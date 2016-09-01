@@ -7,14 +7,17 @@ scalaVersion := "2.11.8"
 
 version := "1.0"
 
-organization in ThisBuild := "org.broadinstitute"
+organization := "org.broadinstitute"
 
-libraryDependencies in ThisBuild ++= Seq(
+libraryDependencies ++= Seq(
   "org.broadinstitute" %% "mdtypes" % "1.0",
-  "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+  "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+  "com.github.scopt" %% "scopt" % "3.5.0"
 )
 
 // Needed to get play iteratees and others
-resolvers in ThisBuild += "Typesafe repository releases" at "http://repo.typesafe.com/typesafe/releases/"
-scalacOptions in ThisBuild ++= Seq("-feature")
+resolvers ++= Seq(
+  "Typesafe repository releases" at "http://repo.typesafe.com/typesafe/releases/",
+  Resolver.sonatypeRepo("public")
+)
 
