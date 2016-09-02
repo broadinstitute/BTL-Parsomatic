@@ -29,17 +29,13 @@ object Parsomatic extends App {
     println("\nFATAL ERROR: " + msg)
     System.exit(1)
   }
-  parser.parse(args, Config(
-    inputFile = new File("NA.tmp"),
-    lastRow = 0,
-    headerRow = 1,
-    startKey = "foo",
-    endKey = "bar",
-    delimiter = "\t")
+  parser.parse(args, Config()
   ) match {
-    // Command line arguments are valid - go execute them
-    case Some(config) => println("I'm doing something")
-    case None => failureExit("Please provide valid input.")
+    case Some(config) => execute(config)     // Command line arguments are valid - go execute them
+    case None => failureExit("Please provide valid input.") //Exits with code 1
+  }
 
+  def execute(config: Config) = {
+    //do some stuff
   }
 }

@@ -4,5 +4,5 @@ import java.io.File
 /**
   * Created by amr on 9/1/2016.
   */
-case class Config (inputFile: File, headerRow: Int = 1, lastRow: Int, startKey: String, endKey: String,
-                   delimiter: String)
+case class Config (inputFile: File = new File("."), headerRow: Int = 1, lastRow: Int = 0, startKey: String = "",
+                   endKey: String = "", delimiter: String = "")
