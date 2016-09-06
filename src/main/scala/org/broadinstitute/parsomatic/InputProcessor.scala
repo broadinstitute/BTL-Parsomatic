@@ -4,10 +4,12 @@ import java.io._
 /**
   * Created by Amr on 9/6/2016.
   */
-class InputProcessor(inputFile: File, delimiter: String) {
-  val input_file: File = inputFile
+//Why does this have to be a case class in order for me to access it inside Parsomatic.scala?
+case class InputProcessor(inputFile: File, delimiter: String) {
+  val inputStream = new FileInputStream(inputFile)
   val delim: String = delimiter
-  val reader = new FileReader(inputFile)
+  val inputData = io.Source.createBufferedSource( inputStream = inputStream, close = () => inputStream.close())
+
   def parseByRow(start: Int, end: Int): Unit = {
     println("Parsing by row")
   }

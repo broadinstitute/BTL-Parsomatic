@@ -39,9 +39,9 @@ object Parsomatic extends App {
     case Some(config) => execute(config)     // Command line arguments are valid - go execute them
     case None => failureExit("Please provide valid input.") //Exits with code 1
   }
-
   def execute(config: Config) = {
-    if (config.byKey) println("start with key") //parse using keys as start/end points
-    else println("start with row") //parse using row as start/end points
+    val ip = new InputProcessor(config.inputFile, config.delimiter)
+    if (config.byKey) ip.parseByKey(config.startKey, config.endKey) //parse using keys as start/end points
+    else ip.parseByRow(config.headerRow, config.lastRow)//parse using row as start/end points
  }
 }
