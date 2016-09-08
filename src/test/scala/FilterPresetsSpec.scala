@@ -14,6 +14,7 @@ class FilterPresetsSpec extends FlatSpec with Matchers {
   "A PicardMetricPreset" should "return a header row as first element of iterable from alignment summary file" in {
     val filteredAlignment = new PicardMetricPreset(alignmentMetrics)
     val run = filteredAlignment.run()
+    //run.right.
     filteredAlignment.start should be (7)
     filteredAlignment.run().isRight should be (true)
   }
