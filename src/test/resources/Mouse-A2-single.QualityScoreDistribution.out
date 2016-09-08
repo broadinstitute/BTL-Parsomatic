@@ -1,0 +1,35 @@
+## htsjdk.samtools.metrics.StringHeader
+# picard.analysis.QualityScoreDistribution CHART_OUTPUT=Mouse-A2-single.QualityScoreDistribution.pdf INPUT=/cil/shed/sandboxes/amr/smartseq/test2/alignments/Mouse-A2-single.duplicates_marked.bam OUTPUT=/cil/shed/sandboxes/amr/smartseq/test2/picard_metrics/Mouse-A2-single.QualityScoreDistribution.out    ALIGNED_READS_ONLY=false PF_READS_ONLY=false INCLUDE_NO_CALLS=false ASSUME_SORTED=true STOP_AFTER=0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false
+## htsjdk.samtools.metrics.StringHeader
+# Started on: Mon Aug 29 14:33:48 EDT 2016
+
+
+## HISTOGRAM	java.lang.Byte
+QUALITY	COUNT_OF_Q
+12	1731
+13	312
+14	30689
+15	196932
+16	1217769
+17	52109
+18	443088
+19	106558
+20	89319
+21	8732
+24	517
+25	97
+26	388
+27	886
+28	132
+29	485322
+30	282572
+31	241717
+32	3967557
+33	5657480
+34	5291147
+35	1504744
+36	866045
+37	13313440
+38	21397099
+39	4045918
+
