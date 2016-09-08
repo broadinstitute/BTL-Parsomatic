@@ -30,7 +30,6 @@ class InputProcessor(inputFile: String) {
       case (x, y) => filterByRow(getKeyRow(lines, x), getKeyRow(lines, y)) //Filter file from first instance of start keyword to first instance of end keyword.
       case _ => Left("filterByKey processing failed.")
     }
-
   }
 }
 
