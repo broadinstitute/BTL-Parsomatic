@@ -1,18 +1,18 @@
 package org.broadinstitute.parsomatic
-import java.io.File
 
 
 /**
   * Created by amr on 9/1/2016.
   */
 
-
 object Parsomatic extends App {
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
-      opt[File]('i', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
+      opt[String]('i', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
+      opt[String]('p', "preset").valueName("foo").optional().action((x, c) => c.copy(preset = x))
+        .text("Use a parser preset from: PicardMetricsParser, PicardHistogramParser")
       opt[Int]('h', "headerRow").valueName("<int>").action((x, c) => c.copy(headerRow = x))
         .text("Header row in file. Default = 1.")
       opt[Int]('l', "lastRow").valueName("<int>").optional().action((x, c) => c.copy(lastRow = x))
@@ -28,20 +28,39 @@ object Parsomatic extends App {
       note("\nA tool for parsing data files into MD objects.\n")
     }
   }
-  //Though parser.parse will give an error msg if args aren't valid, this forces an exit code of 1 as well.
-  private def failureExit(msg: String) {
-    println("\nFATAL ERROR: " + msg)
-    System.exit(1)
-  }
 
   parser.parse(args, Config()
   ) match {
     case Some(config) => execute(config)     // Command line arguments are valid - go execute them
     case None => failureExit("Please provide valid input.") //Exits with code 1
   }
+
   def execute(config: Config) = {
-    val ip = new InputProcessor(config.inputFile, config.delimiter)
-    if (config.byKey) ip.parseByKey(config.startKey, config.endKey) //parse using keys as start/end points
-    else ip.parseByRow(config.headerRow, config.lastRow)//parse using row as start/end points
- }
+    val ip = new InputProcessor(config.inputFile)
+    if (config.byKey) {
+      filterResultHandler(ip.filterByKey(config.startKey, config.endKey))
+    } else if (config.preset.length() > 0) {
+      config.preset match {
+        case "PicardMetricPreset" => val filteredResult = new FilterPresets.PicardMetricPreset(config.inputFile)
+          filterResultHandler(filteredResult.run())
+        case "RnaSeqQCPreset" => val filteredResult = new FilterPresets.RnaSeqQCPreset(config.inputFile)
+          filterResultHandler(filteredResult.run())
+      }
+    } else {
+      filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow))
+    }
+  }
+
+  //Though parser.parse will give an error msg if args aren't valid, this forces an exit code of 1 as well.
+  private def failureExit(msg: String) {
+    println("\nFATAL ERROR: " + msg)
+    System.exit(1)
+  }
+
+  def filterResultHandler(result: Either[String, Iterator[String]]) = {
+    result match {
+      case Right(filteredResult) => for (line <- filteredResult) println(line)
+      case Left(unexpectedResult) => failureExit(unexpectedResult)
+    }
+  }
 }
