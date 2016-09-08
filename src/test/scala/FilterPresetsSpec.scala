@@ -1,5 +1,5 @@
 import org.broadinstitute.parsomatic.FilterPresets._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest._
 
 /**
   * Created by Amr on 9/6/2016.
@@ -15,7 +15,9 @@ class FilterPresetsSpec extends FlatSpec with Matchers {
     val run = filteredAlignment.run()
     filteredAlignment.start should be (7)
     run.isRight should be (true)
-    println(run)
+  }
+  it should "return a FailureExit" in {
+
   }
 
 //  "A PicardHistMetricPreset" should "return an iterable representation of a file" in {
