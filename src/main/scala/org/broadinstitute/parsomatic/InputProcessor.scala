@@ -1,4 +1,5 @@
 package org.broadinstitute.parsomatic
+
 import scala.io.Source
 
 /**

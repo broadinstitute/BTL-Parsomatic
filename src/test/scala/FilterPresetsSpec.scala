@@ -9,6 +9,7 @@ class FilterPresetsSpec extends FlatSpec with Matchers {
   val alignmentMetrics = "C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\Mouse-A2-single.AlignmentSummaryMetrics.out"
   val insertMetrics = "C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\Mouse-A2-single.InsertSize.out"
   val gcMetrics = "C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\Mouse-A2-single.ReadGCMetrics.out"
+  val notRealFile = "doesnt_exists.txt"
 
   "A PicardMetricPreset" should "return a header row as first element of iterable from alignment summary file" in {
     val filteredAlignment = new PicardMetricPreset(alignmentMetrics)
@@ -17,6 +18,7 @@ class FilterPresetsSpec extends FlatSpec with Matchers {
     run.isRight should be (true)
   }
   it should "return a FailureExit" in {
+
 
   }
 

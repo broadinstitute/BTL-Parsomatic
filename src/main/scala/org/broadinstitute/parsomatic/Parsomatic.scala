@@ -1,4 +1,5 @@
 package org.broadinstitute.parsomatic
+import org.broadinstitute.parsomatic.ParsomaticParser
 
 
 /**
@@ -38,16 +39,16 @@ object Parsomatic extends App {
   def execute(config: Config) = {
     val ip = new InputProcessor(config.inputFile)
     if (config.byKey) {
-      filterResultHandler(ip.filterByKey(config.startKey, config.endKey))
+      filterResultHandler(ip.filterByKey(config.startKey, config.endKey), config.delimiter)
     } else if (config.preset.length() > 0) {
       config.preset match {
         case "PicardMetricPreset" => val filteredResult = new FilterPresets.PicardMetricPreset(config.inputFile)
-          filterResultHandler(filteredResult.run())
+          filterResultHandler(filteredResult.run(), config.delimiter)
         case "RnaSeqQCPreset" => val filteredResult = new FilterPresets.RnaSeqQCPreset(config.inputFile)
-          filterResultHandler(filteredResult.run())
+          filterResultHandler(filteredResult.run(), config.delimiter)
       }
     } else {
-      filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow))
+      filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow), config.delimiter)
     }
   }
 
@@ -57,9 +58,9 @@ object Parsomatic extends App {
     System.exit(1)
   }
 
-  def filterResultHandler(result: Either[String, Iterator[String]]) = {
+  def filterResultHandler(result: Either[String, Iterator[String]], delim: String) = {
     result match {
-      case Right(filteredResult) => for (line <- filteredResult) println(line)
+      case Right(filteredResult) => new ParsomaticParser(result, delim).parse()
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }
