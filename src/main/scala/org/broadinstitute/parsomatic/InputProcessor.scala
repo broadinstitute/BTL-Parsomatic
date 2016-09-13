@@ -33,12 +33,3 @@ class InputProcessor(inputFile: String) {
     }
   }
 }
-
-//class ParserByRow(h: Int, l: Int) extends Parser() {
-//
-//
-//}
-//
-//class ParserByKey(s: String, e: String) extends Parser {
-//
-//}

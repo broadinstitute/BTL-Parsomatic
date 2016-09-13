@@ -6,7 +6,6 @@ package org.broadinstitute.parsomatic
 class ParsomaticParser(iter: Either[String, Iterator[String]], delim: String) {
   def parseToMap() = {
     var metrics = scala.collection.mutable.ListBuffer[Map[String, String]]()
-
     for (x <- iter.right) {
       val header = x.next().split(delim)
       while (x.hasNext) {
