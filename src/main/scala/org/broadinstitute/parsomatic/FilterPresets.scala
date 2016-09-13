@@ -15,6 +15,14 @@ object FilterPresets {
     }
   }
 
+  class PicardHistoMetricPreset(input: String) extends Rows with RowFilter {
+    val inputFile = input
+    val start = 7
+    val end = 8
+    def run() = {
+      filter(start, end)
+    }
+  }
   class RnaSeqQCPreset(input: String) extends Rows with RowFilter {
     val inputFile = input
     val start = 1

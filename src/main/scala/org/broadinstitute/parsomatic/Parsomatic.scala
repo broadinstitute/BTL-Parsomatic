@@ -12,7 +12,7 @@ object Parsomatic extends App {
       head("Parsomatic", "1.0")
       opt[String]('i', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
-      opt[String]('p', "preset").valueName("foo").optional().action((x, c) => c.copy(preset = x))
+      opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
         .text("Use a parser preset from: PicardMetricsParser, PicardHistogramParser")
       opt[Int]('h', "headerRow").valueName("<int>").action((x, c) => c.copy(headerRow = x))
         .text("Header row in file. Default = 1.")
@@ -44,6 +44,8 @@ object Parsomatic extends App {
       config.preset match {
         case "PicardMetricPreset" => val filteredResult = new FilterPresets.PicardMetricPreset(config.inputFile)
           filterResultHandler(filteredResult.run(), config.delimiter)
+        case "PicardHistoMetricPreset" => val filteredResult = new FilterPresets.PicardHistoMetricPreset(config.inputFile)
+          filterResultHandler(filteredResult.run(), config.delimiter)
         case "RnaSeqQCPreset" => val filteredResult = new FilterPresets.RnaSeqQCPreset(config.inputFile)
           filterResultHandler(filteredResult.run(), config.delimiter)
       }
@@ -60,7 +62,8 @@ object Parsomatic extends App {
 
   def filterResultHandler(result: Either[String, Iterator[String]], delim: String) = {
     result match {
-      case Right(filteredResult) => new ParsomaticParser(result, delim).parse()
+      case Right(filteredResult) => val mapped = new ParsomaticParser(result, delim).parseToMap()
+        new MapToObject(mapped)
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }
