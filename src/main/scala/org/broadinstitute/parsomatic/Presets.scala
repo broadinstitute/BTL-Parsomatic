@@ -1,38 +1,32 @@
 package org.broadinstitute.parsomatic
 import org.broadinstitute.parsomatic.parserTraits._
-
+import org.broadinstitute.parsomatic.Parsomatic.filterResultHandler
 /**
   * Created by amr on 9/7/2016.
   */
 object Presets {
 
-  class PicardMetricPreset(config: Config) extends Rows with RowFilter with FileMapper with ObjectMapper{
+  class PicardAlignmentMetricPreset(config: Config) extends Rows with RowFilter{
     val inputFile = config.inputFile
     val start = 7
-    val end = 0
-    val delim = "\t"
-    def run() {
-      val fResult = filter(start, end)
-      val mResult = mapFile(fResult, delim).parseToMap()
-      mapToObject(config.mdType, mResult)
-      }
-    }
+    val end = 10
+    config.delimiter = "\t"
+    def run() = filterResultHandler(filter(start, end), config)
+  }
 
-  class PicardHistoMetricPreset(input: String) extends Rows with RowFilter {
-    val inputFile = input
+  class PicardHistoMetricPreset(config: Config) extends Rows with RowFilter{
+    val inputFile = config.inputFile
     val start = 7
     val end = 8
-    val delimiter = "\t"
-    def run() = {
-      filter(start, end)
-    }
+    config.delimiter = "\t"
+    def run() = filterResultHandler(filter(start, end), config)
   }
-  class RnaSeqQCPreset(input: String) extends Rows with RowFilter {
-    val inputFile = input
+
+  class RnaSeqQCPreset(config: Config) extends Rows with RowFilter{
+    val inputFile = config.inputFile
     val start = 1
     val end = 0
-    def run() = {
-      filter(start, end)
-    }
+    config.delimiter = "\t"
+    def run() = filterResultHandler(filter(start, end), config)
   }
 }

@@ -1,5 +1,4 @@
 package org.broadinstitute.parsomatic
-import org.broadinstitute.parsomatic.ParsomaticParser
 
 
 /**
@@ -13,7 +12,7 @@ object Parsomatic extends App {
       opt[String]('i', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
-        .text("Use a parser preset from: PicardMetricsParser, PicardHistogramParser")
+        .text("Use a parser preset from: PicardAlignmentMetric, RnaSeqQCMetrics")
       opt[String]('m', "mdType").valueName("<type>").optional().action((x, c) => c.copy(mdType = x))
         .text("MD type object to create.")
       opt[Int]('h', "headerRow").valueName("<int>").action((x, c) => c.copy(headerRow = x))
@@ -25,7 +24,7 @@ object Parsomatic extends App {
         .text("A key string to indicate header row. Must begin with first character of line.")
       opt[String]('e', "endKey").valueName("<string>").optional().action((x, c) => c.copy(endKey = x))
         .text("A string to indicate last row of data. Must begin with first character of line.")
-      opt[String]('d', "delimiter").valueName("<char>").required().action((x, c) => c.copy(delimiter = x))
+      opt[String]('d', "delimiter").valueName("<char>").optional().action((x, c) => c.copy(delimiter = x))
         .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
       help("help").text("Prints this help text.")
       note("\nA tool for parsing data files into MD objects.\n")
@@ -44,12 +43,12 @@ object Parsomatic extends App {
       filterResultHandler(ip.filterByKey(config.startKey, config.endKey), config)
     } else if (config.preset.length() > 0) {
       config.preset match {
-        case "PicardMetricPreset" => val filteredResult = new Presets.PicardMetricPreset(config)
-          filteredResult.run()
-        case "PicardHistoMetricPreset" => val filteredResult = new Presets.PicardHistoMetricPreset(config.inputFile)
-          filterResultHandler(filteredResult.run(), config)
-        case "RnaSeqQCPreset" => val filteredResult = new Presets.RnaSeqQCPreset(config.inputFile)
-          filterResultHandler(filteredResult.run(), config)
+        case "PicardAlignmentMetrics" => val preset = new Presets.PicardAlignmentMetricPreset(config)
+          preset.run()
+        case "PicardInsertMetrics" => val preset = new Presets.PicardHistoMetricPreset(config)
+          preset.run()
+        case "RnaSeqQCMetrics" => val preset = new Presets.RnaSeqQCPreset(config)
+          preset.run()
       }
     } else {
       filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow), config)
@@ -64,8 +63,9 @@ object Parsomatic extends App {
 
   def filterResultHandler(result: Either[String, Iterator[String]], config: Config) = {
     result match {
-      case Right(filteredResult) => val mapped = new ParsomaticParser(result, config.delimiter).parseToMap()
-        new MapToObject(config.mdType,mapped)
+      case Right(filteredResult) =>
+        val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
+        new MapToObjects(config.mdType,mapped)
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }

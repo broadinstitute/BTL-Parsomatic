@@ -1,19 +1,27 @@
 package org.broadinstitute.parsomatic
+import scala.annotation.tailrec
 
 /**
   * Created by Amr on 9/9/2016.
   */
-class ParsomaticParser(iter: Either[String, Iterator[String]], delim: String) {
+class ParsomaticParser(iter: Iterator[String], delim: String) {
   def parseToMap() = {
-    var metrics = scala.collection.mutable.ListBuffer[Map[String, String]]()
-    for (x <- iter.right) {
-      val header = x.next().split(delim)
-      while (x.hasNext) {
-        val row = header zip x.next().split(delim)
-        val mappedRow = row.toMap
-        metrics += mappedRow
+    val header = iter.next().split(delim)
+    def populateMetrics(lb: scala.collection.mutable.ListBuffer[Map[String,String]]):
+    List[Map[String,String]] = {
+      @tailrec
+      def metricAccumulator(lb: scala.collection.mutable.ListBuffer[Map[String,String]]):
+      List[Map[String,String]] = {
+        if (iter.hasNext) {
+          val row = header zip iter.next().split(delim)
+          lb += row.toMap
+          metricAccumulator(lb)
+        } else {
+          lb.toList
+        }
       }
+      metricAccumulator(lb)
     }
-    metrics
+  populateMetrics(scala.collection.mutable.ListBuffer[Map[String, String]]())
   }
 }
