@@ -56,7 +56,7 @@ object Parsomatic extends App {
   }
 
   //Though parser.parse will give an error msg if args aren't valid, this forces an exit code of 1 as well.
-  private def failureExit(msg: String) {
+  def failureExit(msg: String) {
     println("\nFATAL ERROR: " + msg)
     System.exit(1)
   }
@@ -65,7 +65,7 @@ object Parsomatic extends App {
     result match {
       case Right(filteredResult) =>
         val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
-        new MapToObjects(config.mdType,mapped)
+        new MapToObjects(config.mdType, mapped).go() //returns a List(MdType(params=value)) object
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }
