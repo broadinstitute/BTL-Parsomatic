@@ -16,6 +16,7 @@ class InputProcessor(inputFile: String) {
       case _ => Left("filterByRow processing failed.")
     }
   }
+
   def filterByKey(start: String, end: String): Either[String, Iterator[String]] = {
     println("Parsing by key", start, end)
     def getKeyRow(lines: Iterator[String], word: String): Int = {
@@ -25,8 +26,8 @@ class InputProcessor(inputFile: String) {
       row + 1
     }
     (start, end) match {
-      case ("","") => filterByRow(1,0) //This is the same as filtering by row with default settings.
-      case(x, "") => filterByRow(getKeyRow(lines, x), 0) //Filter file from first instance of start keyword to end of file
+      case ("","") => filterByRow(1,0) //This is the same as filtering by row with default settings
+      case (x, "") => filterByRow(getKeyRow(lines, x), 0) //Filter file from first instance of start keyword to end of file
       case ("", y) => filterByRow(1, getKeyRow(lines, y)) //Filter file from first line to first instance of end keyword.
       case (x, y) => filterByRow(getKeyRow(lines, x), getKeyRow(lines, y)) //Filter file from first instance of start keyword to first instance of end keyword.
       case _ => Left("filterByKey processing failed.")

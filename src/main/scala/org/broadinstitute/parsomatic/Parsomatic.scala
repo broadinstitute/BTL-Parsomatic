@@ -49,6 +49,7 @@ object Parsomatic extends App {
           preset.run()
         case "RnaSeqQCMetrics" => val preset = new Presets.RnaSeqQCPreset(config)
           preset.run()
+        case _ => failureExit("Unrecognized preset.")
       }
     } else {
       filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow), config)

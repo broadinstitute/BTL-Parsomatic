@@ -22,7 +22,7 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
       case "PicardAlignmentMetrics" => for (row <- input) metrics += new PicardAlignmentSummaryMetrics(
         category = row.getOrElse("CATEGORY", "N/A"),
         totalReads = convertToInt(row, "TOTAL_READS", "0"),
-        pfReads = convertToInt(row, "PC_READS", "0"),
+        pfReads = convertToInt(row, "PF_READS", "0"),
         pctPfReads = convertToDouble(row, "PCT_PF_READS", "0.0"),
         pfNoiseReads = convertToInt(row, "PF_NOISE_READS", "0"),
         pfReadsAligned = convertToInt(row, "PF_READS_ALIGNED", "0"),
@@ -43,7 +43,9 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         pctChimeras = convertToDouble(row, "PCT_CHIMERAS", "0.0"),
         pctAdapter = convertToDouble(row, "PCT_ADAPTER", "0.0")
       ) with Metrics
-        metrics.toList
+        val y = metrics.toList
+        println(y)
+        y
       case "PicardInsertSizeMetrics" => for (row <- input) metrics += new PicardInsertSizeMetrics(
         medianInsertSize = convertToInt(row, "MEDIAN_INSERT_SIZE", "0"),
         medianAbsoluteDeviation = convertToInt(row, "MEDIAN_ABSOLUTE_DEVIATION", "0"),
@@ -64,7 +66,6 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         widthOf90Pct = convertToInt(row, "WIDTH_OF_90_PERCENT", "0"),
         widthOf99Pct = convertToInt(row, "WIDTH_OF_99_PERCENT", "0")
       ) with Metrics
-        metrics.toList
       case _ => failureExit("unrecognized mdType input for MapToObject")
     }
   }
