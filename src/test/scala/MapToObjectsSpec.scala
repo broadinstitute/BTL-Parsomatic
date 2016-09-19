@@ -1,11 +1,8 @@
 /**
   * Created by Amr on 9/16/2016.
   */
-import org.broadinstitute.MD.types.PicardAlignmentSummaryMetrics
 import org.broadinstitute.parsomatic.MapToObjects
 import org.scalatest._
-
-import scala.collection.immutable
 
 class MapToObjectsSpec  extends FlatSpec with Matchers {
   val test_entry = List(

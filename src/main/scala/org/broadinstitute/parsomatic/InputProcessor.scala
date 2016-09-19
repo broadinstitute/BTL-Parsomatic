@@ -30,7 +30,6 @@ class InputProcessor(inputFile: String) {
         row + 1
       }
     }
-
     (start, end) match {
       case ("","") => filterByRow(1,0) //This is the same as filtering by row with default settings
       case (x, "") =>
