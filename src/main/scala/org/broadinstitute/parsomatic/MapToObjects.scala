@@ -43,9 +43,7 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         pctChimeras = convertToDouble(row, "PCT_CHIMERAS", "0.0"),
         pctAdapter = convertToDouble(row, "PCT_ADAPTER", "0.0")
       ) with Metrics
-        val y = metrics.toList
-        println(y)
-        y
+        metrics.toList
       case "PicardInsertSizeMetrics" => for (row <- input) metrics += new PicardInsertSizeMetrics(
         medianInsertSize = convertToInt(row, "MEDIAN_INSERT_SIZE", "0"),
         medianAbsoluteDeviation = convertToInt(row, "MEDIAN_ABSOLUTE_DEVIATION", "0"),

@@ -28,8 +28,16 @@ class InputProcessorSpec extends FlatSpec with Matchers {
     val ip = new InputProcessor(alignmentMetrics)
     ip.filterByRow(10,1).left.map(_.toString) should be (Left("filterByRow processing failed."))
   }
-  it should "return a failure string when key input doesn't exist in input file" in {
+  it should "return a failure string when start key input doesn't exist in input file" in {
     val ip = new InputProcessor(alignmentMetrics)
-    ip.filterByKey("","PAIR").left.map(_.toString) should be (Left("filterByKey processing failed."))
+    ip.filterByKey("FOO", "").left.map(_.toString) should be (Left("FOO is not a valid keyword."))
+  }
+  it should "return a failure string when end key input doesn't exist in input file" in {
+    val ip = new InputProcessor(alignmentMetrics)
+    ip.filterByKey("", "BAR").left.map(_.toString) should be (Left("BAR is not a valid keyword."))
+  }
+  it should "return a failure string when both keys don't exist in input file" in {
+    val ip = new InputProcessor(alignmentMetrics)
+    ip.filterByKey("FOO", "BAR").left.map(_.toString) should be (Left("FOO and BAR are not a valid keyword pair."))
   }
 }

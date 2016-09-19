@@ -10,69 +10,61 @@
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.11.8 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@40f87f0e
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3cb15fab
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.8
 [debug] 	found org.scala-lang#scala-library;2.11.8 in sbt-chain
 [debug] 	[2.11.8] org.scala-lang#scala-library;2.11.8
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile->default(compile)]
-[info] Resolving org.broadinstitute#mdtypes_2.11;1.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@613f9785
-[debug] sbt-chain: module revision found in cache: org.broadinstitute#mdtypes_2.11;1.0
-[debug] 	found org.broadinstitute#mdtypes_2.11;1.0 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile->default(compile)]
+[info] Resolving org.broadinstitute#mdtypes_2.11;1.1 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4472a3e6
+[debug] sbt-chain: module revision found in cache: org.broadinstitute#mdtypes_2.11;1.1
+[debug] 	found org.broadinstitute#mdtypes_2.11;1.1 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->default(compile)]
 [info] Resolving org.slf4j#slf4j-api;1.7.21 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1d748d17
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6565967e
 [debug] sbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.7.21
 [debug] 	found org.slf4j#slf4j-api;1.7.21 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->default(compile)]
-[info] Resolving org.reactivemongo#reactivemongo_2.11;0.11.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3638232b
-[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo_2.11;0.11.11
-[debug] 	found org.reactivemongo#reactivemongo_2.11;0.11.11 in sbt-chain
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->default(compile)]
-[info] Resolving org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2dc6a65b
-[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11
-[debug] 	found org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 in sbt-chain
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->default(compile)]
-[info] Resolving org.reactivemongo#reactivemongo-bson_2.11;0.11.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@417eb8b1
-[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo-bson_2.11;0.11.11
-[debug] 	found org.reactivemongo#reactivemongo-bson_2.11;0.11.11 in sbt-chain
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->default(compile)]
-[info] Resolving org.reactivemongo#reactivemongo-shaded;0.11.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@51969a54
-[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo-shaded;0.11.11
-[debug] 	found org.reactivemongo#reactivemongo-shaded;0.11.11 in sbt-chain
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->default(compile)]
-[info] Resolving io.netty#netty;3.10.5.Final ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14e1d21a
-[debug] sbt-chain: module revision found in cache: io.netty#netty;3.10.5.Final
-[debug] 	found io.netty#netty;3.10.5.Final in sbt-chain
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->default(compile)]
+[info] Resolving org.reactivemongo#reactivemongo_2.11;0.11.13 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5487f450
+[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo_2.11;0.11.13
+[debug] 	found org.reactivemongo#reactivemongo_2.11;0.11.13 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->default(compile)]
+[info] Resolving org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@30972c97
+[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13
+[debug] 	found org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->default(compile)]
+[info] Resolving org.reactivemongo#reactivemongo-bson_2.11;0.11.13 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@66b930d
+[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo-bson_2.11;0.11.13
+[debug] 	found org.reactivemongo#reactivemongo-bson_2.11;0.11.13 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->default(compile)]
+[info] Resolving org.reactivemongo#reactivemongo-shaded;0.11.13 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@323905e6
+[debug] sbt-chain: module revision found in cache: org.reactivemongo#reactivemongo-shaded;0.11.13
+[debug] 	found org.reactivemongo#reactivemongo-shaded;0.11.13 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->default(compile)]
 [info] Resolving com.typesafe.play#play-iteratees_2.11;2.3.10 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@68e966f6
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2b0a7bc9
 [debug] sbt-chain: module revision found in cache: com.typesafe.play#play-iteratees_2.11;2.3.10
 [debug] 	found com.typesafe.play#play-iteratees_2.11;2.3.10 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->runtime]
@@ -80,7 +72,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-stm#scala-stm_2.11;0.7 [compile->default(compile)]
 [info] Resolving org.scala-stm#scala-stm_2.11;0.7 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@20d2f05f
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@71a9be03
 [debug] sbt-chain: module revision found in cache: org.scala-stm#scala-stm_2.11;0.7
 [debug] 	found org.scala-stm#scala-stm_2.11;0.7 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-stm#scala-stm_2.11;0.7 [compile->runtime]
@@ -88,23 +80,23 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-stm#scala-stm_2.11;0.7 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
 [info] Resolving commons-codec#commons-codec;1.10 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4e63e1e6
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@63243a93
 [debug] sbt-chain: module revision found in cache: commons-codec#commons-codec;1.10
 [debug] 	found commons-codec#commons-codec;1.10 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->default(compile)]
-[info] Resolving org.apache.logging.log4j#log4j-api;2.0.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@f6bba78
-[debug] sbt-chain: module revision found in cache: org.apache.logging.log4j#log4j-api;2.0.2
-[debug] 	found org.apache.logging.log4j#log4j-api;2.0.2 in sbt-chain
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->default(compile)]
+[info] Resolving org.apache.logging.log4j#log4j-api;2.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@78c6bdb2
+[debug] sbt-chain: module revision found in cache: org.apache.logging.log4j#log4j-api;2.5
+[debug] 	found org.apache.logging.log4j#log4j-api;2.5 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [info] Resolving org.json4s#json4s-native_2.11;3.2.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@44f16522
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@67d10231
 [debug] sbt-chain: module revision found in cache: org.json4s#json4s-native_2.11;3.2.11
 [debug] 	found org.json4s#json4s-native_2.11;3.2.11 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
@@ -112,7 +104,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-core_2.11;3.2.11 [compile->default(compile)]
 [info] Resolving org.json4s#json4s-core_2.11;3.2.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@49e19c64
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@741eaa2a
 [debug] sbt-chain: module revision found in cache: org.json4s#json4s-core_2.11;3.2.11
 [debug] 	found org.json4s#json4s-core_2.11;3.2.11 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-core_2.11;3.2.11 [compile->runtime]
@@ -120,7 +112,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-core_2.11;3.2.11 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-ast_2.11;3.2.11 [compile->default(compile)]
 [info] Resolving org.json4s#json4s-ast_2.11;3.2.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@751c1cd8
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@24c81576
 [debug] sbt-chain: module revision found in cache: org.json4s#json4s-ast_2.11;3.2.11
 [debug] 	found org.json4s#json4s-ast_2.11;3.2.11 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-ast_2.11;3.2.11 [compile->runtime]
@@ -128,7 +120,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-ast_2.11;3.2.11 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.thoughtworks.paranamer#paranamer;2.6 [compile->default(compile)]
 [info] Resolving com.thoughtworks.paranamer#paranamer;2.6 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7179acc6
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@595e604c
 [debug] sbt-chain: module revision found in cache: com.thoughtworks.paranamer#paranamer;2.6
 [debug] 	found com.thoughtworks.paranamer#paranamer;2.6 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.thoughtworks.paranamer#paranamer;2.6 [compile->runtime]
@@ -136,7 +128,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.thoughtworks.paranamer#paranamer;2.6 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scalap;2.11.0 [compile->default(compile)]
 [info] Resolving org.scala-lang#scalap;2.11.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3cc7d21
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4cfa2454
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scalap;2.11.0
 [debug] 	found org.scala-lang#scalap;2.11.0 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scalap;2.11.0 [compile->runtime]
@@ -144,7 +136,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scalap;2.11.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-compiler;2.11.0 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-compiler;2.11.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7bb120a5
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3836a9ef
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.11.0
 [debug] 	found org.scala-lang#scala-compiler;2.11.0 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-compiler;2.11.0 [compile->runtime]
@@ -152,7 +144,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-compiler;2.11.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-reflect;2.11.0 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-reflect;2.11.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1714cc5d
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@62f58b70
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.11.0
 [debug] 	found org.scala-lang#scala-reflect;2.11.0 in sbt-chain
 [debug] 	[2.11.0] org.scala-lang#scala-reflect;2.11.0
@@ -161,7 +153,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-reflect;2.11.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->default(compile)]
 [info] Resolving org.scala-lang.modules#scala-xml_2.11;1.0.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@37cae36d
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7aeb71b7
 [debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.1
 [debug] 	found org.scala-lang.modules#scala-xml_2.11;1.0.1 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->runtime]
@@ -169,7 +161,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-ext_2.11;3.2.11 [compile->default(compile)]
 [info] Resolving org.json4s#json4s-ext_2.11;3.2.11 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7db0628a
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4d80d143
 [debug] sbt-chain: module revision found in cache: org.json4s#json4s-ext_2.11;3.2.11
 [debug] 	found org.json4s#json4s-ext_2.11;3.2.11 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-ext_2.11;3.2.11 [compile->runtime]
@@ -177,7 +169,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-ext_2.11;3.2.11 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->joda-time#joda-time;2.3 [compile->default(compile)]
 [info] Resolving joda-time#joda-time;2.3 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3a91d4a0
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@656a4cf5
 [debug] sbt-chain: module revision found in cache: joda-time#joda-time;2.3
 [debug] 	found joda-time#joda-time;2.3 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->joda-time#joda-time;2.3 [compile->runtime]
@@ -185,7 +177,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->joda-time#joda-time;2.3 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.joda#joda-convert;1.6 [compile->default(compile)]
 [info] Resolving org.joda#joda-convert;1.6 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3102311d
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2ee99967
 [debug] sbt-chain: module revision found in cache: org.joda#joda-convert;1.6
 [debug] 	found org.joda#joda-convert;1.6 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.joda#joda-convert;1.6 [compile->runtime]
@@ -193,7 +185,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.joda#joda-convert;1.6 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-core_2.11;2.4.5 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-http-core_2.11;2.4.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5b54c724
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@328d9b08
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-http-core_2.11;2.4.5
 [debug] 	found com.typesafe.akka#akka-http-core_2.11;2.4.5 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-core_2.11;2.4.5 [compile->runtime]
@@ -201,7 +193,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-core_2.11;2.4.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-stream_2.11;2.4.5 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-stream_2.11;2.4.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@71de71a4
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@77701077
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-stream_2.11;2.4.5
 [debug] 	found com.typesafe.akka#akka-stream_2.11;2.4.5 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-stream_2.11;2.4.5 [compile->runtime]
@@ -209,7 +201,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-stream_2.11;2.4.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.4.5 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-actor_2.11;2.4.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@420199ee
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@17e7a152
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-actor_2.11;2.4.5
 [debug] 	found com.typesafe.akka#akka-actor_2.11;2.4.5 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.4.5 [compile->runtime]
@@ -217,7 +209,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.4.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#config;1.3.0 [compile->default(compile)]
 [info] Resolving com.typesafe#config;1.3.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3016eb15
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@71ca7996
 [debug] sbt-chain: module revision found in cache: com.typesafe#config;1.3.0
 [debug] 	found com.typesafe#config;1.3.0 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#config;1.3.0 [compile->runtime]
@@ -225,7 +217,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#config;1.3.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->default(compile)]
 [info] Resolving org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@49960151
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@737c3f01
 [debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-java8-compat_2.11;0.7.0
 [debug] 	found org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->runtime]
@@ -233,7 +225,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#ssl-config-akka_2.11;0.2.1 [compile->default(compile)]
 [info] Resolving com.typesafe#ssl-config-akka_2.11;0.2.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@43e81836
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@26f50689
 [debug] sbt-chain: module revision found in cache: com.typesafe#ssl-config-akka_2.11;0.2.1
 [debug] 	found com.typesafe#ssl-config-akka_2.11;0.2.1 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#ssl-config-akka_2.11;0.2.1 [compile->runtime]
@@ -241,7 +233,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#ssl-config-akka_2.11;0.2.1 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#ssl-config-core_2.11;0.2.1 [compile->default(compile)]
 [info] Resolving com.typesafe#ssl-config-core_2.11;0.2.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@c983e1e
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@321c9c75
 [debug] sbt-chain: module revision found in cache: com.typesafe#ssl-config-core_2.11;0.2.1
 [debug] 	found com.typesafe#ssl-config-core_2.11;0.2.1 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#ssl-config-core_2.11;0.2.1 [compile->runtime]
@@ -249,7 +241,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe#ssl-config-core_2.11;0.2.1 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->default(compile)]
 [info] Resolving org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@43b045c9
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@36423015
 [debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4
 [debug] 	found org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->runtime]
@@ -257,7 +249,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivestreams#reactive-streams;1.0.0 [compile->default(compile)]
 [info] Resolving org.reactivestreams#reactive-streams;1.0.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@125f4b94
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@11ca9e89
 [debug] sbt-chain: module revision found in cache: org.reactivestreams#reactive-streams;1.0.0
 [debug] 	found org.reactivestreams#reactive-streams;1.0.0 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivestreams#reactive-streams;1.0.0 [compile->runtime]
@@ -265,7 +257,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivestreams#reactive-streams;1.0.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-parsing_2.11;2.4.5 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-parsing_2.11;2.4.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@45ee5ea5
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@63b1a554
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-parsing_2.11;2.4.5
 [debug] 	found com.typesafe.akka#akka-parsing_2.11;2.4.5 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-parsing_2.11;2.4.5 [compile->runtime]
@@ -273,12 +265,20 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-parsing_2.11;2.4.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-http-experimental_2.11;2.4.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@25c256d7
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7b1db168
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-http-experimental_2.11;2.4.5
 [debug] 	found com.typesafe.akka#akka-http-experimental_2.11;2.4.5 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->default(compile)]
+[info] Resolving com.github.scopt#scopt_2.11;3.5.0 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7665b264
+[debug] sbt-chain: module revision found in cache: com.github.scopt#scopt_2.11;3.5.0
+[debug] 	found com.github.scopt#scopt_2.11;3.5.0 in sbt-chain
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->master]
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [runtime]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [compile]
@@ -286,31 +286,27 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->compile]
@@ -323,10 +319,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
@@ -415,35 +411,35 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->compile]
@@ -456,10 +452,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->compile]
@@ -548,6 +544,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->master]
 [debug] resolving dependencies for configuration 'test'
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [test]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [runtime]
@@ -556,31 +556,27 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->compile]
@@ -593,10 +589,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
@@ -679,35 +675,35 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->compile]
@@ -720,10 +716,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->compile]
@@ -806,35 +802,35 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test->compile]
@@ -847,10 +843,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test->compile]
@@ -931,9 +927,13 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->default(compile)]
 [info] Resolving org.scalatest#scalatest_2.11;2.2.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5ee67454
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@66b4c009
 [debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.11;2.2.4
 [debug] 	found org.scalatest#scalatest_2.11;2.2.4 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->runtime]
@@ -941,7 +941,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-reflect;2.11.2 [test->default(compile)]
 [info] Resolving org.scala-lang#scala-reflect;2.11.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4021e0d7
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@f021fe2
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.11.2
 [debug] 	found org.scala-lang#scala-reflect;2.11.2 in sbt-chain
 [debug] 	[2.11.2] org.scala-lang#scala-reflect;2.11.2
@@ -950,7 +950,7 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-reflect;2.11.2 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [test->default(compile)]
 [info] Resolving org.scala-lang.modules#scala-xml_2.11;1.0.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5306f871
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@11b8c0a2
 [debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.2
 [debug] 	found org.scala-lang.modules#scala-xml_2.11;1.0.2 in sbt-chain
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang.modules#scala-xml_2.11;1.0.2 [test->runtime]
@@ -967,31 +967,27 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->compile]
@@ -1004,10 +1000,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
@@ -1096,37 +1092,37 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->master]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [optional]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [provided]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile-internal->compile]
@@ -1139,10 +1135,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile-internal->compile]
@@ -1231,6 +1227,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile-internal->master]
 [debug] resolving dependencies for configuration 'runtime-internal'
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [runtime-internal]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [runtime]
@@ -1239,31 +1239,27 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->compile]
@@ -1276,10 +1272,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
@@ -1368,35 +1364,35 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->compile]
@@ -1409,10 +1405,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->compile]
@@ -1501,36 +1497,36 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->master]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [optional]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [runtime-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime-internal->compile]
@@ -1543,10 +1539,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime-internal->compile]
@@ -1635,6 +1631,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime-internal->master]
 [debug] resolving dependencies for configuration 'test-internal'
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [test-internal]
 [debug] == resolving dependencies for org.broadinstitute#parsomatic$sources_2.11;1.0 [test]
@@ -1644,31 +1644,27 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [compile->compile]
@@ -1681,10 +1677,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
@@ -1775,35 +1771,35 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [compile->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [compile->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [runtime->compile]
@@ -1816,10 +1812,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [runtime->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [runtime->compile]
@@ -1910,35 +1906,35 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [runtime->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [runtime->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test->compile]
@@ -1951,10 +1947,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test->compile]
@@ -2035,6 +2031,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test->compile]
@@ -2053,31 +2053,27 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scala-lang#scala-library;2.11.8 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.0 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.broadinstitute#mdtypes_2.11;1.1 [test-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.slf4j#slf4j-api;1.7.21 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.11 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.11 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.11 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->io.netty#netty;3.10.5.Final [test-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo_2.11;0.11.13 [test-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13 [test-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-bson_2.11;0.11.13 [test-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.reactivemongo#reactivemongo-shaded;0.11.13 [test-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.play#play-iteratees_2.11;2.3.10 [test-internal->compile]
@@ -2090,10 +2086,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->commons-codec#commons-codec;1.10 [test-internal->master]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test-internal->default(compile)]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test-internal->runtime]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test-internal->compile]
-[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.0.2 [test-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.apache.logging.log4j#log4j-api;2.5 [test-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [test-internal->compile]
@@ -2174,6 +2170,10 @@
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test-internal->compile]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.typesafe.akka#akka-http-experimental_2.11;2.4.5 [test-internal->master]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test-internal->default(compile)]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test-internal->runtime]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test-internal->compile]
+[debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->com.github.scopt#scopt_2.11;3.5.0 [test-internal->master]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test-internal->default(compile)]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test-internal->runtime]
 [debug] == resolving dependencies org.broadinstitute#parsomatic$sources_2.11;1.0->org.scalatest#scalatest_2.11;2.2.4 [test-internal->compile]
@@ -2242,28 +2242,26 @@
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.11.8!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.11.8!scala-library.jar(src)
-[debug] 	[NOT REQUIRED] org.broadinstitute#mdtypes_2.11;1.0!mdtypes_2.11.jar
-[debug] 	[NOT REQUIRED] org.broadinstitute#mdtypes_2.11;1.0!mdtypes_2.11.jar(src)
+[debug] 	[NOT REQUIRED] org.broadinstitute#mdtypes_2.11;1.1!mdtypes_2.11.jar
+[debug] 	[NOT REQUIRED] org.broadinstitute#mdtypes_2.11;1.1!mdtypes_2.11.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.21!slf4j-api.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.21!slf4j-api.jar
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo_2.11;0.11.11!reactivemongo_2.11.jar(src)
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo_2.11;0.11.11!reactivemongo_2.11.jar
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11!reactivemongo-bson-macros_2.11.jar
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.11!reactivemongo-bson-macros_2.11.jar(src)
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson_2.11;0.11.11!reactivemongo-bson_2.11.jar(src)
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson_2.11;0.11.11!reactivemongo-bson_2.11.jar
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-shaded;0.11.11!reactivemongo-shaded.jar(src)
-[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-shaded;0.11.11!reactivemongo-shaded.jar
-[debug] 	[NOT REQUIRED] io.netty#netty;3.10.5.Final!netty.jar(src)
-[debug] 	[NOT REQUIRED] io.netty#netty;3.10.5.Final!netty.jar
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo_2.11;0.11.13!reactivemongo_2.11.jar(src)
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo_2.11;0.11.13!reactivemongo_2.11.jar
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13!reactivemongo-bson-macros_2.11.jar
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson-macros_2.11;0.11.13!reactivemongo-bson-macros_2.11.jar(src)
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson_2.11;0.11.13!reactivemongo-bson_2.11.jar(src)
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-bson_2.11;0.11.13!reactivemongo-bson_2.11.jar
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-shaded;0.11.13!reactivemongo-shaded.jar
+[debug] 	[NOT REQUIRED] org.reactivemongo#reactivemongo-shaded;0.11.13!reactivemongo-shaded.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-iteratees_2.11;2.3.10!play-iteratees_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-iteratees_2.11;2.3.10!play-iteratees_2.11.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-stm#scala-stm_2.11;0.7!scala-stm_2.11.jar
 [debug] 	[NOT REQUIRED] org.scala-stm#scala-stm_2.11;0.7!scala-stm_2.11.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-stm#scala-stm_2.11;0.7!scala-stm_2.11.jar
 [debug] 	[NOT REQUIRED] commons-codec#commons-codec;1.10!commons-codec.jar(src)
 [debug] 	[NOT REQUIRED] commons-codec#commons-codec;1.10!commons-codec.jar
-[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-api;2.0.2!log4j-api.jar
-[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-api;2.0.2!log4j-api.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-api;2.5!log4j-api.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-api;2.5!log4j-api.jar
 [debug] 	[NOT REQUIRED] org.json4s#json4s-native_2.11;3.2.11!json4s-native_2.11.jar(src)
 [debug] 	[NOT REQUIRED] org.json4s#json4s-native_2.11;3.2.11!json4s-native_2.11.jar
 [debug] 	[NOT REQUIRED] org.json4s#json4s-core_2.11;3.2.11!json4s-core_2.11.jar(src)
@@ -2308,6 +2306,8 @@
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.11;2.4.5!akka-parsing_2.11.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-experimental_2.11;2.4.5!akka-http-experimental_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-experimental_2.11;2.4.5!akka-http-experimental_2.11.jar(src)
+[debug] 	[NOT REQUIRED] com.github.scopt#scopt_2.11;3.5.0!scopt_2.11.jar
+[debug] 	[NOT REQUIRED] com.github.scopt#scopt_2.11;3.5.0!scopt_2.11.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.2!scala-reflect.jar
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.2!scala-xml_2.11.jar(src)
@@ -2318,7 +2318,7 @@
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.8!scala-reflect.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.12.1!jline.jar(src)
-[debug] :: resolution report :: resolve 2059ms :: artifacts dl 205ms
+[debug] :: resolution report :: resolve 914ms :: artifacts dl 82ms
 [debug] 	report for org.broadinstitute#parsomatic$sources_2.11;1.0 compile produced in C:\Dev\Scala\Parsomatic\target\resolution-cache\reports\org.broadinstitute-parsomatic$sources_2.11-compile.xml
 [debug] 	report for org.broadinstitute#parsomatic$sources_2.11;1.0 runtime produced in C:\Dev\Scala\Parsomatic\target\resolution-cache\reports\org.broadinstitute-parsomatic$sources_2.11-runtime.xml
 [debug] 	report for org.broadinstitute#parsomatic$sources_2.11;1.0 test produced in C:\Dev\Scala\Parsomatic\target\resolution-cache\reports\org.broadinstitute-parsomatic$sources_2.11-test.xml
@@ -2332,4 +2332,4 @@
 [debug] 	report for org.broadinstitute#parsomatic$sources_2.11;1.0 docs produced in C:\Dev\Scala\Parsomatic\target\resolution-cache\reports\org.broadinstitute-parsomatic$sources_2.11-docs.xml
 [debug] 	report for org.broadinstitute#parsomatic$sources_2.11;1.0 pom produced in C:\Dev\Scala\Parsomatic\target\resolution-cache\reports\org.broadinstitute-parsomatic$sources_2.11-pom.xml
 [debug] 	report for org.broadinstitute#parsomatic$sources_2.11;1.0 scala-tool produced in C:\Dev\Scala\Parsomatic\target\resolution-cache\reports\org.broadinstitute-parsomatic$sources_2.11-scala-tool.xml
-[debug] 	resolve done (2059ms resolve - 205ms download)
+[debug] 	resolve done (914ms resolve - 82ms download)

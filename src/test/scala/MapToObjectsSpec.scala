@@ -1,11 +1,14 @@
 /**
   * Created by Amr on 9/16/2016.
   */
+import org.broadinstitute.MD.types.PicardAlignmentSummaryMetrics
 import org.broadinstitute.parsomatic.MapToObjects
 import org.scalatest._
 
+import scala.collection.immutable
+
 class MapToObjectsSpec  extends FlatSpec with Matchers {
-  val test_entry = List( 
+  val test_entry = List(
     Map("CATEGORY" -> "FIRST_OF_PAIR",
       "TOTAL_READS" -> "1184046",
       "PF_READS" -> "1184046",
@@ -30,9 +33,8 @@ class MapToObjectsSpec  extends FlatSpec with Matchers {
       "PCT_ADAPTER" -> "0.000028"
     )
   )
-    "A Valid " should "" in {
+    "A valid MapToObjects object" should "produce a list of PicardAlignmentSummaryMetrics when told to go" in {
       val mto = new MapToObjects("PicardAlignmentMetrics", test_entry)
-      mto.go()
-
+      mto.go() shouldBe a [List[_]]
   }
 }
