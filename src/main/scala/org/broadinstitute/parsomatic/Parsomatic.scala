@@ -64,12 +64,15 @@ object Parsomatic extends App {
     println("\nFATAL ERROR: " + msg)
     System.exit(1)
   }
-
+/*TODO Should probably validate delimiter somewhere to avoid situation where parsing returns unexpected results
+due to delimiter not existing in file.
+ */
   def filterResultHandler(result: Either[String, Iterator[String]], config: Config) = {
     result match {
       case Right(filteredResult) =>
         val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
-        println(new MapToObjects(config.mdType, mapped).go()) //returns a List(MdType(params=value)) object
+        //return a List(MdType(params=value)) object
+        new MapToObjects(config.mdType, mapped).go()
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="bd3129ae-94da-462d-8498-5345fd7aabcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/InputProcessor.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/InputProcessor.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/MapToObjectsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/MapToObjectsSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala" />
     </list>
     <ignored path="Parsomatic.iws" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,9 +40,33 @@
       <file leaf-file-name="Parsomatic.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-871">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="48" />
+            <state relative-caret-position="198">
+              <caret line="9" column="94" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="94" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapToObjects.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1584">
+              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+              <folding>
+                <element signature="e#38#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParsomaticParserSpec.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,68 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapToObjectsSpec.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/MapToObjectsSpec.scala">
+      <file leaf-file-name="Presets.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="638">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#42#91#0" expanded="true" />
+                <element signature="e#38#89#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapToObjects.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="46" column="35" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="35" />
-              <folding>
-                <element signature="e#38#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParsomaticParserSpec.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parserTraits.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/parserTraits.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputProcessor.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/InputProcessor.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Config.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="91" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="91" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,13 +116,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObject.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Config.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/InputProcessorSpec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/MapToObjectsSpec.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ParsomaticParser.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/InputProcessor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala" />
       </list>
     </option>
   </component>
@@ -1247,7 +1217,7 @@
       <workItem from="1473266557112" duration="26102000" />
       <workItem from="1473853936912" duration="78000" />
       <workItem from="1473854052338" duration="32389000" />
-      <workItem from="1474290229215" duration="8117000" />
+      <workItem from="1474290229215" duration="13847000" />
     </task>
     <task id="LOCAL-00001" summary="-Command-line argument parsing">
       <created>1472750956656</created>
@@ -1319,13 +1289,17 @@
       <option name="project" value="LOCAL" />
       <updated>1474296447767</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="-more unit test stuff">
+      <created>1474298372826</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1474298372826</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MapToObjectsSpec - 2016.09.19 at 10h 30m 25s.xml">
-      <configuration name="MapToObjectsSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="MapToObjectsSpec - 2016.09.19 at 10h 31m 08s.xml">
       <configuration name="MapToObjectsSpec" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -1353,9 +1327,12 @@
     <history-entry file="ScalaTests_in_'scala' - 2016.09.19 at 11h 19m 10s.xml">
       <configuration name="ScalaTests in 'scala'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
+    <history-entry file="ScalaTests_in_'scala' - 2016.09.19 at 13h 43m 13s.xml">
+      <configuration name="ScalaTests in 'scala'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92293000" />
+    <option name="totallyTimeSpent" value="98023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
@@ -1370,7 +1347,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30149254" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30149254" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30149254" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1410,7 +1387,8 @@
     <MESSAGE value="-fixed bug where delimiter for presets wasn't being passed properly to filterResultsHandler&#10;-removed some redundant traits&#10;-updated pattern matching for presets in Parsomatic&#10;-converted ParsomaticParser to use recursive function instead of while loop.&#10;-Streamlined presets." />
     <MESSAGE value="-fixed bug where delimiter for presets wasn't being passed properly to filterResultsHandler&#10;-removed some redundant traits&#10;-updated pattern matching for presets in Parsomatic" />
     <MESSAGE value="-completed unit tests for input processor and map to objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="-completed unit tests for input processor and map to objects" />
+    <MESSAGE value="-more unit test stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="-more unit test stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1686,41 +1664,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/parserTraits.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="e#38#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1731,14 +1679,6 @@
           <folding>
             <element signature="e#42#91#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-871">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1763,6 +1703,44 @@
         <state relative-caret-position="396">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="94" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ParsomaticParserSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

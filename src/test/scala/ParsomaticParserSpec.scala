@@ -8,6 +8,6 @@ class ParsomaticParserSpec extends FlatSpec with Matchers{
   val delim = "\t"
   "A parser should return a list" should "" in {
     val pp = new ParsomaticParser(iter, delim)
-    pp.parseToMap() shouldBe a [List[Map[String, String]]]
+    pp.parseToMap() shouldBe a [List[_]]
   }
 }

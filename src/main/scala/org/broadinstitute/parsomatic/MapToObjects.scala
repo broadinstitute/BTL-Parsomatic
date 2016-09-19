@@ -64,6 +64,67 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         widthOf90Pct = convertToInt(row, "WIDTH_OF_90_PERCENT", "0"),
         widthOf99Pct = convertToInt(row, "WIDTH_OF_99_PERCENT", "0")
       ) with Metrics
+        metrics.toList
+      case "RnaSeqQCMetrics" => for (row <- input) metrics += new RnaSeqQcStats(
+        sample = row.getOrElse("Sample", "N/A"),
+        note = row.getOrElse("Note", "N/A"),
+        alignmentMetrics = RnaSeqQcStats.AlignmentMetrics(
+          mapped = convertToInt(row, "Mapped", "0"),
+          mappedPairs = convertToInt(row, "Mapped Pairs", "0"),
+          mappingRate = convertToDouble(row, "Mapping Rate", "0.0"),
+          end1MappingRate = convertToDouble(row, "End 1 Mapping Rate", "0.0"),
+          end2MappingRate = convertToDouble(row, "End 2 Mapping Rate", "0.0"),
+          mappedUnique = convertToInt(row, "Mapped Unique", "0"),
+          uniqueRateofMapped = convertToDouble(row, "Unique Rate of Mapped", "0.0"),
+          mappedUniqueRateofTotal = convertToDouble(row, "Mapped Unique Rate of Total", "0.0"),
+          alternativeAlignments = convertToInt(row, "Alternative Alignments", "0"),
+          duplicationRateOfMapped = convertToDouble(row, "Duplication Rate of Mapped", "0")
+        ),
+        annotationMetrics = RnaSeqQcStats.AnnotationMetrics(
+          rRNA = convertToInt(row, "rRNA", "0"),
+          rRNArate = convertToDouble(row, "rRNA Rate", "0.0"),
+          intragenicRate = convertToDouble(row, "Intragenic Rate", "0.0"),
+          exonicRate = convertToDouble(row, "Exonic Rate", "0.0"),
+          intergenicRate = convertToDouble(row, "Intergenic Rate", "0.0"),
+          intronicRate = convertToDouble(row, "Intronic Rate", "0.0"),
+          genesDetected = convertToInt(row, "Genes Detected", "0.0")
+        ),
+        covMetrics = RnaSeqQcStats.CovMetrics(
+          meanCV = convertToDouble(row, "Mean CV", "0.0"),
+          meanPerBaseCov = convertToDouble(row, "Mean Per Base Cov.", "0.0")
+        ),
+        endMetrics = RnaSeqQcStats.EndMetrics(
+          end1Sense = convertToInt(row, "End 1 Sense", "0"),
+          end1MismatchRate = convertToDouble(row, "End 1 Sense", "0"),
+          end1Antisense = convertToInt(row, "End 1 Antisense", "0"),
+          end1PctSense = convertToDouble(row, "End 1 % Sense", "0"),
+          end2Sense = convertToInt(row, "End 2 Sense", "0"),
+          end2MismatchRate = convertToDouble(row, "End 2 Sense", "0"),
+          end2Antisense = convertToInt(row, "End 2 Antisense", "0"),
+          end2PctSense = convertToDouble(row, "End 2 % Sense", "0"),
+          noCovered5Prime = convertToInt(row, "No Covered 5'", "0"),
+          fivePrimeNorm = convertToDouble(row, "5' Norm", "0.0")
+        ),
+        gapMetrics = RnaSeqQcStats.GapMetrics(
+          numGaps = convertToInt(row, "Num. Gaps", "0"),
+          gapPct = convertToDouble(row, "Gap %", "0.0"),
+          cumulGapLength = convertToInt(row, "Cumul. Gap Length", "0")
+        ),
+        readMetrics = RnaSeqQcStats.ReadMetrics(
+          chimericPairs = convertToInt(row, "Chimeric Pairs", "0"),
+          readLength = convertToInt(row, "Read Length", "0"),
+          unpairedReads = convertToInt(row, "Unpaired Reads", "0"),
+          fragmentLengthStdDev = convertToDouble(row, "Fragment Length Standard Deviation", "0.0"),
+          totalPurityFilteredReadsSequenced = convertToInt(row, "Total Purity Filtered Reads Sequenced", "0"),
+          fragmentLengthMean = convertToInt(row, "Fragment Length Mean", "0"),
+          baseMismatchRate = convertToDouble(row, "Base Mismatch Rate", "0.0"),
+          failedVendorQCCheck = convertToInt(row, "Failed Vendor QC Check", "0"),
+          estimatedLibrarySize = convertToInt(row, "Estimated Library Size", "0"),
+          expressionProfilingEfficiency = convertToDouble(row, "Expression Profiling Efficiency", "0.0"),
+          transcriptsDetected = convertToInt(row, "Transcripts Detected", "0")
+        )
+      ) with Metrics
+        metrics.toList
       case _ => failureExit("unrecognized mdType input for MapToObject")
     }
   }
