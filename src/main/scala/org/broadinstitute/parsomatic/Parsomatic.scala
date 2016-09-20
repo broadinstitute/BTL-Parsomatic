@@ -6,8 +6,8 @@ package org.broadinstitute.parsomatic
   */
 
 object Parsomatic extends App {
-  val preset_list = List("PicardAlignmentMetrics", "PicardInsertMetrics", "RnaSeqQCMetrics")
-  val mdType_list = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "RnaSeqQCMetrics")
+  val preset_list = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "RnaSeqQCMetrics")
+  val mdType_list = List("PicardAlignmentMetrics", "PicardInserSizetMetrics", "PicardMeanQualByCycle", "RnaSeqQCMetrics")
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
@@ -48,9 +48,11 @@ object Parsomatic extends App {
       config.preset match {
         case "PicardAlignmentMetrics" => val preset = new Presets.PicardAlignmentMetricPreset(config)
           preset.run()
-        case "PicardInsertMetrics" => val preset = new Presets.PicardHistoMetricPreset(config)
+        case "PicardInsertSizeMetrics" => val preset = new Presets.PicardHistoMetricPreset(config)
           preset.run()
         case "RnaSeqQCMetrics" => val preset = new Presets.RnaSeqQCPreset(config)
+          preset.run()
+        case "PicardMeanQualByCycle" => val preset = new Presets.PicardMeanQualByCyclePreset(config)
           preset.run()
         case _ => failureExit("Unrecognized preset.")
       }
@@ -72,7 +74,8 @@ due to delimiter not existing in file.
       case Right(filteredResult) =>
         val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
         //return a List(MdType(params=value)) object
-        new MapToObjects(config.mdType, mapped).go()
+        //new MapToObjects(config.mdType, mapped).go()
+        println(new MapToObjects(config.mdType, mapped).go())
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }
