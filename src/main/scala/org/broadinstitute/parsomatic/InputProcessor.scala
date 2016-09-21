@@ -6,7 +6,7 @@ import scala.io.Source
   * Created by Amr on 9/6/2016.
   */
 class InputProcessor(inputFile: String) {
-  val lines = Source.fromFile(inputFile).getLines()
+  val lines = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty())
 
   def filterByRow(start: Int, end: Int): Either[String, Iterator[String]] = {
     println("Parsing by row", start, end)
@@ -20,7 +20,7 @@ class InputProcessor(inputFile: String) {
   def filterByKey(start: String, end: String): Either[String, Iterator[String]] = {
     println("Parsing by key", start, end)
     def getKeyRow(lines: Iterator[String], word: String): Int = {
-      val list = Source.fromFile(inputFile).getLines().toList
+      val list = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
       val row = list.indexWhere(_.startsWith(word))
       if (row == -1) {
         println(word.concat(" not found."))

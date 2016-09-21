@@ -8,8 +8,11 @@ object Presets {
 
   class PicardAlignmentMetricPreset(config: Config) extends Rows with RowFilter{
     val inputFile = config.inputFile
-    val start = 7
-    val end = 10
+    /*Note these preset numbers factor in that inputProcessor removes blank lines.
+     The header line in the file is line 7, but because there is a blank line above it, start is 6 and end is 9.
+      */
+    val start = 6
+    val end = 9
     config.delimiter = "\t"
     def run() = filterResultHandler(filter(start, end), config)
   }

@@ -14,15 +14,16 @@ class InputProcessorSpec extends FlatSpec with Matchers {
   }
   it should "always return an iterator inclusive of start and end lines indicated by start and end rows" in {
     val ip = new InputProcessor(alignmentMetrics)
+    //println(ip.filterByKey("CATEGORY", "PAIR").right)
     ip.filterByKey("CATEGORY", "PAIR").right.map(_.length) should be (Right(4))
   }
   it should "always return an iterator inclusive of start and end lines indicated by start and end keys" in{
     val ip = new InputProcessor(alignmentMetrics)
-    ip.filterByRow(7,10).right.map(_.length) should be (Right(4))
+    ip.filterByRow(6,9).right.map(_.length) should be (Right(4))
   }
-  it should "return an iterator with # of elements equal to # lines in file when end row = 0" in {
+  it should "return an iterator with # of elements equal to # lines (minus blanks) in file when end row = 0" in {
     val ip = new InputProcessor(alignmentMetrics)
-    ip.filterByRow(1,0).right.map(_.length) should be (Right(10))
+    ip.filterByRow(1,0).right.map(_.length) should be (Right(9))
   }
   "An invalid input" should "return a failure string when row input is nonsensical" in {
     val ip = new InputProcessor(alignmentMetrics)
