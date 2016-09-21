@@ -25,7 +25,8 @@ object Presets {
     def run () = {
       //take original histogram file and use filter to filter by key.
       filter(start, end) match {
-        case Right(filterResult) => new GetPicardMeanQualMetrics(filterResult, config.delimiter)
+        case Right(filterResult) => val x = new GetPicardMeanQualMetrics(filterResult, config.delimiter)
+          filterResultHandler(x.getMeans,config)
         case Left(unexpectedResult) => ???
       }
       //take results of histogram filter-by-key and produce new input for filterResultsHandler.

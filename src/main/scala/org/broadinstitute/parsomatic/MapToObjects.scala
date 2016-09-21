@@ -65,10 +65,11 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         widthOf99Pct = convertToInt(row, "WIDTH_OF_99_PERCENT", "0")
       ) with Metrics
         metrics.toList
-//      case "PicardMeanQualByCycle" => for (row <- input) metrics += new PicardMeanQualByCycle(
-//        r1MeanQual = convertToDouble(row, "R1_MEAN_QUAL", "0.0"),
-//        r2MeanQual = convertToDouble(row, "R2_MEAN_QUAL", "0.0")
-//      )
+      case "PicardMeanQualByCycle" => for (row <- input) metrics += new PicardMeanQualByCycle(
+        r1MeanQual = convertToDouble(row, "R1_MEAN_QUAL", "0.0"),
+        r2MeanQual = convertToDouble(row, "R2_MEAN_QUAL", "0.0")
+      ) with Metrics
+        metrics.toList
       case "RnaSeqQCMetrics" => for (row <- input) metrics += new RnaSeqQcStats(
         sample = row.getOrElse("Sample", "N/A"),
         note = row.getOrElse("Note", "N/A"),
