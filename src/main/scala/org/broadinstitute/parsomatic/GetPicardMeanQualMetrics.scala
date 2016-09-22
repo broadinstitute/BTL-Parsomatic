@@ -14,10 +14,8 @@ class GetPicardMeanQualMetrics(input: Iterator[String], delim: String) {
     val (r1, r2) = int_means.splitAt(means.length/2)
     val r1MeanQual = BigDecimal(r1.foldLeft(0.0)(_+_)/r1.length).setScale(2, RoundingMode.HALF_EVEN)
     val r2MeanQual = BigDecimal(r2.foldLeft(0.0)(_+_)/r2.length).setScale(2, RoundingMode.HALF_EVEN)
-      if ((r1MeanQual > -1) && (r2MeanQual > - 1)) {
-        Right(Iterator("R1_MEAN_QUAL\tR2_MEAN_QUAL", r1MeanQual.toString.concat("\t").concat(r2MeanQual.toString)))
-    } else {
-        Left("getMeans failed.")
-      }
+      if ((r1MeanQual > -1) && (r2MeanQual > - 1)) Right(Iterator("R1_MEAN_QUAL\tR2_MEAN_QUAL",
+        r1MeanQual.toString.concat("\t").concat(r2MeanQual.toString)))
+      else Left("getMeans failed.")
   }
 }

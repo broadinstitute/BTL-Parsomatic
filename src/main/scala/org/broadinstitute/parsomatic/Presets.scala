@@ -1,5 +1,6 @@
 package org.broadinstitute.parsomatic
 import org.broadinstitute.parsomatic.parserTraits._
+import org.broadinstitute.parsomatic.Parsomatic.failureExit
 import org.broadinstitute.parsomatic.Parsomatic.filterResultHandler
 /**
   * Created by amr on 9/7/2016.
@@ -23,14 +24,25 @@ object Presets {
     val end = ""
     config.delimiter = "\t"
     def run () = {
-      //take original histogram file and use filter to filter by key.
       filter(start, end) match {
-        case Right(filterResult) => val x = new GetPicardMeanQualMetrics(filterResult, config.delimiter)
-          filterResultHandler(x.getMeans,config)
-        case Left(unexpectedResult) => ???
+        case Right(filterResult) => val result = new GetPicardMeanQualMetrics(filterResult, config.delimiter)
+          filterResultHandler(result.getMeans,config)
+        case Left(unexpectedResult) => failureExit("PicardMeanQualByCyclePreset failed.")
       }
-      //take results of histogram filter-by-key and produce new input for filterResultsHandler.
-      //filterResultHandler(filter(start, end), config)
+    }
+  }
+
+  class PicardMeanGcPreset (config: Config) extends Keys with KeyFilter {
+    val inputFile = config.inputFile
+    val start = "GC"
+    val end = ""
+    config.delimiter = "\t"
+    def run () = {
+      filter(start, end) match {
+        case Right(filterResult) => val result = new GetPicardMeanGcMetrics(filterResult, config.delimiter)
+          filterResultHandler(result.getMean, config)
+        case Left(unexpectedResult) => failureExit("PicardMeanGcPreset failed.")
+      }
     }
   }
 
@@ -40,6 +52,20 @@ object Presets {
     val end = 8
     config.delimiter = "\t"
     def run() = filterResultHandler(filter(start, end), config)
+  }
+
+  class ErccStatsPreset(config: Config) extends Rows with RowFilter {
+    val inputFile = config.inputFile
+    val start = 1
+    val end = 0
+    config.delimiter = "\t"
+    def run () = {
+      filter(start, end) match {
+        case Right(filterResult) => val result = new GetErccStats(filterResult)
+          filterResultHandler(result.getStats, config)
+        case Left(unexpectedResult) => failureExit("ErccStatsPreset failed.")
+      }
+    }
   }
 
   class RnaSeqQCPreset(config: Config) extends Rows with RowFilter{

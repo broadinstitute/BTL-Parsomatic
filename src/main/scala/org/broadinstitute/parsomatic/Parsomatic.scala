@@ -6,8 +6,10 @@ package org.broadinstitute.parsomatic
   */
 
 object Parsomatic extends App {
-  val preset_list = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "RnaSeqQCMetrics")
-  val mdType_list = List("PicardAlignmentMetrics", "PicardInserSizetMetrics", "PicardMeanQualByCycle", "RnaSeqQCMetrics")
+  val preset_list = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
+    "RnaSeqQCMetrics", "ErccStats")
+  val mdType_list = List("PicardAlignmentMetrics", "PicardInserSizetMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
+    "RnaSeqQCMetrics", "ErccStats")
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
@@ -53,6 +55,10 @@ object Parsomatic extends App {
         case "RnaSeqQCMetrics" => val preset = new Presets.RnaSeqQCPreset(config)
           preset.run()
         case "PicardMeanQualByCycle" => val preset = new Presets.PicardMeanQualByCyclePreset(config)
+          preset.run()
+        case "ErccStats" => val preset = new Presets.ErccStatsPreset(config)
+          preset.run()
+        case "PicardMeanGc" => val preset = new Presets.PicardMeanGcPreset(config)
           preset.run()
         case _ => failureExit("Unrecognized preset.")
       }

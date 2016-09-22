@@ -130,6 +130,19 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         )
       ) with Metrics
         metrics.toList
+      case "ErccStats" => for (row <- input) metrics += new ErccStats(
+        totalReads = convertToInt(row, "TOTAL_READS", "0"),
+        totalErccReads = convertToInt(row,"ERCC_READS", "0"),
+        totalUnalignedReads = convertToInt(row,"UNALIGNED_ERCC_READS", "0"),
+        fractionGenomeReferenceReads = convertToDouble(row, "PCT_NOT_ERCC", "0.0"),
+        fractionErccReads = convertToDouble(row, "PCT_ERCC", "0.0"),
+        fractionUnalignedReads = convertToDouble(row, "PCT_UNALIGNED_ERCC", "0.0")
+      ) with Metrics
+        metrics.toList
+      case "PicardMeanGc" => for (row <- input) metrics += new PicardReadGcMetrics(
+        meanGcContent = convertToDouble(row, "MEAN_GC_CONTENT", "0.0")
+      ) with Metrics
+        metrics.toList
       case _ => failureExit("unrecognized mdType input for MapToObject")
     }
   }

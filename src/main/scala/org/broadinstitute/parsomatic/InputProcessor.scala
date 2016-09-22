@@ -9,7 +9,7 @@ class InputProcessor(inputFile: String) {
   val lines = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty())
 
   def filterByRow(start: Int, end: Int): Either[String, Iterator[String]] = {
-    println("Parsing by row", start, end)
+    println("Parsing by rows " + start + " to " + end)
     end match {
       case 0 => Right(lines drop (start - 1))
       case _ if end > start => Right(lines.slice(start - 1, end))
@@ -18,7 +18,7 @@ class InputProcessor(inputFile: String) {
   }
 
   def filterByKey(start: String, end: String): Either[String, Iterator[String]] = {
-    println("Parsing by key", start, end)
+    println("Parsing by key, starting with " + start + " and ending with " + end)
     def getKeyRow(lines: Iterator[String], word: String): Int = {
       val list = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
       val row = list.indexWhere(_.startsWith(word))
@@ -26,7 +26,7 @@ class InputProcessor(inputFile: String) {
         println(word.concat(" not found."))
         row
       } else {
-        println(word, "found at index", row + 1)
+        println(word + " found at index" + row + 1)
         row + 1
       }
     }
