@@ -70,7 +70,7 @@ class MapToObjects(mdType: String, input: List[Map[String, String]]) {
         r2MeanQual = convertToDouble(row, "R2_MEAN_QUAL", "0.0")
       ) with Metrics
         metrics.toList
-      case "RnaSeqQCMetrics" => for (row <- input) metrics += new RnaSeqQcStats(
+      case "RnaSeqQcStats" => for (row <- input) metrics += new RnaSeqQcStats(
         sample = row.getOrElse("Sample", "N/A"),
         note = row.getOrElse("Note", "N/A"),
         alignmentMetrics = RnaSeqQcStats.AlignmentMetrics(

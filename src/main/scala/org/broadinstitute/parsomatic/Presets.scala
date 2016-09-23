@@ -48,8 +48,8 @@ object Presets {
 
   class PicardHistoMetricPreset(config: Config) extends Rows with RowFilter{
     val inputFile = config.inputFile
-    val start = 7
-    val end = 8
+    val start = 6
+    val end = 7
     config.delimiter = "\t"
     def run() = filterResultHandler(filter(start, end), config)
   }
