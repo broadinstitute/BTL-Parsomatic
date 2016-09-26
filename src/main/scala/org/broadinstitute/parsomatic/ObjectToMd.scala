@@ -1,21 +1,40 @@
 package org.broadinstitute.parsomatic
-import org.broadinstitute.MD.rest.AnalysisUpdate.MetricEntrySerializer
+import akka.http.scaladsl.model.ContentTypes.`application/json`
+import akka.http.scaladsl.model.HttpEntity
 import org.broadinstitute.MD.types._
 import org.broadinstitute.MD.rest._
 import org.broadinstitute.parsomatic.Parsomatic.failureExit
+import akka.http.scaladsl.client.RequestBuilding.Post
 
 /**
   * Created by Amr on 9/23/2016.
   */
-class ObjectToMd() {
+class ObjectToMd(id: String, sampleRef: SampleRef){
+  val pathPrefix = "/MD"
+  val analysisUpdate = s"$pathPrefix/analysisUpdate"
+
+  def doAnalysisUpdate(obj: AnalysisUpdate) = {
+    Post(s"$analysisUpdate", HttpEntity(`application/json`, AnalysisUpdate.writeJson(obj)))
+  }
+
   def insert(objList: Any) = {
     println(objList)
     objList.asInstanceOf[List[Any]].head match {
                 case asm: PicardAlignmentSummaryMetrics =>
-                  val pa = PicardAlignmentSummaryAnalysis(objList.asInstanceOf[List[PicardAlignmentSummaryMetrics]])
-                  val au = new AnalysisUpdate.MetricEntry(metricType = MetricsType.PicardAlignmentSummaryAnalysis,
-                    metric = pa)
-                  println(au)
+                  val analysisUpdate = AnalysisUpdate(
+                    id = id,
+                    version = None,
+                    sampleMetrics = List(new AnalysisUpdate.SampleMetrics(sampleRef,
+                      List(new AnalysisUpdate.MetricEntry(
+                      metricType = MetricsType.PicardAlignmentSummaryAnalysis,
+                      metric = PicardAlignmentSummaryAnalysis(objList.asInstanceOf[List[PicardAlignmentSummaryMetrics]]
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                  doAnalysisUpdate(analysisUpdate)
                 case ism: PicardInsertSizeMetrics => println("PicardInsertSizeMetrics!")
                 case mqc: PicardMeanQualByCycle => println("PicardMeanQualByCycle!")
                 case rgc: PicardReadGcMetrics => println("PicardMeanGc!")

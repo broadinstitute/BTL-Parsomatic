@@ -1,5 +1,6 @@
 package org.broadinstitute.parsomatic
-
+import org.broadinstitute.MD.types.SampleRef
+import org.broadinstitute.MD.types.SampleRef._
 
 
 /**
@@ -84,7 +85,7 @@ due to delimiter not existing in file.
         //return a List(MdType(params=value)) object
         //new MapToObjects(config.mdType, mapped).go()
         val obj_list = new MapToObjects(config.mdType, mapped).go()
-        val inserter = new ObjectToMd()
+        val inserter = new ObjectToMd("test_1", SampleRef("sample1", "foo"))
         inserter.insert(obj_list)
 //        new MapToObjects(config.mdType, mapped).go() match {
 //          case asm: List[PicardAlignmentSummaryMetrics] => println("Yup!")
