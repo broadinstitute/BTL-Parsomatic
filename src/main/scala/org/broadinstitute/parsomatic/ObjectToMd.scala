@@ -18,7 +18,8 @@ class ObjectToMd(id: String, sampleRef: SampleRef){
     Post(s"$analysisUpdate", HttpEntity(`application/json`, AnalysisUpdate.writeJson(obj)))
   }
 
-  def createAnalysisUpdate(id: String, version: Option[String] = None, metricType: MetricsType, metrics: AnalysisMetrics) = {
+  def createAnalysisUpdate(id: String, version: Option[String] = None, metricType: MetricsType,
+                           metrics: AnalysisMetrics) = {
     AnalysisUpdate(
       id = id,
       version = None,
