@@ -18,7 +18,6 @@ class ObjectToMd(id: String, sampleRef: SampleRef){
   }
 
   def insert(objList: Any) = {
-    println(objList)
     objList.asInstanceOf[List[Any]].head match {
                 case asm: PicardAlignmentSummaryMetrics =>
                   val analysisUpdate = AnalysisUpdate(
