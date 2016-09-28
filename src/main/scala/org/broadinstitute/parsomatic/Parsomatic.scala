@@ -1,6 +1,5 @@
 package org.broadinstitute.parsomatic
 import org.broadinstitute.MD.types.SampleRef
-import org.broadinstitute.MD.types.SampleRef._
 
 
 /**
@@ -10,20 +9,20 @@ import org.broadinstitute.MD.types.SampleRef._
   * A tool for parsing various types of metrics files and loading their contents into the MD database.
   */
 object Parsomatic extends App {
-  val preset_list = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
-    "RnaSeqQcStats", "ErccStats")
-  val mdType_list = List("PicardAlignmentMetrics", "PicardInserSizetMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
+  val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
     "RnaSeqQcStats", "ErccStats")
 
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
-      opt[String]('i', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
+      opt[String]('i', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
+        .text("The ID of the sample to update metrics for.")
+      opt[String]('f', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
-        .text("Use a parser preset from:".concat(preset_list.toString()))
+        .text("Use a parser preset from:".concat(presetList.toString()))
       opt[String]('m', "mdType").valueName("<type>").optional().action((x, c) => c.copy(mdType = x))
-        .text("MD type object to create. Choose from:".concat(mdType_list.toString()))
+        .text("MD type object to create. Choose from:".concat(presetList.toString()))
       opt[Int]('h', "headerRow").valueName("<int>").action((x, c) => c.copy(headerRow = x))
         .text("Header row in file. Do not include blank lines when counting. Default = 1.")
       opt[Int]('l', "lastRow").valueName("<int>").optional().action((x, c) => c.copy(lastRow = x))
@@ -44,8 +43,8 @@ object Parsomatic extends App {
 
   parser.parse(args, Config()
   ) match {
-    case Some(config) => execute(config)     // Command line arguments are valid - go execute them
-    case None => failureExit("Please provide valid input.") //Exits with code 1
+    case Some(config) => execute(config)
+    case None => failureExit("Please provide valid input.")
   }
 
   /**
@@ -100,11 +99,9 @@ due to delimiter not existing in file.
     result match {
       case Right(filteredResult) =>
         val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
-        //return a List(MdType(params=value)) object
-        //new MapToObjects(config.mdType, mapped).go()
-        val obj_list = new MapToObjects(config.mdType, mapped).go()
-        val inserter = new ObjectToMd("test_1", SampleRef("sample1", "foo"))
-        inserter.run(obj_list)
+        val objList = new MapToObjects(config.mdType, mapped).go()
+        val insertObject = new ObjectToMd(config.sampleId, SampleRef("sample1", "foo"))
+        insertObject.run(objList)
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }
