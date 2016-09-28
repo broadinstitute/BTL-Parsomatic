@@ -1,5 +1,7 @@
 package org.broadinstitute.parsomatic
 import org.broadinstitute.MD.types.SampleRef
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Failure, Success}
 
 
 /**
@@ -99,9 +101,17 @@ due to delimiter not existing in file.
     result match {
       case Right(filteredResult) =>
         val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
-        val objList = new MapToObjects(config.mdType, mapped).go()
-        val insertObject = new ObjectToMd(config.sampleId, SampleRef("sample1", "foo"))
-        insertObject.run(objList)
+        val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
+        analysisObject match {
+          case Right(analysis) =>
+            val insertObject = new ObjectToMd(config.sampleId, SampleRef("foo", "bar"))
+            insertObject.run(analysis) onComplete {
+              case Success(s) => println( "Request succeeded with status code " + s.status)
+                System.exit(0)
+              case Failure(f) => failureExit("Request failed: " + f.getMessage)
+            }
+          case Left(unexpectedResult) => failureExit(unexpectedResult)
+        }
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }

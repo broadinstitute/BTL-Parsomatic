@@ -1,7 +1,7 @@
 /**
   * Created by Amr on 9/16/2016.
   */
-import org.broadinstitute.parsomatic.MapToObjects
+import org.broadinstitute.parsomatic.MapToAnalysisObject
 import org.scalatest._
 
 class MapToObjectsSpec  extends FlatSpec with Matchers {
@@ -31,7 +31,7 @@ class MapToObjectsSpec  extends FlatSpec with Matchers {
     )
   )
     "A valid MapToObjects object" should "produce a list of PicardAlignmentSummaryMetrics when told to go" in {
-      val mto = new MapToObjects("PicardAlignmentMetrics", test_entry)
+      val mto = new MapToAnalysisObject("PicardAlignmentMetrics", test_entry)
       mto.go() shouldBe a [List[_]]
   }
 }
