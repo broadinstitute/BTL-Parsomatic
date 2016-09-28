@@ -5,9 +5,19 @@ import scala.io.Source
 /**
   * Created by Amr on 9/6/2016.
   */
+/**
+  *
+  * @param inputFile: the input metrics file to be processed.
+  */
 class InputProcessor(inputFile: String) {
   val lines = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty())
 
+  /**
+    *
+    * @param start The row/line in the file where the filtering should begin.
+    * @param end The row/line(inclusively) in the file where fitlering should end.
+    * @return
+    */
   def filterByRow(start: Int, end: Int): Either[String, Iterator[String]] = {
     println("Parsing by rows " + start + " to " + end)
     end match {
@@ -17,6 +27,12 @@ class InputProcessor(inputFile: String) {
     }
   }
 
+  /**
+    *
+    * @param start The first word in the row where filtering should begin.
+    * @param end The first word in the row where filtering should end.
+    * @return
+    */
   def filterByKey(start: String, end: String): Either[String, Iterator[String]] = {
     println("Parsing by key, starting with " + start + " and ending with " + end)
     def getKeyRow(lines: Iterator[String], word: String): Int = {

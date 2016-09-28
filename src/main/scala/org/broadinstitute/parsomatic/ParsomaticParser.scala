@@ -4,6 +4,11 @@ import scala.annotation.tailrec
 /**
   * Created by Amr on 9/9/2016.
   */
+/**
+  * Parses the Iterator representation of the metrics file into a map of K/V pairs.
+  * @param iter The iterator representation of the metrics file.
+  * @param delim The delimiter that split keys and values in the metrics file.
+  */
 class ParsomaticParser(iter: Iterator[String], delim: String) {
   def parseToMap() = {
     val header = iter.next().split(delim)

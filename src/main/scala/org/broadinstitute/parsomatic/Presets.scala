@@ -5,6 +5,10 @@ import org.broadinstitute.parsomatic.Parsomatic.filterResultHandler
 /**
   * Created by amr on 9/7/2016.
   */
+/**
+  * Presets for commonly parsed metrics files. Presets include start/end specifications for filtering as well as
+  * custom executions for parsing processes.
+  */
 object Presets {
 
   class PicardAlignmentMetricPreset(config: Config) extends Rows with RowFilter{

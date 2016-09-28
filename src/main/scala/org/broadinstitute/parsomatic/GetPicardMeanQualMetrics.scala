@@ -3,9 +3,19 @@ import scala.math.BigDecimal.RoundingMode
 /**
   * Created by Amr on 9/20/2016.
   */
+/**
+  * Processes picard mean quality histogram into read 1(r1) and read 2(r2) mean quality scores.
+  * @param input The iterator containing the histogram values.
+  * @param delim The delimiter that separates histogram bins from their values.
+  */
 class GetPicardMeanQualMetrics(input: Iterator[String], delim: String) {
   val means = scala.collection.mutable.ListBuffer[String]()
 
+  /**
+    * Process the histogram by converting values to double. Gets r1 and r2 by splitting histogram in half, and assigning
+    * the first half to r1 and second half to r2, summing each, and getting mean value.
+    * @return
+    */
   def getMeans: Either[String, Iterator[String]] = {
     for (mean <- input.drop(1)) {
       means += mean.split(delim)(1)

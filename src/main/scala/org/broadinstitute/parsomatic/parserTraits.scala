@@ -3,6 +3,9 @@ package org.broadinstitute.parsomatic
 /**
   * Created by amr on 9/7/2016.
   */
+/**
+  * A collection of traits that can be used combined to create custom parser presets.
+  */
 object parserTraits {
 //
   trait Rows {

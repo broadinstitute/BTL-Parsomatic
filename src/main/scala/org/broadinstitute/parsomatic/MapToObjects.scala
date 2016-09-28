@@ -4,19 +4,42 @@ import org.broadinstitute.parsomatic.Parsomatic.failureExit
 /**
   * Created by Amr on 9/12/2016.
   */
+/**
+  * Takes the map representation of the metrics file and converts it to an mdType object.
+  * @param mdType A string indicating the mdType the map should be turned into.
+  * @param input The map representation of the metrics file.
+  */
 class MapToObjects(mdType: String, input: List[Map[String, String]]) {
   def converter[T](row: Map[String, String], key: String, default: String, cvt: String => T) =
     cvt(row.getOrElse(key, default))
 
+  /**
+    * Converts a string representation of an integer to an integer.
+    * @param row The contents of the row containing the key.
+    * @param key The key of the value to convert to an int.
+    * @param default A default int to use if the key is not found.
+    * @return
+    */
   def convertToInt(row: Map[String, String], key: String, default: String) =
     converter(row, key, default, (_: String).toInt)
 
+  /**
+    * Converts a string representation of an double to a double.
+    * @param row The contents of the row containing the key.
+    * @param key The key of the value to convert to an int.
+    * @param default A default int to use if the key is not found.
+    * @return
+    */
   def convertToDouble(row: Map[String, String], key: String, default: String) =
     converter(row, key, default, (_: String).toDouble)
 
   sealed trait Metrics
   val metrics = scala.collection.mutable.ListBuffer[Metrics]()
 
+  /**
+    * Execution engine for MapToObjects.
+    * @return
+    */
   def go() = {
     mdType match {
       case "PicardAlignmentMetrics" => for (row <- input) metrics += new PicardAlignmentSummaryMetrics(

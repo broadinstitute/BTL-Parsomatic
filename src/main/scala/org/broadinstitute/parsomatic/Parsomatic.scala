@@ -4,14 +4,17 @@ import org.broadinstitute.MD.types.SampleRef._
 
 
 /**
-  * Created by amr on 9/1/2016.
+  * Created by Amr Abouelleil on 9/1/2016.
   */
-
+/**
+  * A tool for parsing various types of metrics files and loading their contents into the MD database.
+  */
 object Parsomatic extends App {
   val preset_list = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
     "RnaSeqQcStats", "ErccStats")
   val mdType_list = List("PicardAlignmentMetrics", "PicardInserSizetMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
     "RnaSeqQcStats", "ErccStats")
+
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
@@ -45,6 +48,11 @@ object Parsomatic extends App {
     case None => failureExit("Please provide valid input.") //Exits with code 1
   }
 
+  /**
+    *
+    * @param config The config object that contains all the user-specified arguments to run the program.
+    * @return
+    */
   def execute(config: Config) = {
     val ip = new InputProcessor(config.inputFile)
     if (config.byKey) {
@@ -70,7 +78,11 @@ object Parsomatic extends App {
     }
   }
 
-  //Though parser.parse will give an error msg if args aren't valid, this forces an exit code of 1 as well.
+  /**
+    * A method to exit the program with an exit code of 1.
+    * Though parser.parse will give an error msg if args aren't valid, this forces an exit code of 1 as well.
+    * @param msg A message describing why the program exited unexpectedly.
+    */
   def failureExit(msg: String) {
     println("\nFATAL ERROR: " + msg)
     System.exit(1)
@@ -78,6 +90,12 @@ object Parsomatic extends App {
 /*TODO Should probably validate delimiter somewhere to avoid situation where parsing returns unexpected results
 due to delimiter not existing in file.
  */
+  /**
+    * A method that takes the filteredResult and processes it through the Parsomatic steps.
+    * @param result The filteredResult object.
+    * @param config The user-supplied arguments.
+    * @return
+    */
   def filterResultHandler(result: Either[String, Iterator[String]], config: Config) = {
     result match {
       case Right(filteredResult) =>
