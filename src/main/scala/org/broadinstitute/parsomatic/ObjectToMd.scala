@@ -62,12 +62,12 @@ class ObjectToMd(id: String, sampleRef: SampleRef){
                     metrics = rqc
                   )
                   doAnalysisUpdate(analysisUpdate)
-//                case ers: ErccStats =>
-//                  val analysisUpdate = createAnalysisUpdate(
-//                    id = id,
-//                    metricType = MetricsType.EercStats,
-//                    metrics = ers
-//                  )
+                case ers: ErccStats =>
+                  val analysisUpdate = createAnalysisUpdate(
+                    id = id,
+                    metricType = MetricsType.ErccStats,
+                    metrics = ers
+                  )
                   doAnalysisUpdate(analysisUpdate)
                 case _ => failureExit("Unrecognized type(s) to load into MD.")
     }

@@ -105,10 +105,6 @@ due to delimiter not existing in file.
         val obj_list = new MapToObjects(config.mdType, mapped).go()
         val inserter = new ObjectToMd("test_1", SampleRef("sample1", "foo"))
         inserter.run(obj_list)
-//        new MapToObjects(config.mdType, mapped).go() match {
-//          case asm: List[PicardAlignmentSummaryMetrics] => println("Yup!")
-//          case _ => println("Nope!")
-//        }
       case Left(unexpectedResult) => failureExit(unexpectedResult)
     }
   }
