@@ -16,10 +16,10 @@ class GetErccStats(input: Iterator[String]) {
     */
   def getStats:Either[String, Iterator[String]] = {
     val statList = input.toList
-    if ((stats.length == 1) && (statList.length==6)) {
+    if (statList.length==6) {
       stats += statList.mkString("\t")
       Right(stats.toIterator)
     }
-    else Left("GetErccStats.getStats failed")
+    else Left("GetErccStats.getStats failed.")
   }
 }
