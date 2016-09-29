@@ -19,6 +19,8 @@ object Parsomatic extends App {
       head("Parsomatic", "1.0")
       opt[String]('i', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for.")
+      opt[String]('s', "sampleSetId").valueName("<setId>").required().action((x,c) => c.copy(sampleId = x))
+        .text("The ID of the sample set containing the sample to update metrics for.")
       opt[String]('f', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
@@ -104,7 +106,7 @@ due to delimiter not existing in file.
         val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
         analysisObject match {
           case Right(analysis) =>
-            val insertObject = new ObjectToMd(config.sampleId, SampleRef("foo", "bar"))
+            val insertObject = new ObjectToMd(config.sampleId, SampleRef(config.sampleId, config.sampleSetId))
             insertObject.run(analysis) onComplete {
               case Success(s) => println( "Request succeeded with status code " + s.status)
                 System.exit(0)
