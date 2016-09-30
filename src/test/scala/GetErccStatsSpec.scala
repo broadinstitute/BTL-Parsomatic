@@ -24,7 +24,7 @@ class GetErccStatsSpec extends FlatSpec with Matchers{
   it should "return an iterator with correct input that can be properly mapped to k/v pairs" in {
     val erccStats = new GetErccStats(input)
     val stat_iter = erccStats.getStats
-    println(stat_iter.)
+    //println(stat_iter.)
     stat_iter match {
       case Right(r) =>
         for ((a, b) <- r zip input) {
