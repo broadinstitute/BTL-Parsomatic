@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="bd3129ae-94da-462d-8498-5345fd7aabcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/ParserTraitsSpec.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/parserTraits.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ParserTraits.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/GetErccStats.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/GetErccStats.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToAnalysisObject.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToAnalysisObject.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/GetErccStatsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/GetErccStatsSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala" />
     </list>
     <ignored path="Parsomatic.iws" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -87,21 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetPicardMeanGcMetrics.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GetPicardMeanGcMetrics.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/GetPicardMeanGcMetrics.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
               <caret line="23" column="90" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserTraitsSpec.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/ParserTraitsSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -1458,7 +1441,7 @@
       <workItem from="1475158710762" duration="7914000" />
       <workItem from="1475244808372" duration="2269000" />
       <workItem from="1475255515592" duration="1586000" />
-      <workItem from="1475495447723" duration="17932000" />
+      <workItem from="1475495447723" duration="17956000" />
     </task>
     <task id="LOCAL-00001" summary="-Command-line argument parsing">
       <created>1472750956656</created>
@@ -1628,7 +1611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475509242295</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="-more unit testing">
+      <created>1475519640976</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1475519640976</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1664,11 +1654,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181853000" />
+    <option name="totallyTimeSpent" value="181877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1684,7 +1674,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31666666" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31666666" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
