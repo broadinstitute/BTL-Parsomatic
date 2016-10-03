@@ -14,9 +14,15 @@ class GetPicardMeanGcMetrics(input: Iterator[String], delim: String) {
   }
 
   def getMean: Either[String, Iterator[String]] = {
-    val denominators = input.drop(1).map(convertAndMultiply(_))
-    val meanGc = BigDecimal(denominators.sum/observations).setScale(2, RoundingMode.HALF_EVEN)
-    if (meanGc > 0) Right(Iterator("MEAN_GC_CONTENT", meanGc.toString))
-    else Left("GetPicardMeanGcMetrics.getMean failed")
+    try {
+      val denominators = input.drop(1).map(convertAndMultiply(_))
+      val meanGc = BigDecimal(denominators.sum/observations).setScale(2, RoundingMode.HALF_EVEN)
+      if (meanGc > 0) Right(Iterator("MEAN_GC_CONTENT", meanGc.toString))
+      else Left("GetPicardMeanGcMetrics.getMean failed unexpectedly")
+    } catch {
+      case nfe: NumberFormatException => Left("GetPicardMeanGcMetrics.getMean failed:" + nfe.getMessage)
+      case _: Throwable => Left("GetPicardMeanGcMetrics.getMean failed with unknown error")
+    }
+
   }
 }
