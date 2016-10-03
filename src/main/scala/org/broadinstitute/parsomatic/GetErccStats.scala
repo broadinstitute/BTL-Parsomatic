@@ -8,7 +8,7 @@ package org.broadinstitute.parsomatic
   * @param input An iterator representing the ercc stats file.
   */
 class GetErccStats(input: Iterator[String]) {
-  val stats = scala.collection.mutable.ListBuffer[String]("TOTAL_READS\tERCC_READS\tUNALIGNED_ERCC_READS\tPCT_NOT_ERCC\tPCT_ERCC\tPCT_UNALIGNED_ERCC")
+  val stats = scala.collection.mutable.ListBuffer[String]("TOTAL_READS\tERCC_READS\tUNALIGNED_ERCC_READS\tFRC_GENOME_REF\tFRC_ERCC_READS\tFRC_UNALIGNED_ERCC")
 
   /**
     * Returns an iterator formatted for Parsomatic.

@@ -166,9 +166,9 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         totalReads = convertToInt(input.head, "TOTAL_READS", "0"),
         totalErccReads = convertToInt(input.head,"ERCC_READS", "0"),
         totalUnalignedReads = convertToInt(input.head,"UNALIGNED_ERCC_READS", "0"),
-        fractionGenomeReferenceReads = convertToDouble(input.head, "PCT_NOT_ERCC", "0.0"),
-        fractionErccReads = convertToDouble(input.head, "PCT_ERCC", "0.0"),
-        fractionUnalignedReads = convertToDouble(input.head, "PCT_UNALIGNED_ERCC", "0.0")
+        fractionGenomeReferenceReads = convertToDouble(input.head, "FRC_GENOME_REF", "0.0"),
+        fractionErccReads = convertToDouble(input.head, "FRC_ERCC_READS", "0.0"),
+        fractionUnalignedReads = convertToDouble(input.head, "FRC_UNALIGNED_ERCC", "0.0")
         )
       )
       case "PicardMeanGc" =>

@@ -1,9 +1,11 @@
 /**
   * Created by Amr on 9/16/2016.
   */
+import org.broadinstitute.MD.types.{AnalysisMetrics, PicardAlignmentSummaryAnalysis}
 import org.scalatest._
+import org.broadinstitute.parsomatic.MapToAnalysisObject
 
-class MapToAnalysisObjectSpec  extends FlatSpec with Matchers {
+class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   val test_entry = List(
     Map("CATEGORY" -> "FIRST_OF_PAIR",
       "TOTAL_READS" -> "1184046",
@@ -29,4 +31,12 @@ class MapToAnalysisObjectSpec  extends FlatSpec with Matchers {
       "PCT_ADAPTER" -> "0.000028"
     )
   )
+  "a picard alignment mapper" should "return a PicardAlignmentSummaryAnalysis when given valid input" in {
+    val mapper = new MapToAnalysisObject("PicardAlignmentMetrics", test_entry)
+    mapper.go().right.get.isInstanceOf[PicardAlignmentSummaryAnalysis] should be(true)
+  }
+  "a picard alignment mapper" should "give unrecognized MD type message with bad MD type" in {
+    val mapper = new MapToAnalysisObject("foo", test_entry)
+    mapper.go().left.get should be ("unrecognized mdType input for MapToObject")
+  }
 }

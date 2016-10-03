@@ -6,7 +6,7 @@ package org.broadinstitute.parsomatic
 /**
   * A collection of traits that can be used combined to create custom parser presets.
   */
-object parserTraits {
+object ParserTraits {
 //
   trait Rows {
     val start: Int

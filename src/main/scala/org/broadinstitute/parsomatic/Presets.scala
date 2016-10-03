@@ -1,5 +1,5 @@
 package org.broadinstitute.parsomatic
-import org.broadinstitute.parsomatic.parserTraits._
+import org.broadinstitute.parsomatic.ParserTraits._
 import org.broadinstitute.parsomatic.Parsomatic.failureExit
 import org.broadinstitute.parsomatic.Parsomatic.filterResultHandler
 /**

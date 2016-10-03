@@ -17,20 +17,21 @@ class GetErccStatsSpec extends FlatSpec with Matchers{
     erccStats.stats.head.split("\t").length should be (6)
   }
   "GetErccStats.getStats" should "return a failure message if input stats are wrong length" in {
-    val badStats = "2368092\n75658\n293314\n0.84419\n0.0319489".split("\n").toIterator
+    val badStats = "2368092\n75658\n293314\n0.84419\n".split("\n").toIterator
     val badErccStats = new GetErccStats(badStats)
     badErccStats.getStats should be (Left("GetErccStats.getStats failed."))
   }
   it should "return an iterator with correct input that can be properly mapped to k/v pairs" in {
-    val erccStats = new GetErccStats(input)
-    val stat_iter = erccStats.getStats
-    //println(stat_iter.)
-    stat_iter match {
-      case Right(r) =>
-        for ((a, b) <- r zip input) {
-          println(a,b)
-        }
-      case Left(l) => println("oops")
+    val erccStats = new GetErccStats("2368092\n75658\n293314\n0.84419\n0.0319489\n0.123861".split("\n").toIterator)
+    val stat_list = erccStats.getStats.right.get.toList
+    val header = stat_list.head.split("\t")
+    val values = stat_list(1).split("\t")
+    val mapped = (header zip values).toMap
+    mapped.get("TOTAL_READS") should be (Some("2368092"))
+    mapped.get("ERCC_READS") should be (Some("75658"))
+    mapped.get("UNALIGNED_ERCC_READS") should be (Some("293314"))
+    mapped.get("FRC_GENOME_REF") should be (Some("0.84419"))
+    mapped.get("FRC_ERCC_READS") should be (Some("0.0319489"))
+    mapped.get("FRC_UNALIGNED_ERCC") should be (Some("0.123861"))
     }
-  }
 }
