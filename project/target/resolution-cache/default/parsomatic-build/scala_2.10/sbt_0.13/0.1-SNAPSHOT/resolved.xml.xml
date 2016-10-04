@@ -4,7 +4,7 @@
 		module="parsomatic-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160920083416"
+		publication="20161004153258"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
