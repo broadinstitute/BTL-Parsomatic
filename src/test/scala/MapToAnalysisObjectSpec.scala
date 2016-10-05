@@ -86,7 +86,9 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
     val metrics = mapper.go()
     metrics.right.get.isInstanceOf[PicardInsertSizeMetrics]  should be (true)
     metrics match {
-      case Right(r) => for (y <- List.concat(r.toString.split(Array(',', '(', ')')).slice(4,8), r.toString.split(Array(',', '(', ')')).slice(9,20))) {
+      case Right(r) =>
+        for (y <- List.concat(r.toString.split(
+          Array(',', '(', ')')).slice(4,8), r.toString.split(Array(',', '(', ')')).slice(9,20))) {
         assert(y.toDouble > -1)
       }
       case Left(l) => println(l)
@@ -101,7 +103,9 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
     val mapper = new MapToAnalysisObject("PicardAlignmentMetrics", missingKeys)
     val metrics = mapper.go()
     metrics match {
-      case Right(r) => for (y <- List.concat(r.toString.split(Array(',', '(', ')')).slice(4,8), r.toString.split(Array(',', '(', ')')).slice(9,20))) {
+      case Right(r) =>
+        for (y <- List.concat(r.toString.split(
+          Array(',', '(', ')')).slice(4,8), r.toString.split(Array(',', '(', ')')).slice(9,20))) {
         assert(y.toDouble < 0)
       }
       case Left(l) => println(l)
