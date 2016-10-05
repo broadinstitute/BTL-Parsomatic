@@ -48,7 +48,7 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
       "WIDTH_OF_50_PERCENT" -> "1",
       "WIDTH_OF_60_PERCENT" -> "1",
       "WIDTH_OF_70_PERCENT" -> "1",
-      "WIDTH_OF_80_PERCENT" -> "1",
+      "WIDTH_OF_80_PERCENT" -> "1", 
       "WIDTH_OF_90_PERCENT" -> "1",
       "WIDTH_OF_99_PERCENT" -> "1"
     )

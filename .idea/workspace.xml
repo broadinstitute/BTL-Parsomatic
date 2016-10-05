@@ -28,26 +28,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="MapToAnalysisObject.scala" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToAnalysisObject.scala">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="635">
-                    <caret line="165" column="67" selection-start-line="165" selection-start-column="67" selection-end-line="165" selection-end-column="67" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -132,8 +112,8 @@
       <file leaf-file-name="MapToAnalysisObjectSpec.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
+            <state relative-caret-position="340">
+              <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#42#78#0" expanded="true" />
@@ -1639,7 +1619,7 @@
       <workItem from="1475255515592" duration="1586000" />
       <workItem from="1475495447723" duration="17956000" />
       <workItem from="1475609563529" duration="1291000" />
-      <workItem from="1475669330524" duration="8831000" />
+      <workItem from="1475669330524" duration="10042000" />
     </task>
     <task id="LOCAL-00001" summary="-Command-line argument parsing">
       <created>1472750956656</created>
@@ -1837,7 +1817,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475680198317</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="-last of the unit tests I will implement at this time.">
+      <created>1475688935238</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1475688935238</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1873,7 +1860,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191999000" />
+    <option name="totallyTimeSpent" value="193210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -2322,8 +2309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
+        <state relative-caret-position="340">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#42#78#0" expanded="true" />
