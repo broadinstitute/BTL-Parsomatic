@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="bd3129ae-94da-462d-8498-5345fd7aabcc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/parsomatic.iml" afterPath="$PROJECT_DIR$/.idea/modules/parsomatic.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala" />
     </list>
     <ignored path="Parsomatic.iws" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -81,6 +82,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ObjectToMd.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+              <folding>
+                <element signature="e#38#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="build.sbt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,21 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parsomatic.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules/parsomatic.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapToAnalysisObjectSpec.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MapToAnalysisObjectSpec.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+            <state relative-caret-position="748">
+              <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#42#78#0" expanded="true" />
@@ -191,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Presets.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ParsomaticParser.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToObjects.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala" />
         <option value="$PROJECT_DIR$/../../Python/scratch/smartseq_wdl/wdl" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Config.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/Parsomatic.scala" />
@@ -208,6 +210,7 @@
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/MapToAnalysisObject.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala" />
       </list>
     </option>
   </component>
@@ -419,6 +422,167 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.296875" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\project\target\config-classes\$f0376e8433b155fca615.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\project\target\config-classes\$f0376e8433b155fca615.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\project\target\config-classes\$f0376e8433b155fca615$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\project\target\config-classes\$f0376e8433b155fca615$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$9f8f2c2bc3d3b14e48e4$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$1d66546a055ab2dbefeb.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$34920cee75be14950816$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$d88789a9f2b9d7e758f7.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$38b2b6bbab59480fa418.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$7976ab12337113fd10b7$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$0217c186dc720d1f1ac2.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$d88789a9f2b9d7e758f7$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$b31f5998e34d5efa70a9$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$38b2b6bbab59480fa418$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$5c4bc5ea44d11d32b714$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$9f8f2c2bc3d3b14e48e4$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$34920cee75be14950816$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$7976ab12337113fd10b7.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$38b2b6bbab59480fa418$$anonfun$$sbtdef$1$$anonfun$apply$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$b31f5998e34d5efa70a9.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$d88789a9f2b9d7e758f7$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$38b2b6bbab59480fa418$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$5c4bc5ea44d11d32b714.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$2cf7a88e98df57343206.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$34920cee75be14950816.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$9f8f2c2bc3d3b14e48e4.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$2cf7a88e98df57343206$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$1d66546a055ab2dbefeb.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$d88789a9f2b9d7e758f7.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$38b2b6bbab59480fa418.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$0217c186dc720d1f1ac2.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$1d66546a055ab2dbefeb$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$0217c186dc720d1f1ac2$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$2cf7a88e98df57343206$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$7976ab12337113fd10b7.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$1d66546a055ab2dbefeb$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$7976ab12337113fd10b7$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$b31f5998e34d5efa70a9.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$2cf7a88e98df57343206.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$0217c186dc720d1f1ac2$$anonfun$$sbtdef$1.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$5c4bc5ea44d11d32b714.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$b31f5998e34d5efa70a9$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$9f8f2c2bc3d3b14e48e4.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$34920cee75be14950816.cache</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\project\target\config-classes\$5c4bc5ea44d11d32b714$.class</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__org_reactivemongo_reactivemongo_bson_2_11_0_11_11_jar.xml</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__io_netty_netty_3_10_5_Final_jar.xml</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__org_reactivemongo_reactivemongo_bson_macros_2_11_0_11_11_jar.xml</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__org_reactivemongo_reactivemongo_shaded_0_11_11_jar.xml</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__org_broadinstitute_mdtypes_2_11_1_0_jar.xml</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__org_reactivemongo_reactivemongo_2_11_0_11_11_jar.xml</PATH>
+          <PATH vcs="svn" revision="1183">C:\Dev\Scala\Parsomatic\.idea\libraries\SBT__org_apache_logging_log4j_log4j_api_2_0_2_jar.xml</PATH>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="ScalaTest.MapToAnalysisObjectSpec">
     <configuration default="false" name="ScalaTests in 'scala'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true">
@@ -1465,7 +1629,7 @@
       <workItem from="1475495447723" duration="17956000" />
       <workItem from="1475609563529" duration="1291000" />
       <workItem from="1475669330524" duration="10063000" />
-      <workItem from="1476189275249" duration="175000" />
+      <workItem from="1476189275249" duration="1293000" />
     </task>
     <task id="LOCAL-00001" summary="-Command-line argument parsing">
       <created>1472750956656</created>
@@ -1677,7 +1841,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475698237165</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="-last of the unit tests I will implement at this time.">
+      <created>1476189453895</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1476189453895</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1713,7 +1884,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193406000" />
+    <option name="totallyTimeSpent" value="194524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1722,6 +1893,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40499458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16041666" sideWeight="0.49487555" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1732,8 +1904,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28958333" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28958333" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1744,10 +1917,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40499458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17552084" sideWeight="0.50512445" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1988,13 +2159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="68" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/GetPicardMeanQualMetrics.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -2061,14 +2225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/GetPicardMeanGcMetrics.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2150,16 +2306,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="635">
           <caret line="165" column="67" selection-start-line="165" selection-start-column="67" selection-end-line="165" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/MapToAnalysisObjectSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        <state relative-caret-position="748">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#42#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/GetPicardMeanGcMetrics.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/broadinstitute/parsomatic/ObjectToMd.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+          <folding>
+            <element signature="e#38#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
