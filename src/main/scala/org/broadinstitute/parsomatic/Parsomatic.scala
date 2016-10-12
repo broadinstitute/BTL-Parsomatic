@@ -1,5 +1,7 @@
 package org.broadinstitute.parsomatic
+import com.typesafe.scalalogging.Logger
 import org.broadinstitute.MD.types.SampleRef
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Failure, Success}
 
@@ -57,6 +59,8 @@ object Parsomatic extends App {
     * @return
     */
   def execute(config: Config) = {
+    val logger = Logger("Parsomatic.execute")
+    logger.debug(config.toString)
     val ip = new InputProcessor(config.inputFile)
     if (config.byKey) {
       filterResultHandler(ip.filterByKey(config.startKey, config.endKey), config)
@@ -87,7 +91,8 @@ object Parsomatic extends App {
     * @param msg A message describing why the program exited unexpectedly.
     */
   def failureExit(msg: String) {
-    println("\nFATAL ERROR: " + msg)
+    val logger = Logger("Parsomatic.failureExit")
+    logger.error(msg)
     System.exit(1)
   }
 /*TODO Should probably validate delimiter somewhere to avoid situation where parsing returns unexpected results
@@ -100,15 +105,18 @@ due to delimiter not existing in file.
     * @return
     */
   def filterResultHandler(result: Either[String, Iterator[String]], config: Config) = {
+    val logger = Logger("Parsomatic.filterResultHandler")
     result match {
       case Right(filteredResult) =>
+        logger.info(config.inputFile + "filtered successfully.")
         val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
+        logger.info(config.inputFile + "stored to memory successfully.")
         val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
         analysisObject match {
           case Right(analysis) =>
             val insertObject = new ObjectToMd(config.sampleId, SampleRef(config.sampleId, config.sampleSetId))
             insertObject.run(analysis) onComplete {
-              case Success(s) => println( "Request succeeded with status code " + s.status)
+              case Success(s) => logger.info( "Request returned status code " + s.status)
                 System.exit(0)
               case Failure(f) => failureExit("Request failed: " + f.getMessage)
             }

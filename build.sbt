@@ -12,6 +12,8 @@ organization := "org.broadinstitute"
 libraryDependencies ++= Seq(
   "org.broadinstitute" %% "mdtypes" % "1.2",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+  "ch.qos.logback" %  "logback-classic" % "1.1.7",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
   "com.github.scopt" %% "scopt" % "3.5.0"
 )
 

@@ -1,4 +1,6 @@
 package org.broadinstitute.parsomatic
+import com.typesafe.scalalogging.Logger
+
 import scala.annotation.tailrec
 
 /**
@@ -10,8 +12,10 @@ import scala.annotation.tailrec
   * @param delim The delimiter that split keys and values in the metrics file.
   */
 class ParsomaticParser(iter: Iterator[String], delim: String) {
+  val logger = Logger("Parsomatic.ParsomaticParser")
   def parseToMap() = {
     val header = iter.next().split(delim)
+    logger.info("Parsing file iterator to map.")
     def populateMetrics(lb: scala.collection.mutable.ListBuffer[Map[String,String]]):
     List[Map[String,String]] = {
       @tailrec
