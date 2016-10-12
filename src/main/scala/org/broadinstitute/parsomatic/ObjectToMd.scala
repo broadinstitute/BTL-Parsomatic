@@ -63,8 +63,8 @@ class ObjectToMd(id: String, sampleRef: SampleRef){
     MetricsUpdate(
       id = id,
       version = None,
-      sampleMetrics = List(new MetricsUpdate.SampleMetrics(sampleRef,
-        List(new MetricsUpdate.MetricEntry(
+      sampleMetrics = List(new SampleMetrics(sampleRef,
+        List(new MetricEntry(
           metricType = metricType,
           metric = metrics
             )
