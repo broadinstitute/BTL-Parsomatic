@@ -7,7 +7,7 @@ import akka.stream.ActorMaterializer
 import org.scalatest.{FlatSpec, Matchers}
 import org.broadinstitute.parsomatic.ObjectToMd
 import org.broadinstitute.MD.types._
-
+import akka.http.scaladsl.model.StatusCodes._
 import scala.concurrent.duration._
 import scala.concurrent.Await
 /**
@@ -23,21 +23,22 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
     )
 
   val pathPrefix = "http://btllims.broadinstitute.org:9100/MD"
-
-  "ObjectToMd" should "return a 200 OK status code when adding" in {
+  val id = "parsomatic_unit_test"
+  "ObjectToMd" should "return a CREATED status code when adding" in {
     val addPath = pathPrefix + "/add/metrics"
-    val request = doRequest(addPath, "{\"id\": \"sample_1\", \"version\": \"V1\"}")
-    Await.result(request, 5 seconds).status.toString should be("20[1 Created]")
+    val request = doRequest(addPath, "{\"id\": \"parsomatic_unit_test\", \"version\": \"V1\"}")
+    Await.result(request, 5 seconds).status shouldBe Created
   }
-  it should "return a 200 OK status code when updating" in {
-    val otm = new ObjectToMd("test", SampleRef("sample_1", "set_1"))
+  it should "return an OK status code when updating" in {
+    val otm = new ObjectToMd(id, SampleRef(id, "set_1"))
     val request = otm.run(new PicardReadGcMetrics(meanGcContent = 45.55))
-    Await.result(request, 5 seconds).status.toString should be("200 OK")
+    val result = Await.result(request, 5 seconds)
+    result.status shouldBe OK
   }
   it should "return a 200 ok status code when deleting" in {
-    val delPathPrefix = s"$pathPrefix/delete"
-    val path = "foo"
-    val id = "bar"
-    val version = "V1"
+    val delPath = s"$pathPrefix/delete/metrics?id=$id"
+    val request = Http().singleRequest(Post(uri = delPath))
+    val result = Await.result(request, 5 seconds)
+    result.status shouldBe OK
   }
 }

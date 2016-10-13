@@ -21,7 +21,7 @@ import scala.concurrent.Future
 
 class ObjectToMd(id: String, sampleRef: SampleRef){
   val pathPrefix = "http://btllims.broadinstitute.org:9100/MD"
-  val analysisUpdate = s"$pathPrefix/metricsUpdate"
+  val metricsUpdate = s"$pathPrefix/metricsUpdate"
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
@@ -46,7 +46,7 @@ class ObjectToMd(id: String, sampleRef: SampleRef){
     * @return
     */
   def doAnalysisUpdate(obj: MetricsUpdate): Future[HttpResponse] = {
-    Http().singleRequest(Post(s"$analysisUpdate",
+    Http().singleRequest(Post(s"$metricsUpdate",
       HttpEntity(`application/json`, MetricsUpdate.writeJson(obj))))
   }
 
