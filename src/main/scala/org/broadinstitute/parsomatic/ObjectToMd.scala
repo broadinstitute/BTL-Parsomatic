@@ -46,8 +46,7 @@ class ObjectToMd(id: String, sampleRef: SampleRef){
     * @return
     */
   def doAnalysisUpdate(obj: MetricsUpdate): Future[HttpResponse] = {
-    Http().singleRequest(Post(s"$metricsUpdate",
-      HttpEntity(`application/json`, MetricsUpdate.writeJson(obj))))
+    Http().singleRequest(Post(s"$metricsUpdate", HttpEntity(`application/json`, MetricsUpdate.writeJson(obj))))
   }
 
   /**
