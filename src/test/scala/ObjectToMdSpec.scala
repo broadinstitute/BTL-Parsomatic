@@ -8,6 +8,8 @@ import org.scalatest.{FlatSpec, Matchers}
 import org.broadinstitute.parsomatic.ObjectToMd
 import org.broadinstitute.MD.types._
 import akka.http.scaladsl.model.StatusCodes._
+import org.broadinstitute.MD.types.metrics.PicardReadGcMetrics
+
 import scala.concurrent.duration._
 import scala.concurrent.Await
 /**
@@ -22,7 +24,7 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
       Post(uri = path, entity = HttpEntity(contentType = `application/json`, string = json))
     )
 
-  val pathPrefix = "http://btllims.broadinstitute.org:9100/MD"
+  val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
   val id = "parsomatic_unit_test"
   "ObjectToMd" should "return a CREATED status code when adding" in {
     val addPath = pathPrefix + "/add/metrics"
@@ -30,7 +32,7 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
     Await.result(request, 5 seconds).status shouldBe Created
   }
   it should "return an OK status code when updating" in {
-    val otm = new ObjectToMd(id, SampleRef(id, "set_1"))
+    val otm = new ObjectToMd(id, SampleRef(id, "set_1"), true)
     val request = otm.run(new PicardReadGcMetrics(meanGcContent = 45.55))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK

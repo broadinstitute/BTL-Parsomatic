@@ -3,11 +3,13 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.ContentTypes.`application/json`
 import akka.http.scaladsl.model.{HttpEntity, HttpResponse}
-import org.broadinstitute.MD.types._
-import org.broadinstitute.MD.rest._
+import org.broadinstitute.MD.types.metrics._
+import org.broadinstitute.MD.types.SampleRef
 import akka.http.scaladsl.client.RequestBuilding.Post
 import akka.stream.ActorMaterializer
-import org.broadinstitute.MD.rest.MetricsType.MetricsType
+import org.broadinstitute.MD.rest._
+import org.broadinstitute.MD.types.metrics.MetricsType.MetricsType
+
 import scala.concurrent.Future
 
 /**
@@ -19,8 +21,10 @@ import scala.concurrent.Future
   * @param sampleRef a sampleRef.
   */
 
-class ObjectToMd(id: String, sampleRef: SampleRef){
-  val pathPrefix = "http://btllims.broadinstitute.org:9100/MD"
+class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean){
+  var port = 9100
+  if (test) port = 9101
+  val pathPrefix = s"http://btllims.broadinstitute.org:$port/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()

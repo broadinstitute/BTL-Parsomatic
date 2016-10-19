@@ -1,7 +1,7 @@
 /**
   * Created by Amr on 9/16/2016.
   */
-import org.broadinstitute.MD.types._
+import org.broadinstitute.MD.types.metrics._
 import org.scalatest._
 import org.broadinstitute.parsomatic.MapToAnalysisObject
 

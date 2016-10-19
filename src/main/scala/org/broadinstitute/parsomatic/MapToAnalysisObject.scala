@@ -1,5 +1,5 @@
 package org.broadinstitute.parsomatic
-import org.broadinstitute.MD.types._
+import org.broadinstitute.MD.types.metrics._
 /**
   * Created by Amr on 9/12/2016.
   */

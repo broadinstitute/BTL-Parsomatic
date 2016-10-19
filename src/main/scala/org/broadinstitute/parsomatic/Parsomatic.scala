@@ -34,13 +34,15 @@ object Parsomatic extends App {
       opt[Int]('l', "lastRow").valueName("<int>").optional().action((x, c) => c.copy(lastRow = x))
         .text("Last row of data to parse. Do not include blank lines when counting. " +
           "If unspecified, will end parse all lines after headerRow.")
-      opt[Boolean]('k', "byKey").valueName("<bool>").optional().action((x, c) => c.copy(byKey = x))
+      opt[Boolean]('k', "byKey").valueName("<bool>").optional().action((x, c) => c.copy(byKey = true))
         .text("Flag required if processing using key words.")
       opt[String]('s', "startKey").valueName("<string>").optional().action((x, c) => c.copy(startKey = x))
         .text("A key string to indicate header row. Must begin with first character of line.")
       opt[String]('e', "endKey").valueName("<string>").optional().action((x, c) => c.copy(endKey = x))
         .text("A string to indicate last row of data. Must begin with first character of line.")
       opt[String]('d', "delimiter").valueName("<char>").optional().action((x, c) => c.copy(delimiter = x))
+        .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
+      opt[String]('t', "test").hidden().action((_, c) => c.copy(test = true))
         .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
       help("help").text("Prints this help text.")
       note("\nA tool for parsing data files into MD objects.\n")
@@ -114,7 +116,8 @@ due to delimiter not existing in file.
         val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
         analysisObject match {
           case Right(analysis) =>
-            val insertObject = new ObjectToMd(config.sampleId, SampleRef(config.sampleId, config.sampleSetId))
+            val insertObject = new ObjectToMd(config.sampleId,
+              SampleRef(config.sampleId, config.sampleSetId), config.test)
             insertObject.run(analysis) onComplete {
               case Success(s) => logger.info( "Request returned status code " + s.status)
                 System.exit(0)
