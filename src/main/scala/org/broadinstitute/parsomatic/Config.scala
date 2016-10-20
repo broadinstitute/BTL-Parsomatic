@@ -5,4 +5,5 @@ package org.broadinstitute.parsomatic
   */
 case class Config (sampleId: String = "", sampleSetId: String = "", inputFile: String = "", preset: String = "",
                    headerRow: Int = 1, lastRow: Int = 0, mdType: String = "", byKey: Boolean = false,
-                   startKey: String = "", endKey: String = "", var delimiter: String = ",", test: Boolean = false)
+                   startKey: String = "", endKey: String = "", var delimiter: String = ",", test: Boolean = false,
+                   version: Long = -999)

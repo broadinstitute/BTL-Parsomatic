@@ -26,19 +26,20 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
 
   val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
   val id = "parsomatic_unit_test"
+  val version = 1
   "ObjectToMd" should "return a CREATED status code when adding" in {
     val addPath = pathPrefix + "/add/metrics"
-    val request = doRequest(addPath, "{\"id\": \"parsomatic_unit_test\", \"version\": \"V1\"}")
+    val request = doRequest(addPath, s"""{\"id\": \"$id\", \"version\": $version}""")
     Await.result(request, 5 seconds).status shouldBe Created
   }
   it should "return an OK status code when updating" in {
-    val otm = new ObjectToMd(id, SampleRef(id, "set_1"), true)
+    val otm = new ObjectToMd(id, SampleRef(id, "set_1"), true, version)
     val request = otm.run(new PicardReadGcMetrics(meanGcContent = 45.55))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK
   }
   it should "return a 200 ok status code when deleting" in {
-    val delPath = s"$pathPrefix/delete/metrics?id=$id"
+    val delPath = s"$pathPrefix/delete/metrics?id=$id&version=$version"
     val request = Http().singleRequest(Post(uri = delPath))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK

@@ -1,6 +1,5 @@
 package org.broadinstitute.parsomatic
 import com.typesafe.scalalogging.Logger
-
 import scala.annotation.tailrec
 
 /**

@@ -1,8 +1,9 @@
 package org.broadinstitute.parsomatic
+import akka.http.scaladsl.model.StatusCodes
 import com.typesafe.scalalogging.Logger
 import org.broadinstitute.MD.types.SampleRef
-
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.annotation.tailrec
 import scala.util.{Failure, Success}
 
 
@@ -19,9 +20,11 @@ object Parsomatic extends App {
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
-      opt[String]('i', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
+      opt[String]('I', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for.")
-      opt[String]('s', "sampleSetId").valueName("<setId>").required().action((x,c) => c.copy(sampleId = x))
+      opt[Long]('V', "version").valueName("version").optional().action((x,c) => c.copy(version = x))
+        .text("Optional version string for the entry.")
+      opt[String]('S', "sampleSetId").valueName("<setId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample set containing the sample to update metrics for.")
       opt[String]('f', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
@@ -97,9 +100,41 @@ object Parsomatic extends App {
     logger.error(msg)
     System.exit(1)
   }
-/*TODO Should probably validate delimiter somewhere to avoid situation where parsing returns unexpected results
-due to delimiter not existing in file.
- */
+
+  def validateDelimiter(filteredLines: Iterator[String], delim: String): Boolean = {
+    val logger = Logger("Parsomatic.validateDelimiter")
+    //taken from http://stackoverflow.com/questions/12496959/summing-values-in-a-list
+    def sum(xs: List[Int]): Int = {
+      @tailrec
+      def inner(xs: List[Int], accum: Int): Int = {
+        xs match {
+          case x :: tail => inner(tail, accum + x)
+          case Nil => accum
+        }
+      }
+      inner(xs, 0)
+    }
+
+    def populateEntries(entry: scala.collection.mutable.ListBuffer[Int]): List[Int] = {
+      @tailrec
+      def entryAccumulator(entry: scala.collection.mutable.ListBuffer[Int]): List[Int] = {
+        if (filteredLines.hasNext) {
+          val lineEntries = filteredLines.next.split(delim).length
+          if (lineEntries <= 1) logger.warn(lineEntries.toString + " column(s) found. Is this intended?")
+          entry += lineEntries
+          entryAccumulator(entry)
+        } else {
+          entry.toList
+        }
+      }
+    entryAccumulator(entry)
+    }
+    val result: List[Int] = populateEntries(scala.collection.mutable.ListBuffer[Int]())
+    val listSum = sum(result)
+    val listMult = result.head * result.length
+    if (listSum == listMult) true
+    else false
+  }
   /**
     * A method that takes the filteredResult and processes it through the Parsomatic steps.
     * @param result The filteredResult object.
@@ -110,17 +145,25 @@ due to delimiter not existing in file.
     val logger = Logger("Parsomatic.filterResultHandler")
     result match {
       case Right(filteredResult) =>
-        logger.info(config.inputFile + "filtered successfully.")
-        val mapped = new ParsomaticParser(filteredResult, config.delimiter).parseToMap()
-        logger.info(config.inputFile + "stored to memory successfully.")
+        logger.info(config.inputFile + " filtered successfully.")
+        val resList = filteredResult.toList
+        if (!validateDelimiter(resList.to[Iterator], config.delimiter)) failureExit("delimiter does not split lines equally.")
+        val mapped = new ParsomaticParser(resList.to[Iterator], config.delimiter).parseToMap()
+        logger.info(config.inputFile + " stored to memory successfully.")
         val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
         analysisObject match {
           case Right(analysis) =>
             val insertObject = new ObjectToMd(config.sampleId,
-              SampleRef(config.sampleId, config.sampleSetId), config.test)
+              SampleRef(config.sampleId, config.sampleSetId), config.test, config.version)
             insertObject.run(analysis) onComplete {
-              case Success(s) => logger.info( "Request returned status code " + s.status)
-                System.exit(0)
+              case Success(s) =>
+              s.status match {
+                case StatusCodes.OK => logger.info("Request successful: " + s.status)
+                  System.exit(0)
+                case _ =>
+                  val failMsg = "Request failed: " + s.status
+                  failureExit(failMsg)
+              }
               case Failure(f) => failureExit("Request failed: " + f.getMessage)
             }
           case Left(unexpectedResult) => failureExit(unexpectedResult)

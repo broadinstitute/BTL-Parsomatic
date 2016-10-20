@@ -9,7 +9,6 @@ import akka.http.scaladsl.client.RequestBuilding.Post
 import akka.stream.ActorMaterializer
 import org.broadinstitute.MD.rest._
 import org.broadinstitute.MD.types.metrics.MetricsType.MetricsType
-
 import scala.concurrent.Future
 
 /**
@@ -21,11 +20,12 @@ import scala.concurrent.Future
   * @param sampleRef a sampleRef.
   */
 
-class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean){
+class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean, version: Long){
   var port = 9100
   if (test) port = 9101
   val pathPrefix = s"http://btllims.broadinstitute.org:$port/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
+  val metricsCreate = s"$pathPrefix/add/metrics"
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
   implicit val ec = system.dispatcher
@@ -36,12 +36,12 @@ class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean){
     * @return
     */
   def run(analysisObject: AnalysisMetrics): Future[HttpResponse] = {
-    val analyisUpdate = createAnalysisUpdate(
+    val analysisUpdate = createAnalysisUpdate(
       id = id,
       metricType = MetricsType.withName(analysisObject.getClass.getSimpleName),
       metrics = analysisObject
     )
-    doAnalysisUpdate(analyisUpdate)
+    doAnalysisUpdate(analysisUpdate)
   }
 
   /**
@@ -50,6 +50,7 @@ class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean){
     * @return
     */
   def doAnalysisUpdate(obj: MetricsUpdate): Future[HttpResponse] = {
+
     Http().singleRequest(Post(s"$metricsUpdate", HttpEntity(`application/json`, MetricsUpdate.writeJson(obj))))
   }
 
