@@ -10,7 +10,7 @@ version := "1.0"
 organization := "org.broadinstitute"
 
 libraryDependencies ++= Seq(
-  "org.broadinstitute" %% "mdtypes" % "1.5",
+  "org.broadinstitute" %% "mdtypes" % "1.6",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test",
   "ch.qos.logback" %  "logback-classic" % "1.1.7",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
