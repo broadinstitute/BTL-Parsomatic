@@ -114,7 +114,6 @@ object Parsomatic extends App {
       }
       inner(xs, 0)
     }
-
     def populateEntries(entry: scala.collection.mutable.ListBuffer[Int]): List[Int] = {
       @tailrec
       def entryAccumulator(entry: scala.collection.mutable.ListBuffer[Int]): List[Int] = {
