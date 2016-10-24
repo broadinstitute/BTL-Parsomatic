@@ -6,7 +6,6 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.annotation.tailrec
 import scala.io.Source
 import scala.util.{Failure, Success}
-import org.json4s.jackson.parseJson
 import com.lambdaworks.jacks.JacksMapper
 
 /**
@@ -160,7 +159,6 @@ object Parsomatic extends App {
       case Right(filteredResult) =>
         logger.info(config.inputFile + " filtered successfully.")
         val resList = filteredResult.toList
-        println(config.validateDelim)
         if (config.validateDelim)
           if (!validateDelimiter(resList.to[Iterator], config.delimiter))
             failureExit("delimiter does not split lines equally.")
