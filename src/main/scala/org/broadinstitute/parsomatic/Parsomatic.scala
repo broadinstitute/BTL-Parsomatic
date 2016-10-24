@@ -4,8 +4,10 @@ import com.typesafe.scalalogging.Logger
 import org.broadinstitute.MD.types.SampleRef
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.annotation.tailrec
+import scala.io.Source
 import scala.util.{Failure, Success}
-
+import org.json4s.jackson.parseJson
+import com.lambdaworks.jacks.JacksMapper
 
 /**
   * Created by Amr Abouelleil on 9/1/2016.
@@ -20,12 +22,14 @@ object Parsomatic extends App {
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
-      opt[String]('i', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
-        .text("The ID of the sample to update metrics for.")
+      opt[String]('i', "sampleId").valueName("<id>").optional().action((x,c) => c.copy(sampleId = x))
+        .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
       opt[String]('s', "setId").valueName("<SetId>").required().action((x, c) => c.copy(setId = x))
         .text("The ID of the sample set containing the sample to update metrics for.")
       opt[Long]('v', "version").valueName("version").optional().action((x,c) => c.copy(version = x))
         .text("Optional version string for the entry.")
+      opt[String]('e', "entryFile").optional().action((x, c) => c.copy(entryFile = x))
+        .text("If EntryCreator was used you may supply the entry file to pass along sampleId and version.")
       opt[String]('f', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
@@ -57,7 +61,12 @@ object Parsomatic extends App {
   parser.parse(args, Config()
   ) match {
     case Some(config) =>
-      println(config)
+      if (config.entryFile.length > 0) {
+        val json = Source.fromFile(config.entryFile).getLines().next()
+        val mapper = JacksMapper.readValue[Map[String, String]](json)
+        config.sampleId = mapper("id")
+        config.version = mapper("version").toLong
+      }
       execute(config)
     case None => failureExit("Please provide valid input.")
   }
