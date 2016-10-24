@@ -38,10 +38,10 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK
   }
-  it should "return a 200 ok status code when deleting" in {
-    val delPath = s"$pathPrefix/delete/metrics?id=$id&version=$version"
-    val request = Http().singleRequest(Post(uri = delPath))
-    val result = Await.result(request, 5 seconds)
-    result.status shouldBe OK
-  }
+//  it should "return a 200 ok status code when deleting" in {
+//    val delPath = s"$pathPrefix/delete/metrics?id=$id&version=$version"
+//    val request = Http().singleRequest(Post(uri = delPath))
+//    val result = Await.result(request, 5 seconds)
+//    result.status shouldBe OK
+//  }
 }

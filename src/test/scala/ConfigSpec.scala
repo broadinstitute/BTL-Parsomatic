@@ -6,7 +6,7 @@ import org.broadinstitute.parsomatic.Config
 class ConfigSpec extends FlatSpec with Matchers{
   val config = Config(
     sampleId = "foo",
-    sampleSetId = "bar",
+    //setId = "bar",
     inputFile = "input.txt",
     preset = "preset",
     delimiter = ","

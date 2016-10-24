@@ -14,18 +14,18 @@ import scala.util.{Failure, Success}
   * A tool for parsing various types of metrics files and loading their contents into the MD database.
   */
 object Parsomatic extends App {
-  val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle", "PicardMeanGc",
-    "RnaSeqQcStats", "ErccStats")
+  val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
+    "PicardMeanGc", "RnaSeqQcStats", "ErccStats")
 
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
-      opt[String]('I', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
+      opt[String]('i', "sampleId").valueName("<id>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for.")
-      opt[Long]('V', "version").valueName("version").optional().action((x,c) => c.copy(version = x))
-        .text("Optional version string for the entry.")
-      opt[String]('S', "sampleSetId").valueName("<setId>").required().action((x,c) => c.copy(sampleId = x))
+      opt[String]('s', "setId").valueName("<SetId>").required().action((x, c) => c.copy(setId = x))
         .text("The ID of the sample set containing the sample to update metrics for.")
+      opt[Long]('v', "version").valueName("version").optional().action((x,c) => c.copy(version = x))
+        .text("Optional version string for the entry.")
       opt[String]('f', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
         .text("Path to input file to parse. Required.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
@@ -39,14 +39,16 @@ object Parsomatic extends App {
           "If unspecified, will end parse all lines after headerRow.")
       opt[Boolean]('k', "byKey").valueName("<bool>").optional().action((x, c) => c.copy(byKey = true))
         .text("Flag required if processing using key words.")
-      opt[String]('s', "startKey").valueName("<string>").optional().action((x, c) => c.copy(startKey = x))
+      opt[String]('S', "startKey").valueName("<string>").optional().action((x, c) => c.copy(startKey = x))
         .text("A key string to indicate header row. Must begin with first character of line.")
-      opt[String]('e', "endKey").valueName("<string>").optional().action((x, c) => c.copy(endKey = x))
+      opt[String]('E', "endKey").valueName("<string>").optional().action((x, c) => c.copy(endKey = x))
         .text("A string to indicate last row of data. Must begin with first character of line.")
       opt[String]('d', "delimiter").valueName("<char>").optional().action((x, c) => c.copy(delimiter = x))
         .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
+      opt[Boolean]('V', "validateDelim").optional().action((x, c) => c.copy(validateDelim = x))
+        .text("Validates delimiter. set to 'false' to disable. On by default.")
       opt[String]('t', "test").hidden().action((_, c) => c.copy(test = true))
-        .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
+        .text("Enable test mode which updates MDBeta instead of MD.")
       help("help").text("Prints this help text.")
       note("\nA tool for parsing data files into MD objects.\n")
     }
@@ -54,7 +56,9 @@ object Parsomatic extends App {
 
   parser.parse(args, Config()
   ) match {
-    case Some(config) => execute(config)
+    case Some(config) =>
+      println(config)
+      execute(config)
     case None => failureExit("Please provide valid input.")
   }
 
@@ -118,9 +122,10 @@ object Parsomatic extends App {
       @tailrec
       def entryAccumulator(entry: scala.collection.mutable.ListBuffer[Int]): List[Int] = {
         if (filteredLines.hasNext) {
-          val lineEntries = filteredLines.next.split(delim).length
-          if (lineEntries <= 1) logger.warn(lineEntries.toString + " column(s) found. Is this intended?")
-          entry += lineEntries
+          val lineEntries = filteredLines.next.split(delim)
+          val entryCount = lineEntries.length
+          if (entryCount <= 1) logger.warn(lineEntries.toString + " column(s) found. Is this intended?")
+          entry += entryCount
           entryAccumulator(entry)
         } else {
           entry.toList
@@ -146,14 +151,17 @@ object Parsomatic extends App {
       case Right(filteredResult) =>
         logger.info(config.inputFile + " filtered successfully.")
         val resList = filteredResult.toList
-        if (!validateDelimiter(resList.to[Iterator], config.delimiter)) failureExit("delimiter does not split lines equally.")
+        println(config.validateDelim)
+        if (config.validateDelim)
+          if (!validateDelimiter(resList.to[Iterator], config.delimiter))
+            failureExit("delimiter does not split lines equally.")
         val mapped = new ParsomaticParser(resList.to[Iterator], config.delimiter).parseToMap()
         logger.info(config.inputFile + " stored to memory successfully.")
         val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
         analysisObject match {
           case Right(analysis) =>
             val insertObject = new ObjectToMd(config.sampleId,
-              SampleRef(config.sampleId, config.sampleSetId), config.test, config.version)
+              SampleRef(sampleID = config.sampleId, setID = config.setId), config.test, config.version)
             insertObject.run(analysis) onComplete {
               case Success(s) =>
               s.status match {

@@ -38,6 +38,7 @@ class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean, version: Long)
   def run(analysisObject: AnalysisMetrics): Future[HttpResponse] = {
     val analysisUpdate = createAnalysisUpdate(
       id = id,
+      version = Option(version),
       metricType = MetricsType.withName(analysisObject.getClass.getSimpleName),
       metrics = analysisObject
     )
@@ -62,11 +63,11 @@ class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean, version: Long)
     * @param metrics: the actual AnalysisMetrics object.
     * @return
     */
-  def createAnalysisUpdate(id: String, version: Option[String] = None, metricType: MetricsType,
+  def createAnalysisUpdate(id: String, version: Option[Long], metricType: MetricsType,
                            metrics: AnalysisMetrics) = {
     MetricsUpdate(
       id = id,
-      version = None,
+      version = version,
       sampleMetrics = List(new SampleMetrics(sampleRef,
         List(new MetricEntry(
           metricType = metricType,
