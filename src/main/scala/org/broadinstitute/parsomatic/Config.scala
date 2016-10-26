@@ -18,5 +18,6 @@ case class Config (
                    endKey: String = "",
                    var delimiter: String = ",",
                    validateDelim: Boolean = true,
+                   var vOffset: Int = 0,
                    test: Boolean = false
                    )

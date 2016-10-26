@@ -50,6 +50,8 @@ object Parsomatic extends App {
         .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
       opt[Boolean]('V', "validateDelim").optional().action((x, c) => c.copy(validateDelim = x))
         .text("Validates delimiter. set to 'false' to disable. On by default.")
+      opt[Int]('o', "offset").action((_, c) => c.copy(test = true))
+        .text("An offset for validation. Should equal the number of headers with no columns. 0 by default.")
       opt[String]('t', "test").hidden().action((_, c) => c.copy(test = true))
         .text("Enable test mode which updates MDBeta instead of MD.")
       help("help").text("Prints this help text.")
@@ -84,8 +86,10 @@ object Parsomatic extends App {
     } else if (config.preset.length() > 0) {
       config.preset match {
         case "PicardAlignmentMetrics" => val preset = new Presets.PicardAlignmentMetricPreset(config)
+          config.vOffset = 3
           preset.run()
         case "PicardInsertSizeMetrics" => val preset = new Presets.PicardHistoMetricPreset(config)
+          config.vOffset = 3
           preset.run()
         case "RnaSeqQcStats" => val preset = new Presets.RnaSeqQCPreset(config)
           preset.run()
@@ -113,7 +117,7 @@ object Parsomatic extends App {
     System.exit(1)
   }
 
-  def validateDelimiter(filteredLines: Iterator[String], delim: String): Boolean = {
+  def validateDelimiter(filteredLines: Iterator[String], delim: String, offset: Int): Boolean = {
     val logger = Logger("Parsomatic.validateDelimiter")
     //taken from http://stackoverflow.com/questions/12496959/summing-values-in-a-list
     def sum(xs: List[Int]): Int = {
@@ -142,8 +146,9 @@ object Parsomatic extends App {
     entryAccumulator(entry)
     }
     val result: List[Int] = populateEntries(scala.collection.mutable.ListBuffer[Int]())
-    val listSum = sum(result)
-    val listMult = result.head * result.length
+    val newResult = result.patch(0,Seq(result.head - offset), 1)
+    val listSum = sum(newResult)
+    val listMult = newResult.head * newResult.length
     if (listSum == listMult) true
     else false
   }
@@ -160,7 +165,7 @@ object Parsomatic extends App {
         logger.info(config.inputFile + " filtered successfully.")
         val resList = filteredResult.toList
         if (config.validateDelim)
-          if (!validateDelimiter(resList.to[Iterator], config.delimiter))
+          if (!validateDelimiter(resList.to[Iterator], config.delimiter, config.vOffset))
             failureExit("delimiter does not split lines equally.")
         val mapped = new ParsomaticParser(resList.to[Iterator], config.delimiter).parseToMap()
         logger.info(config.inputFile + " stored to memory successfully.")
