@@ -24,21 +24,28 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
     )
 
   val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
-  val id = "parsomatic_unit_test"
+  val set_id = "parsomatic_unit_test"
+  val sample_id = "put_sample_1"
   val version = 1
   "ObjectToMd" should "return a CREATED status code when adding" in {
     val addPath = pathPrefix + "/add/metrics"
-    val request = doRequest(addPath, s"""{\"id\": \"$id\", \"version\": $version}""")
+    val request = doRequest(addPath, s"""{\"id\": \"$set_id\", \"version\": $version}""")
     Await.result(request, 5 seconds).status shouldBe Created
   }
   it should "return an OK status code when updating" in {
-    val otm = new ObjectToMd(id, SampleRef(id, "set_1"), true, version)
+    val otm = new ObjectToMd(set_id, SampleRef(sample_id, set_id), true, version)
     val request = otm.run(new PicardReadGcMetrics(meanGcContent = 45.55))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK
   }
+  it should "return an OK status code when updating a new sample" in {
+    val otm = new ObjectToMd(set_id, SampleRef("put_sample_2", set_id), true, version)
+    val request = otm.run(new PicardReadGcMetrics(meanGcContent = 36.12))
+    val result = Await.result(request, 5 seconds)
+    result.status shouldBe OK
+  }
   it should "return a 200 ok status code when deleting" in {
-    val delPath = s"$pathPrefix/delete/metrics?id=$id&version=$version"
+    val delPath = s"$pathPrefix/delete/metrics?id=$set_id&version=$version"
     val request = Http().singleRequest(Post(uri = delPath))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK
