@@ -9,7 +9,6 @@ import org.broadinstitute.parsomatic.ObjectToMd
 import org.broadinstitute.MD.types._
 import akka.http.scaladsl.model.StatusCodes._
 import org.broadinstitute.MD.types.metrics.PicardReadGcMetrics
-
 import scala.concurrent.duration._
 import scala.concurrent.Await
 /**
