@@ -21,10 +21,10 @@ object Parsomatic extends App {
   def parser = {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.0")
-      opt[String]('i', "sampleId").valueName("<id>").optional().action((x,c) => c.copy(sampleId = x))
+      opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
-      opt[String]('s', "setId").valueName("<SetId>").required().action((x, c) => c.copy(setId = x))
-        .text("The ID of the sample set containing the sample to update metrics for.")
+      opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
+        .text("The ID of the sample set containing the sample to update metrics for. Supply if not using entrycreator json.")
       opt[Long]('v', "version").valueName("version").optional().action((x,c) => c.copy(version = x))
         .text("Optional version string for the entry.")
       opt[String]('e', "entryFile").optional().action((x, c) => c.copy(entryFile = x))
@@ -65,7 +65,7 @@ object Parsomatic extends App {
       if (config.entryFile.length > 0) {
         val json = Source.fromFile(config.entryFile).getLines().next()
         val mapper = JacksMapper.readValue[Map[String, String]](json)
-        config.sampleId = mapper("id")
+        config.setId = mapper("id")
         config.version = mapper("version").toLong
       }
       execute(config)
@@ -172,7 +172,7 @@ object Parsomatic extends App {
         val analysisObject = new MapToAnalysisObject(config.mdType, mapped).go()
         analysisObject match {
           case Right(analysis) =>
-            val insertObject = new ObjectToMd(config.sampleId,
+            val insertObject = new ObjectToMd(config.setId,
               SampleRef(sampleID = config.sampleId, setID = config.setId), config.test, config.version)
             insertObject.run(analysis) onComplete {
               case Success(s) =>

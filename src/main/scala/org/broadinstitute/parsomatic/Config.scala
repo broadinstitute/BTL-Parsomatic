@@ -4,8 +4,8 @@ package org.broadinstitute.parsomatic
   * Created by amr on 9/1/2016.
   */
 case class Config (
-                   var sampleId: String = "",
-                   setId: String = "",
+                   sampleId: String = "",
+                   var setId: String = "",
                    var version: Long = -999,
                    entryFile: String = "",
                    inputFile: String = "",

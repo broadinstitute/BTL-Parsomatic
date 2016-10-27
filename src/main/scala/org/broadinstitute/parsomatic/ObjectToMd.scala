@@ -16,11 +16,11 @@ import scala.concurrent.Future
   */
 /**
   *
-  * @param id The sample ID of the sample to be updated/added to MD.
-  * @param sampleRef a sampleRef.
+  * @param setId The analysis/sample_set ID of the sample to be updated/added to MD.
+  * @param sampleRef a sampleRef containing a sample ID and sample set ID.
   */
 
-class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean, version: Long){
+class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Long){
   var port = 9100
   if (test) port = 9101
   val pathPrefix = s"http://btllims.broadinstitute.org:$port/MD"
@@ -37,7 +37,7 @@ class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean, version: Long)
     */
   def run(analysisObject: AnalysisMetrics): Future[HttpResponse] = {
     val analysisUpdate = createAnalysisUpdate(
-      id = id,
+      setId = setId,
       version = Option(version),
       metricType = MetricsType.withName(analysisObject.getClass.getSimpleName),
       metrics = analysisObject
@@ -63,10 +63,10 @@ class ObjectToMd(id: String, sampleRef: SampleRef, test: Boolean, version: Long)
     * @param metrics: the actual AnalysisMetrics object.
     * @return
     */
-  def createAnalysisUpdate(id: String, version: Option[Long], metricType: MetricsType,
+  def createAnalysisUpdate(setId: String, version: Option[Long], metricType: MetricsType,
                            metrics: AnalysisMetrics) = {
     MetricsUpdate(
-      id = id,
+      id = setId,
       version = version,
       sampleMetrics = List(new SampleMetrics(sampleRef,
         List(new MetricEntry(
