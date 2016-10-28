@@ -15,12 +15,14 @@ import com.lambdaworks.jacks.JacksMapper
   * A tool for parsing various types of metrics files and loading their contents into the MD database.
   */
 object Parsomatic extends App {
+
   val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
     "PicardMeanGc", "RnaSeqQcStats", "ErccStats")
 
   def parser = {
+
     new scopt.OptionParser[Config]("Parsomatic") {
-      head("Parsomatic", "1.0")
+      head("Parsomatic", "1.0.1")
       opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
       opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
