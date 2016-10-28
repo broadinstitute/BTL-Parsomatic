@@ -1,4 +1,6 @@
 package org.broadinstitute.parsomatic
+import com.typesafe.scalalogging.Logger
+
 import scala.math.BigDecimal.RoundingMode
 
 /**
@@ -6,18 +8,24 @@ import scala.math.BigDecimal.RoundingMode
   */
 class GetPicardMeanGcMetrics(input: Iterator[String], delim: String) {
   var observations = 0
-
-  def convertAndMultiply(str: String): Int = {
+  val logger = Logger("GetPicardMeanGcMetrics")
+  def convertAndMultiply(str: String): Long = {
     val intList = str.split(delim)
     observations += intList(1).toInt
-    intList(0).toInt * intList(1).toInt
+    intList(0).toLong * intList(1).toLong
   }
 
   def getMean: Either[String, Iterator[String]] = {
     try {
-      val denominators = input.drop(1).map(convertAndMultiply(_))
-      val meanGc = BigDecimal(denominators.sum/observations).setScale(2, RoundingMode.HALF_EVEN)
-      if (meanGc > 0) Right(Iterator("MEAN_GC_CONTENT", meanGc.toString))
+      val new_input = input.drop(2).toList
+      logger.debug(s"Observations found: $observations")
+      val sum_bin_totals = new_input.map(convertAndMultiply(_)).sum
+      logger.debug(s"Sum of GC bins: $sum_bin_totals")
+      val meanGc = BigDecimal(sum_bin_totals/observations).setScale(2, RoundingMode.HALF_EVEN)
+      logger.debug(s"meanGc = $sum_bin_totals/$observations = $meanGc")
+      if (meanGc > 0) {
+        Right(Iterator("MEAN_GC_CONTENT", meanGc.toString))
+      }
       else Left("GetPicardMeanGcMetrics.getMean failed unexpectedly")
     } catch {
       case nfe: NumberFormatException => Left("GetPicardMeanGcMetrics.getMean failed:" + nfe.getMessage)

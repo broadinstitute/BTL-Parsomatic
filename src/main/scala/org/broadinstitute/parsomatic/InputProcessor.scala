@@ -12,6 +12,8 @@ import scala.io.Source
 class InputProcessor(inputFile: String) {
   val lines = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty())
   val logger = Logger("InputProcessor")
+  logger.info(s"Reading $inputFile...")
+  logger.info("Blank lines removed.")
   /**
     *
     * @param start The row/line in the file where the filtering should begin.
@@ -19,7 +21,8 @@ class InputProcessor(inputFile: String) {
     * @return
     */
   def filterByRow(start: Int, end: Int): Either[String, Iterator[String]] = {
-    logger.debug("Parsing by rows " + start + " to " + end)
+    if (end > 0) logger.debug("Parsing by rows " + start + " to " + end)
+    else logger.debug("Parsing by rows " + start + " to EOF")
     end match {
       case 0 => Right(lines drop (start - 1))
       case _ if end > start => Right(lines.slice(start - 1, end))
@@ -46,7 +49,8 @@ class InputProcessor(inputFile: String) {
         logger.debug(word.concat(" not found."))
         row
       } else {
-        logger.debug(word + " found at index" + row + 1)
+        val shiftRow = row + 1
+        logger.debug(word + " found at index " + shiftRow)
         row + 1
       }
     }
