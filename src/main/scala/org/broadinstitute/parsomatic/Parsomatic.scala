@@ -22,12 +22,12 @@ object Parsomatic extends App {
   def parser = {
 
     new scopt.OptionParser[Config]("Parsomatic") {
-      head("Parsomatic", "1.0.1")
+      head("Parsomatic", "1.0.2")
       opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
       opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
         .text("The ID of the sample set containing the sample to update metrics for. Supply if not using entrycreator json.")
-      opt[Long]('v', "version").valueName("version").optional().action((x,c) => c.copy(version = x))
+      opt[Long]('v', "version").valueName("<version>").optional().action((x,c) => c.copy(version = Some(x)))
         .text("Optional version string for the entry.")
       opt[String]('e', "entryFile").optional().action((x, c) => c.copy(entryFile = x))
         .text("If EntryCreator was used you may supply the entry file to pass along sampleId and version.")
@@ -68,7 +68,7 @@ object Parsomatic extends App {
         val json = Source.fromFile(config.entryFile).getLines().next()
         val mapper = JacksMapper.readValue[Map[String, String]](json)
         config.setId = mapper("id")
-        config.version = mapper("version").toLong
+        config.version = Some(mapper("version").toLong)
       }
       execute(config)
     case None => failureExit("Please provide valid input.")

@@ -6,7 +6,7 @@ package org.broadinstitute.parsomatic
 case class Config (
                    sampleId: String = "",
                    var setId: String = "",
-                   var version: Long = -999,
+                   var version: Option[Long] = None,
                    entryFile: String = "",
                    inputFile: String = "",
                    preset: String = "",
