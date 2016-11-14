@@ -5,32 +5,29 @@ package org.broadinstitute.parsomatic
   */
 /**
   * Converts results of get_ercc_stats.py into format usable by Parsomatic.
-  * @param input An iterator representing the ercc stats file.
   */
-// TODO: Can convert this to an object which is more efficient memory wise because you don't have to to make this
-// more than once. In general use objects when just using the thing one time. In this case, input can be moved to
-// the method call as opposed to being part of the class.
-// TODO: Make delimiter a variable.
-// TODO: Replace output of iterator with list.
-// TODO: I don't really need statsList.length==6. If I can make the list, what can I do with the list to know how many
-// Headers you have any can insert the delimiters.
-// TODO: Improve fail statement to be more specific about seeing X columns but expecting 6.
-// TODO: Use private val for any val that is only being used in the scope of the val exists in. This is good documentation
-// but also can possibly be more efficient for the compiler.
 
-class GetErccStats(input: Iterator[String]) {
-  val stats = scala.collection.mutable.ListBuffer[String]("TOTAL_READS\tERCC_READS\tUNALIGNED_ERCC_READS\tFRC_GENOME_REF\tFRC_ERCC_READS\tFRC_UNALIGNED_ERCC")
+object GetErccStats {
+  // It might be interesting to use reflection in the future to get the case class param names. This would
+  // require refactoring at several levels as then headers and case class params would have to be same everywhere.
+  private val headers = List("TOTAL_READS",
+    "ERCC_READS",
+    "UNALIGNED_ERCC_READS",
+    "FRC_GENOME_REF",
+    "FRC_ERCC_READS",
+    "FRC_UNALIGNED_ERCC"
+  )
 
   /**
-    * Returns an iterator formatted for Parsomatic.
+    *
+     * @param input A list of strings containing ERCC stats.
+    * @param delim The delimiter to used as string separators.
     * @return
     */
-  def getStats:Either[String, Iterator[String]] = {
-    val statList = input.toList
-    if (statList.length==6) {
-      stats += statList.mkString("\t")
-      Right(stats.toIterator)
+  def getStats(input: List[String], delim: String):Either[String, List[String]] = {
+    if (input.length==headers.length) {
+      Right(List(headers.mkString(delim), input.mkString(delim)))
     }
-    else Left("GetErccStats.getStats failed.")
+    else Left(s"GetErccStats.getStats failed: Expected input length ${headers.length}, received ${input.length}.")
   }
 }

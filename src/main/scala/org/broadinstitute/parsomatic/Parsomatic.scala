@@ -160,7 +160,7 @@ object Parsomatic extends App {
     * @param config The user-supplied arguments.
     * @return
     */
-  def filterResultHandler(result: Either[String, Iterator[String]], config: Config) = {
+  def filterResultHandler(result: Either[String, List[String]], config: Config) = {
     val logger = Logger("Parsomatic.filterResultHandler")
     result match {
       case Right(filteredResult) =>

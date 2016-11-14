@@ -29,8 +29,8 @@ object Presets {
     config.delimiter = "\t"
     def run () = {
       filter(start, end) match {
-        case Right(filterResult) => val result = new GetPicardMeanQualMetrics(filterResult, config.delimiter)
-          filterResultHandler(result.getMeans,config)
+        case Right(filterResult) =>
+          filterResultHandler(GetPicardMeanQualMetrics.getMeans(filterResult, config.delimiter), config)
         case Left(unexpectedResult) => failureExit("PicardMeanQualByCyclePreset failed.")
       }
     }
@@ -43,8 +43,8 @@ object Presets {
     config.delimiter = "\t"
     def run () = {
       filter(start, end) match {
-        case Right(filterResult) => val result = new GetPicardMeanGcMetrics(filterResult, config.delimiter)
-          filterResultHandler(result.getMean, config)
+        case Right(filterResult) =>
+          filterResultHandler(GetPicardMeanGcMetrics.getMean(filterResult, config.delimiter), config)
         case Left(unexpectedResult) => failureExit("PicardMeanGcPreset failed.")
       }
     }
@@ -65,8 +65,8 @@ object Presets {
     config.delimiter = "\t"
     def run () = {
       filter(start, end) match {
-        case Right(filterResult) => val result = new GetErccStats(filterResult)
-          filterResultHandler(result.getStats, config)
+        case Right(filterResult) =>
+          filterResultHandler(GetErccStats.getStats(filterResult, config.delimiter), config)
         case Left(unexpectedResult) => failureExit("ErccStatsPreset failed.")
       }
     }

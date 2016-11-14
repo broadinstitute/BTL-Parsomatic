@@ -10,8 +10,8 @@ import scala.io.Source
   * @param inputFile: the input metrics file to be processed.
   */
 class InputProcessor(inputFile: String) {
-  val lines = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty())
-  val logger = Logger("InputProcessor")
+  private val lines = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
+  private val logger = Logger("InputProcessor")
   logger.info(s"Reading $inputFile...")
   logger.info("Blank lines removed.")
   /**
@@ -20,7 +20,7 @@ class InputProcessor(inputFile: String) {
     * @param end The row/line(inclusively) in the file where fitlering should end.
     * @return
     */
-  def filterByRow(start: Int, end: Int): Either[String, Iterator[String]] = {
+  def filterByRow(start: Int, end: Int): Either[String, List[String]] = {
     if (end > 0) logger.debug("Parsing by rows " + start + " to " + end)
     else logger.debug("Parsing by rows " + start + " to EOF")
     end match {
@@ -36,15 +36,14 @@ class InputProcessor(inputFile: String) {
     * @param end The first word in the row where filtering should end.
     * @return
     */
-  def filterByKey(start: String, end: String): Either[String, Iterator[String]] = {
+  def filterByKey(start: String, end: String): Either[String, List[String]] = {
     if (end.length > 0)
       logger.debug("Parsing by key, starting with " + start + " and ending with " + end)
     else
       logger.debug("Parsing by key, starting with " + start)
-    def getKeyRow(lines: Iterator[String], word: String): Int = {
+    def getKeyRow(lines: List[String], word: String): Int = {
       logger.debug("Searching for key row for keyword " + word)
-      val list = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
-      val row = list.indexWhere(_.startsWith(word))
+      val row = lines.indexWhere(_.startsWith(word))
       if (row == -1) {
         logger.debug(word.concat(" not found."))
         row
