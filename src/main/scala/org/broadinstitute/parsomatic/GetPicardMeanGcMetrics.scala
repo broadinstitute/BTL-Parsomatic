@@ -1,6 +1,8 @@
 package org.broadinstitute.parsomatic
 import com.typesafe.scalalogging.Logger
+
 import scala.math.BigDecimal.RoundingMode
+import scala.util.control.NonFatal
 
 /**
   * Created by amr on 9/22/2016.
@@ -43,12 +45,9 @@ class GetPicardMeanGcMetrics(input: Iterator[String], delim: String) {
       if (meanGc > 0) {
         Right(Iterator("MEAN_GC_CONTENT", meanGc.toString))
       }
-      else Left("GetPicardMeanGcMetrics.getMean failed because meanGC was less than or greater than zero.")
+      else Left("GetPicardMeanGcMetrics.getMean failed: meanGC was less than zero.")
     } catch {
-      case nfe: NumberFormatException => Left("GetPicardMeanGcMetrics.getMean failed:" + nfe.getLocalizedMessage)
-      // TODO: Can make the error below more informative
-      case e: Exception => Left("GetPicardMeanGcMetrics.getMean failed with unknown error")
-      case _ => Left("GetPicardMeanGcMetrics.getMean failed with unknown error")
+      case NonFatal(e) => Left("GetPicardMeanGcMetrics.getMean failed:" + e.getLocalizedMessage)
     }
   }
 }

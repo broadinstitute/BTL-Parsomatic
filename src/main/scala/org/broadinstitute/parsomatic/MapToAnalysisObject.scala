@@ -74,8 +74,8 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         Right(PicardAlignmentSummaryAnalysis(metrics.toList))
       case "PicardInsertSizeMetrics" =>
         Right(PicardInsertSizeMetrics(
-          medianInsertSize = convertToInt(input.head, "MEDIAN_INSERT_SIZE", "-1"),
-          medianAbsoluteDeviation = convertToInt(input.head, "MEDIAN_ABSOLUTE_DEVIATION", "-1"),
+          medianInsertSize = convertToDouble(input.head, "MEDIAN_INSERT_SIZE", "-1.0"),
+          medianAbsoluteDeviation = convertToDouble(input.head, "MEDIAN_ABSOLUTE_DEVIATION", "-1.0"),
           minInsertSize = convertToInt(input.head, "MIN_INSERT_SIZE", "-1"),
           maxInsertSize = convertToInt(input.head, "MAX_INSERT_SIZE", "-1"),
           meanInsertSize = convertToDouble(input.head, "MEAN_INSERT_SIZE", "-1.0"),
