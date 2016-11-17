@@ -19,6 +19,7 @@ object Presets {
     val start = 6
     val end = 9
     config.delimiter = "\t"
+    config.mdType = "PicardAlignmentMetrics"
     def run() = filterResultHandler(filter(start, end), config)
   }
 
@@ -27,6 +28,7 @@ object Presets {
     val start = "CYCLE"
     val end = ""
     config.delimiter = "\t"
+    config.mdType = "PicardMeanQualByCycle"
     def run () = {
       filter(start, end) match {
         case Right(filterResult) =>
@@ -41,6 +43,7 @@ object Presets {
     val start = "GC"
     val end = ""
     config.delimiter = "\t"
+    config.mdType = "PicardMeanGc"
     def run () = {
       filter(start, end) match {
         case Right(filterResult) =>
@@ -63,6 +66,7 @@ object Presets {
     val start = 1
     val end = 0
     config.delimiter = "\t"
+    config.mdType = "ErccStats"
     def run () = {
       filter(start, end) match {
         case Right(filterResult) =>
@@ -77,6 +81,7 @@ object Presets {
     val start = 1
     val end = 0
     config.delimiter = "\t"
+    config.mdType = "RnaSeqQcStats"
     def run() = filterResultHandler(filter(start, end), config)
   }
 }

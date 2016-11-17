@@ -4,7 +4,7 @@ import org.broadinstitute.parsomatic.GetErccStats
   * Created by amr on 9/29/2016.
   */
 class GetErccStatsSpec extends FlatSpec with Matchers{
-  val input = "2368092\n75658\n293314\n0.84419\n0.0319489\n0.123861".split("\n").toList
+  private val input = "2368092\n75658\n293314\n0.84419\n0.0319489\n0.123861".split("\n").toList
   "GetErccStats.getStats" should "return a failure message if input stats are wrong length" in {
     val badStats = "2368092\n75658\n293314\n0.84419\n".split("\n").toList
     val badErccStats = GetErccStats.getStats(badStats, "\t")

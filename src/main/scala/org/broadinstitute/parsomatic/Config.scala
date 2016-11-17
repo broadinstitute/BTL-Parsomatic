@@ -10,7 +10,7 @@ case class Config (
                    entryFile: String = "",
                    inputFile: String = "",
                    preset: String = "",
-                   mdType: String = "",
+                   var mdType: String = "",
                    headerRow: Int = 1,
                    lastRow: Int = 0,
                    byKey: Boolean = false,

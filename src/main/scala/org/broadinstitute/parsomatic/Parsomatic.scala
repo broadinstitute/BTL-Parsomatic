@@ -22,7 +22,7 @@ object Parsomatic extends App {
   def parser = {
 
     new scopt.OptionParser[Config]("Parsomatic") {
-      head("Parsomatic", "1.1.0")
+      head("Parsomatic", "1.1.1")
       opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
       opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
@@ -36,7 +36,7 @@ object Parsomatic extends App {
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
         .text("Use a parser preset from:".concat(presetList.toString()))
       opt[String]('m', "mdType").valueName("<type>").optional().action((x, c) => c.copy(mdType = x))
-        .text("MD type object to create. Choose from:".concat(presetList.toString()))
+        .text("MD type object to create. Required if not using presets. Choose from:".concat(presetList.toString()))
       opt[Int]('h', "headerRow").valueName("<int>").action((x, c) => c.copy(headerRow = x))
         .text("Header row in file. Do not include blank lines when counting. Default = 1.")
       opt[Int]('l', "lastRow").valueName("<int>").optional().action((x, c) => c.copy(lastRow = x))

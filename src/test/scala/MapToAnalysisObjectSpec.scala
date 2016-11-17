@@ -17,7 +17,7 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
       "PF_ALIGNED_BASES" -> "0",
       "PF_ALIGNED_BASES" -> "0",
       "PF_ALIGNED_BASES" -> "0",
-      "PF_HQ_ALIGNED_20_BASES" -> "0",
+      "PF_HQ_ALIGNED_Q20_BASES" -> "0",
       "PF_HQ_MEDIAN_MISMATCHES" -> "0",
       "PF_MISMATCH_RATE" -> "0",
       "PF_HQ_ERROR_RATE" -> "0",
@@ -62,6 +62,7 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   "A PicardAlignmentMetrics mapper" should "return a PicardAlignmentSummaryAnalysis when given valid input" in {
     val mapper = new MapToAnalysisObject("PicardAlignmentMetrics", alnTestEntry)
     val metrics = mapper.go()
+    println(metrics)
     metrics.right.get.isInstanceOf[PicardAlignmentSummaryAnalysis]  should be (true)
     metrics match {
       case Right(r) => for (y <- r.toString.split(Array(',', '(', ')')).drop(4)) assert(y.toDouble > -1)

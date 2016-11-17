@@ -57,7 +57,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           pfAlignedBases = convertToInt(row, "PF_ALIGNED_BASES", "-1"),
           pfHqAlignedReads = convertToInt(row, "PF_ALIGNED_BASES", "-1"),
           pfHqAlignedBases = convertToInt(row, "PF_ALIGNED_BASES", "-1"),
-          pfHqAlignedQ20Bases = convertToInt(row, "PF_HQ_ALIGNED_20_BASES", "-1"),
+          pfHqAlignedQ20Bases = convertToInt(row, "PF_HQ_ALIGNED_Q20_BASES", "-1"),
           pfHqMedianMismatches = convertToDouble(row, "PF_HQ_MEDIAN_MISMATCHES", "-1.0"),
           pfMismatchRate = convertToDouble(row, "PF_MISMATCH_RATE", "-1.0"),
           pfHqErrorRate = convertToDouble(row, "PF_HQ_ERROR_RATE", "-1.0"),
@@ -113,12 +113,13 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           mappedUnique = convertToInt(input.head, "Mapped Unique", "-1"),
           uniqueRateofMapped = convertToDouble(input.head, "Unique Rate of Mapped", "-1.0"),
           mappedUniqueRateofTotal = convertToDouble(input.head, "Mapped Unique Rate of Total", "-1.0"),
-          alternativeAlignments = convertToInt(input.head, "Alternative Alignments", "-1"),
+          // Note that RnaSeqQC tool output misspells Alignments, hence we match on the mispelling.
+          alternativeAlignments = convertToInt(input.head, "Alternative Aligments", "-1"),
           duplicationRateOfMapped = convertToDouble(input.head, "Duplication Rate of Mapped", "-1")
         ),
         annotationMetrics = RnaSeqQcStats.AnnotationMetrics(
           rRNA = convertToInt(input.head, "rRNA", "-1"),
-          rRNArate = convertToDouble(input.head, "rRNA Rate", "-1.0"),
+          rRNArate = convertToDouble(input.head, "rRNA rate", "-1.0"),
           intragenicRate = convertToDouble(input.head, "Intragenic Rate", "-1.0"),
           exonicRate = convertToDouble(input.head, "Exonic Rate", "-1.0"),
           intergenicRate = convertToDouble(input.head, "Intergenic Rate", "-1.0"),
@@ -138,7 +139,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           end2MismatchRate = convertToDouble(input.head, "End 2 Sense", "-1"),
           end2Antisense = convertToInt(input.head, "End 2 Antisense", "-1"),
           end2PctSense = convertToDouble(input.head, "End 2 % Sense", "-1"),
-          noCovered5Prime = convertToInt(input.head, "No Covered 5'", "-1"),
+          noCovered5Prime = convertToInt(input.head, " No. Covered 5'", "-1"),
           fivePrimeNorm = convertToDouble(input.head, "5' Norm", "-1.0")
         ),
         gapMetrics = RnaSeqQcStats.GapMetrics(
@@ -150,7 +151,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           chimericPairs = convertToInt(input.head, "Chimeric Pairs", "-1"),
           readLength = convertToInt(input.head, "Read Length", "-1"),
           unpairedReads = convertToInt(input.head, "Unpaired Reads", "-1"),
-          fragmentLengthStdDev = convertToDouble(input.head, "Fragment Length Standard Deviation", "-1.0"),
+          fragmentLengthStdDev = convertToDouble(input.head, "Fragment Length StdDev", "-1.0"),
           totalPurityFilteredReadsSequenced = convertToInt(input.head, "Total Purity Filtered Reads Sequenced", "-1"),
           fragmentLengthMean = convertToInt(input.head, "Fragment Length Mean", "-1"),
           baseMismatchRate = convertToDouble(input.head, "Base Mismatch Rate", "-1.0"),
