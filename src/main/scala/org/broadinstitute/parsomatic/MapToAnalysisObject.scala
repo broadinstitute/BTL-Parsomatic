@@ -132,11 +132,11 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         ),
         endMetrics = RnaSeqQcStats.EndMetrics(
           end1Sense = convertToInt(input.head, "End 1 Sense", "-1"),
-          end1MismatchRate = convertToDouble(input.head, "End 1 Sense", "-1"),
+          end1MismatchRate = convertToDouble(input.head, "End 1 Mismatch Rate", "-1.0"),
           end1Antisense = convertToInt(input.head, "End 1 Antisense", "-1"),
           end1PctSense = convertToDouble(input.head, "End 1 % Sense", "-1"),
           end2Sense = convertToInt(input.head, "End 2 Sense", "-1"),
-          end2MismatchRate = convertToDouble(input.head, "End 2 Sense", "-1"),
+          end2MismatchRate = convertToDouble(input.head, "End 2 Mismatch Rate", "-1.0"),
           end2Antisense = convertToInt(input.head, "End 2 Antisense", "-1"),
           end2PctSense = convertToDouble(input.head, "End 2 % Sense", "-1"),
           noCovered5Prime = convertToInt(input.head, " No. Covered 5'", "-1"),
