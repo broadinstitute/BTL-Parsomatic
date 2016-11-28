@@ -3,6 +3,7 @@ package org.broadinstitute.parsomatic
 /**
   * Created by amr on 9/1/2016.
   */
+// Var probably not the best thing to do here, but use option instead.
 case class Config (
                    sampleId: String = "",
                    var setId: String = "",
