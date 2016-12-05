@@ -139,7 +139,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           end2MismatchRate = convertToDouble(input.head, "End 2 Mismatch Rate", "-1.0"),
           end2Antisense = convertToInt(input.head, "End 2 Antisense", "-1"),
           end2PctSense = convertToDouble(input.head, "End 2 % Sense", "-1"),
-          noCovered5Prime = convertToInt(input.head, " No. Covered 5'", "-1"),
+          noCovered5Prime = convertToInt(input.head, "No. Covered 5'", "-1"),
           fivePrimeNorm = convertToDouble(input.head, "5' Norm", "-1.0")
         ),
         gapMetrics = RnaSeqQcStats.GapMetrics(
