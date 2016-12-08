@@ -66,7 +66,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           readsAlignedInPairs = convertToInt(row, "READS_ALIGNED_IN_PAIRS", "-1"),
           pctReadsAlignedInPairs = convertToDouble(row, "PCT_READS_ALIGNED_IN_PAIRS", "-1.0"),
           badCycles = convertToInt(row, "BAD_CYCLES", "-1"),
-          strandBalance = convertToInt(row, "STRAND_BALANCE", "-1"),
+          strandBalance = convertToDouble(row, "STRAND_BALANCE", "-1.0"),
           pctChimeras = convertToDouble(row, "PCT_CHIMERAS", "-1.0"),
           pctAdapter = convertToDouble(row, "PCT_ADAPTER", "-1.0")
           )
@@ -155,7 +155,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           totalPurityFilteredReadsSequenced = convertToInt(input.head, "Total Purity Filtered Reads Sequenced", "-1"),
           fragmentLengthMean = convertToInt(input.head, "Fragment Length Mean", "-1"),
           baseMismatchRate = convertToDouble(input.head, "Base Mismatch Rate", "-1.0"),
-          failedVendorQCCheck = convertToInt(input.head, "Failed Vendor QC Check", "-1"),
+          failedVendorQCCheck = convertToDouble(input.head, "Failed Vendor QC Check", "-1.0"),
           estimatedLibrarySize = convertToInt(input.head, "Estimated Library Size", "-1"),
           expressionProfilingEfficiency = convertToDouble(input.head, "Expression Profiling Efficiency", "-1.0"),
           transcriptsDetected = convertToInt(input.head, "Transcripts Detected", "-1")
