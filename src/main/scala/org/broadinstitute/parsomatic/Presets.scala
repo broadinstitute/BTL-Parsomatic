@@ -84,4 +84,11 @@ object Presets {
     config.mdType = "RnaSeqQcStats"
     def run() = filterResultHandler(filter(start, end), config)
   }
+
+  class DemultiplexedStatsPreset(config: Config) {
+    config.delimiter = "\t"
+    //TODO: Result should return a List with the string "pctOfTotalDemultiplexed\t<double>"
+    val result: Either[String, List[String]] = Left("foo")
+    def run() = filterResultHandler(result, config)
+  }
 }

@@ -17,7 +17,7 @@ import com.lambdaworks.jacks.JacksMapper
 object Parsomatic extends App {
 
   val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
-    "PicardMeanGc", "RnaSeqQcStats", "ErccStats")
+    "PicardMeanGc", "RnaSeqQcStats", "ErccStats, DemultiplexedStats")
 
   def parser = {
 
@@ -101,6 +101,8 @@ object Parsomatic extends App {
           preset.run()
         case "PicardMeanGc" => val preset = new Presets.PicardMeanGcPreset(config)
           preset.run()
+        case "DemultiplexedStats" => val preset = new Presets.DemultiplexedStatsPreset(config)
+          preset.run()
         case _ => failureExit("Unrecognized preset.")
       }
     } else {
@@ -165,7 +167,7 @@ object Parsomatic extends App {
     result match {
       case Right(filteredResult) =>
         logger.info(config.inputFile + " filtered successfully.")
-        val resList = filteredResult.toList
+        val resList = filteredResult
         if (config.validateDelim)
           if (!validateDelimiter(resList.to[Iterator], config.delimiter, config.vOffset))
             failureExit("delimiter does not split lines equally.")
