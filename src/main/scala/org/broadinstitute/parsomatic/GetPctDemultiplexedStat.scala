@@ -12,6 +12,7 @@ import scala.collection.mutable
 import scala.concurrent.duration._
 import scala.concurrent.Await
 import org.broadinstitute.MD.types.marshallers.Marshallers._
+import org.broadinstitute.parsomatic.Parsomatic.failureExit
 
 /**
   * Created by amr on 12/8/2016.
@@ -41,7 +42,6 @@ class GetPctDemultiplexedStat(config: Config) extends Samples with Metrics with 
      2 - divide the specified sample's total reads by the total reads for the library.
      3 - generate a result that is a Right(List[String]).
     */
-
     val query = doQuery(mq)
     val result = query.flatMap(response => Unmarshal(response.entity).to[List[SampleMetrics]])
     val metricsList = Await.result(result, 5 seconds)
@@ -49,7 +49,18 @@ class GetPctDemultiplexedStat(config: Config) extends Samples with Metrics with 
       "PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads" -> None
     )
     val mapsList = fillMap(demultiplexMap, metricsList)
-    println(mapsList)
-    Left(s"getPctDemultiplexedStat.getStats failed:")
+    val totals = mapsList.map( x =>
+    {
+      x.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
+        case Some(t: Int) => t.toLong
+        case _ => failureExit(s"totalReads not populated for ${x.getOrElse("sampleName", "sample")}")
+      }
+    }
+    )
+    totals match {
+      case l: List[Long] => println(l.sum)
+      case _ => failureExit("Totals list contains non-Long values.")
+    }
+    Left(s"getPctDemultiplexedStat.getStats failed")
   }
 }
