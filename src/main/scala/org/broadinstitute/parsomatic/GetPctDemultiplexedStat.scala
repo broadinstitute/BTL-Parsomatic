@@ -2,12 +2,14 @@ package org.broadinstitute.parsomatic
 import akka.actor.ActorSystem
 import akka.http.scaladsl.unmarshalling.Unmarshal
 import akka.stream.ActorMaterializer
+import com.typesafe.scalalogging.Logger
 import org.broadinstitute.MD.rest.{SampleMetrics, SampleMetricsRequest}
 import org.broadinstitute.MD.types.SampleRef
 import org.broadinstitute.MD.types.metrics.MetricsType
 import org.broadinstitute.MD.types.metrics.MetricsType.MetricsType
 import org.broadinstitute.mdreport.Reporters.getSamples
 import org.broadinstitute.mdreport.ReporterTraits._
+
 import scala.collection.mutable
 import scala.concurrent.duration._
 import scala.concurrent.Await
@@ -18,6 +20,7 @@ import org.broadinstitute.parsomatic.Parsomatic.failureExit
   * Created by amr on 12/8/2016.
   */
 class GetPctDemultiplexedStat(config: Config) extends Samples with Metrics with Requester with MapMaker{
+  private val logger = Logger("GetPctDemultiplexedStat")
   private implicit lazy val system = ActorSystem()
   private implicit lazy val materializer = ActorMaterializer()
   private implicit lazy val ec = system.dispatcher
@@ -49,18 +52,29 @@ class GetPctDemultiplexedStat(config: Config) extends Samples with Metrics with 
       "PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads" -> None
     )
     val mapsList = fillMap(demultiplexMap, metricsList)
+    // Code review this section
+    var sampleTotal: Double = 0
+    for (m <- mapsList)
+      if (m("sampleName") == config.sampleId)
+        m.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
+          case Some(t: Int) => sampleTotal = t.toDouble
+          case _ => failureExit(s"totalReads not populated for ${m.getOrElse("sampleName", "sample")}")
+        }
     val totals = mapsList.map( x =>
     {
       x.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
-        case Some(t: Int) => t.toLong
+        case Some(t: Int) => t.toDouble
         case _ => failureExit(s"totalReads not populated for ${x.getOrElse("sampleName", "sample")}")
       }
     }
     )
     totals match {
-      case l: List[Long] => println(l.sum)
-      case _ => failureExit("Totals list contains non-Long values.")
+      case l: List[Double] =>
+        val libTotals = l.sum
+        val percentDemultiplexed: Double = (sampleTotal/libTotals) * 100.0
+        logger.debug(s"% Demultiplex Calculation: ($sampleTotal/$libTotals) * 100.0 = $percentDemultiplexed")
+        Right(List("pctOfTotalDemultiplexed", percentDemultiplexed.toString))
+      case _ => Left("Totals list contains non-Long values.")
     }
-    Left(s"getPctDemultiplexedStat.getStats failed")
   }
 }

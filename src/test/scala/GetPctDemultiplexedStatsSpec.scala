@@ -8,11 +8,16 @@ class GetPctDemultiplexedStatsSpec extends FlatSpec with Matchers{
   "GetPctDemultiplexedStatsSpec" should "return a listmap" in {
     val config = Config(
       test = true,
-      setId = "SSF-1859",
-      version = Some(7)
+      sampleId = "SSF1859B04_A375_AkiYoda",
+      setId = "SSF1859",
+      version = Some(1479320376921L)
     )
     val getter = new GetPctDemultiplexedStat(config)
-    getter.getStats()
+    val foo = getter.getStats()
+    foo match {
+      case Right(r) => println(r)
+      case Left(l) => println(l)
+    }
 
   }
   it should "" in {
