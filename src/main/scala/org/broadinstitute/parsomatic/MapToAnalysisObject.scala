@@ -35,6 +35,8 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
   def convertToDouble(row: Map[String, String], key: String, default: String) =
     converter(row, key, default, (_: String).toDouble)
 
+  def convertToLong(row: Map[String, String], key: String, default: String) =
+    converter(row, key, default, (_: String).toLong)
   /**
     * Execution engine for MapToObjects.
     *
@@ -48,22 +50,22 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         for (row <- input) {
         metrics += new PicardAlignmentSummaryMetrics(
           category = row.getOrElse("CATEGORY", "N/A"),
-          totalReads = convertToInt(row, "TOTAL_READS", "-1"),
-          pfReads = convertToInt(row, "PF_READS", "-1"),
+          totalReads = convertToLong(row, "TOTAL_READS", "-1"),
+          pfReads = convertToLong(row, "PF_READS", "-1"),
           pctPfReads = convertToDouble(row, "PCT_PF_READS", "-1.0"),
-          pfNoiseReads = convertToInt(row, "PF_NOISE_READS", "-1"),
-          pfReadsAligned = convertToInt(row, "PF_READS_ALIGNED", "-1"),
+          pfNoiseReads = convertToLong(row, "PF_NOISE_READS", "-1"),
+          pfReadsAligned = convertToLong(row, "PF_READS_ALIGNED", "-1"),
           pctPfReadsAligned = convertToDouble(row, "PCT_PF_READS_ALIGNED", "-1.0"),
-          pfAlignedBases = convertToInt(row, "PF_ALIGNED_BASES", "-1"),
-          pfHqAlignedReads = convertToInt(row, "PF_ALIGNED_BASES", "-1"),
-          pfHqAlignedBases = convertToInt(row, "PF_ALIGNED_BASES", "-1"),
-          pfHqAlignedQ20Bases = convertToInt(row, "PF_HQ_ALIGNED_Q20_BASES", "-1"),
+          pfAlignedBases = convertToLong(row, "PF_ALIGNED_BASES", "-1"),
+          pfHqAlignedReads = convertToLong(row, "PF_ALIGNED_BASES", "-1"),
+          pfHqAlignedBases = convertToLong(row, "PF_ALIGNED_BASES", "-1"),
+          pfHqAlignedQ20Bases = convertToLong(row, "PF_HQ_ALIGNED_Q20_BASES", "-1"),
           pfHqMedianMismatches = convertToDouble(row, "PF_HQ_MEDIAN_MISMATCHES", "-1.0"),
           pfMismatchRate = convertToDouble(row, "PF_MISMATCH_RATE", "-1.0"),
           pfHqErrorRate = convertToDouble(row, "PF_HQ_ERROR_RATE", "-1.0"),
           pfIndelRate = convertToDouble(row, "PF_INDEL_RATE", "-1.0"),
           meanReadLength = convertToInt(row, "MEAN_READ_LENGTH", "-1"),
-          readsAlignedInPairs = convertToInt(row, "READS_ALIGNED_IN_PAIRS", "-1"),
+          readsAlignedInPairs = convertToLong(row, "READS_ALIGNED_IN_PAIRS", "-1"),
           pctReadsAlignedInPairs = convertToDouble(row, "PCT_READS_ALIGNED_IN_PAIRS", "-1.0"),
           badCycles = convertToInt(row, "BAD_CYCLES", "-1"),
           strandBalance = convertToDouble(row, "STRAND_BALANCE", "-1.0"),
@@ -80,7 +82,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           maxInsertSize = convertToInt(input.head, "MAX_INSERT_SIZE", "-1"),
           meanInsertSize = convertToDouble(input.head, "MEAN_INSERT_SIZE", "-1.0"),
           standardDeviation = convertToDouble(input.head, "STANDARD_DEVIATION", "-1.0"),
-          readPairs = convertToInt(input.head, "READ_PAIRS", "-1"),
+          readPairs = convertToLong(input.head, "READ_PAIRS", "-1"),
           pairOrientation = input.head.getOrElse("PAIR_ORIENTATION", "N/A"),
           widthOf10Pct = convertToInt(input.head, "WIDTH_OF_10_PERCENT", "-1"),
           widthOf20Pct = convertToInt(input.head, "WIDTH_OF_20_PERCENT", "-1"),
@@ -105,20 +107,20 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         sample = input.head.getOrElse("Sample", "N/A"),
         note = input.head.getOrElse("Note", "N/A"),
         alignmentMetrics = RnaSeqQcStats.AlignmentMetrics(
-          mapped = convertToInt(input.head, "Mapped", "-1"),
-          mappedPairs = convertToInt(input.head, "Mapped Pairs", "-1"),
+          mapped = convertToLong(input.head, "Mapped", "-1"),
+          mappedPairs = convertToLong(input.head, "Mapped Pairs", "-1"),
           mappingRate = convertToDouble(input.head, "Mapping Rate", "-1.0"),
           end1MappingRate = convertToDouble(input.head, "End 1 Mapping Rate", "-1.0"),
           end2MappingRate = convertToDouble(input.head, "End 2 Mapping Rate", "-1.0"),
-          mappedUnique = convertToInt(input.head, "Mapped Unique", "-1"),
+          mappedUnique = convertToLong(input.head, "Mapped Unique", "-1"),
           uniqueRateofMapped = convertToDouble(input.head, "Unique Rate of Mapped", "-1.0"),
           mappedUniqueRateofTotal = convertToDouble(input.head, "Mapped Unique Rate of Total", "-1.0"),
           // Note that RnaSeqQC tool output misspells Alignments, hence we match on the mispelling.
-          alternativeAlignments = convertToInt(input.head, "Alternative Aligments", "-1"),
+          alternativeAlignments = convertToLong(input.head, "Alternative Aligments", "-1"),
           duplicationRateOfMapped = convertToDouble(input.head, "Duplication Rate of Mapped", "-1")
         ),
         annotationMetrics = RnaSeqQcStats.AnnotationMetrics(
-          rRNA = convertToInt(input.head, "rRNA", "-1"),
+          rRNA = convertToLong(input.head, "rRNA", "-1"),
           rRNArate = convertToDouble(input.head, "rRNA rate", "-1.0"),
           intragenicRate = convertToDouble(input.head, "Intragenic Rate", "-1.0"),
           exonicRate = convertToDouble(input.head, "Exonic Rate", "-1.0"),
@@ -131,15 +133,15 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           meanPerBaseCov = convertToDouble(input.head, "Mean Per Base Cov.", "-1.0")
         ),
         endMetrics = RnaSeqQcStats.EndMetrics(
-          end1Sense = convertToInt(input.head, "End 1 Sense", "-1"),
+          end1Sense = convertToLong(input.head, "End 1 Sense", "-1"),
           end1MismatchRate = convertToDouble(input.head, "End 1 Mismatch Rate", "-1.0"),
-          end1Antisense = convertToInt(input.head, "End 1 Antisense", "-1"),
+          end1Antisense = convertToLong(input.head, "End 1 Antisense", "-1"),
           end1PctSense = convertToDouble(input.head, "End 1 % Sense", "-1"),
-          end2Sense = convertToInt(input.head, "End 2 Sense", "-1"),
+          end2Sense = convertToLong(input.head, "End 2 Sense", "-1"),
           end2MismatchRate = convertToDouble(input.head, "End 2 Mismatch Rate", "-1.0"),
-          end2Antisense = convertToInt(input.head, "End 2 Antisense", "-1"),
+          end2Antisense = convertToLong(input.head, "End 2 Antisense", "-1"),
           end2PctSense = convertToDouble(input.head, "End 2 % Sense", "-1"),
-          noCovered5Prime = convertToInt(input.head, "No. Covered 5'", "-1"),
+          noCovered5Prime = convertToLong(input.head, "No. Covered 5'", "-1"),
           fivePrimeNorm = convertToDouble(input.head, "5' Norm", "-1.0")
         ),
         gapMetrics = RnaSeqQcStats.GapMetrics(
@@ -148,15 +150,15 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           cumulGapLength = convertToInt(input.head, "Cumul. Gap Length", "-1")
         ),
         readMetrics = RnaSeqQcStats.ReadMetrics(
-          chimericPairs = convertToInt(input.head, "Chimeric Pairs", "-1"),
+          chimericPairs = convertToLong(input.head, "Chimeric Pairs", "-1"),
           readLength = convertToInt(input.head, "Read Length", "-1"),
-          unpairedReads = convertToInt(input.head, "Unpaired Reads", "-1"),
+          unpairedReads = convertToLong(input.head, "Unpaired Reads", "-1"),
           fragmentLengthStdDev = convertToDouble(input.head, "Fragment Length StdDev", "-1.0"),
-          totalPurityFilteredReadsSequenced = convertToInt(input.head, "Total Purity Filtered Reads Sequenced", "-1"),
+          totalPurityFilteredReadsSequenced = convertToLong(input.head, "Total Purity Filtered Reads Sequenced", "-1"),
           fragmentLengthMean = convertToInt(input.head, "Fragment Length Mean", "-1"),
           baseMismatchRate = convertToDouble(input.head, "Base Mismatch Rate", "-1.0"),
           failedVendorQCCheck = convertToDouble(input.head, "Failed Vendor QC Check", "-1.0"),
-          estimatedLibrarySize = convertToInt(input.head, "Estimated Library Size", "-1"),
+          estimatedLibrarySize = convertToLong(input.head, "Estimated Library Size", "-1"),
           expressionProfilingEfficiency = convertToDouble(input.head, "Expression Profiling Efficiency", "-1.0"),
           transcriptsDetected = convertToInt(input.head, "Transcripts Detected", "-1")
             )
@@ -164,9 +166,9 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         )
       case "ErccStats" =>
         Right(new ErccStats(
-        totalReads = convertToInt(input.head, "TOTAL_READS", "-1"),
-        totalErccReads = convertToInt(input.head,"ERCC_READS", "-1"),
-        totalUnalignedReads = convertToInt(input.head,"UNALIGNED_ERCC_READS", "-1"),
+        totalReads = convertToLong(input.head, "TOTAL_READS", "-1"),
+        totalErccReads = convertToLong(input.head,"ERCC_READS", "-1"),
+        totalUnalignedReads = convertToLong(input.head,"UNALIGNED_ERCC_READS", "-1"),
         fractionGenomeReferenceReads = convertToDouble(input.head, "FRC_GENOME_REF", "-1.0"),
         fractionErccReads = convertToDouble(input.head, "FRC_ERCC_READS", "-1.0"),
         fractionUnalignedReads = convertToDouble(input.head, "FRC_UNALIGNED_ERCC", "-1.0")
@@ -175,6 +177,18 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
       case "PicardMeanGc" =>
         Right(new PicardReadGcMetrics(
         meanGcContent = convertToDouble(input.head, "MEAN_GC_CONTENT", "-1.0")
+        )
+      )
+      case "PicardEstimateLibrarySize" => Right(new PicardEstimateLibraryComplexity(
+        library = input.head.getOrElse("LIBRARY", "N/A"),
+        unpariedReadsExamined = convertToLong(input.head, "UNPAIRED_READS_EXAMINED", "-1.0"),
+        readPairsExamined = convertToLong(input.head, "READ_PAIRS_EXAMINED", "-1.0"),
+        unmappedReads = convertToLong(input.head, "UNMAPPED_READS", "-1.0"),
+        unpairedReadDuplicates = convertToLong(input.head, "UNPAIRED_READ_DUPLICATES", "-1.0"),
+        readPairDuplicates = convertToLong(input.head, "READ_PAIR_DUPLICATES", "-1.0"),
+        readPairOpticalDuplicates = convertToLong(input.head, "READ_PAIR_OPTICAL_DUPLICATES", "-1.0"),
+        percentDuplciation = convertToDouble(input.head, "PERCENT_DUPLICATION", "-1.0"),
+        estimatedLibrarySize = convertToLong(input.head, "ESTIMATED_LIBRARY_SIZE", "-1.0")
         )
       )
       case "DemultiplexedStats" => Right(new DemultiplexedStats(

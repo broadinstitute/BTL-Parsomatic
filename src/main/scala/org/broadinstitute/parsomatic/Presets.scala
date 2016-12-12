@@ -53,7 +53,15 @@ object Presets {
     }
   }
 
-  class PicardHistoMetricPreset(config: Config) extends Rows with RowFilter{
+  class PicardInsertSizeMetric(config: Config) extends Rows with RowFilter{
+    val inputFile = config.inputFile
+    val start = 6
+    val end = 7
+    config.delimiter = "\t"
+    def run() = filterResultHandler(filter(start, end), config)
+  }
+
+  class PicardEstimateLibrarySize(config: Config) extends Rows with RowFilter{
     val inputFile = config.inputFile
     val start = 6
     val end = 7

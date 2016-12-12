@@ -17,12 +17,12 @@ import com.lambdaworks.jacks.JacksMapper
 object Parsomatic extends App {
 
   val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
-    "PicardMeanGc", "RnaSeqQcStats", "ErccStats, DemultiplexedStats")
+    "PicardMeanGc", "RnaSeqQcStats", "ErccStats" , "DemultiplexedStats", "PicardEstimateLibrarySize")
 
   def parser = {
 
     new scopt.OptionParser[Config]("Parsomatic") {
-      head("Parsomatic", "1.1.4")
+      head("Parsomatic", "1.1.5")
       opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
       opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
@@ -90,7 +90,7 @@ object Parsomatic extends App {
         case "PicardAlignmentMetrics" => val preset = new Presets.PicardAlignmentMetricPreset(config)
           config.vOffset = 3
           preset.run()
-        case "PicardInsertSizeMetrics" => val preset = new Presets.PicardHistoMetricPreset(config)
+        case "PicardInsertSizeMetrics" => val preset = new Presets.PicardInsertSizeMetric(config)
           config.vOffset = 3
           preset.run()
         case "RnaSeqQcStats" => val preset = new Presets.RnaSeqQCPreset(config)
@@ -100,6 +100,8 @@ object Parsomatic extends App {
         case "ErccStats" => val preset = new Presets.ErccStatsPreset(config)
           preset.run()
         case "PicardMeanGc" => val preset = new Presets.PicardMeanGcPreset(config)
+          preset.run()
+        case "PicardEstimateLibrarySize" => val preset = new Presets.PicardEstimateLibrarySize(config)
           preset.run()
         case "DemultiplexedStats" => val preset = new Presets.DemultiplexedStatsPreset(config)
           preset.run()
