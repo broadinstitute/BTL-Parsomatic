@@ -87,8 +87,8 @@ object Presets {
 
   class DemultiplexedStatsPreset(config: Config) {
     config.delimiter = "\t"
-    //TODO: Result should return a List with the string "pctOfTotalDemultiplexed\t<double>"
-    val result: Either[String, List[String]] = Left("foo")
+    config.mdType = "DemultiplexedStats"
+    val result = new GetPctDemultiplexedStat(config).getStats()
     def run() = filterResultHandler(result, config)
   }
 }

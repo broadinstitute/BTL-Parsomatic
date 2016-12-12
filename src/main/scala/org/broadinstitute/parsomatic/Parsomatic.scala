@@ -31,8 +31,8 @@ object Parsomatic extends App {
         .text("Optional version string for the entry.")
       opt[String]('e', "entryFile").optional().action((x, c) => c.copy(entryFile = x))
         .text("If EntryCreator was used you may supply the entry file to pass along sampleId and version.")
-      opt[String]('f', "inputFile").valueName("<file>").required().action((x, c) => c.copy(inputFile = x))
-        .text("Path to input file to parse. Required.")
+      opt[String]('f', "inputFile").valueName("<file>").optional().action((x, c) => c.copy(inputFile = x))
+        .text("Path to input file to parse. Required for all but DemultiplexedStats.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
         .text("Use a parser preset from:".concat(presetList.toString()))
       opt[String]('m', "mdType").valueName("<type>").optional().action((x, c) => c.copy(mdType = x))
@@ -82,8 +82,8 @@ object Parsomatic extends App {
   def execute(config: Config) = {
     val logger = Logger("Parsomatic.execute")
     logger.debug(config.toString)
-    val ip = new InputProcessor(config.inputFile)
     if (config.byKey) {
+      val ip = new InputProcessor(config.inputFile)
       filterResultHandler(ip.filterByKey(config.startKey, config.endKey), config)
     } else if (config.preset.length() > 0) {
       config.preset match {
@@ -106,6 +106,7 @@ object Parsomatic extends App {
         case _ => failureExit("Unrecognized preset.")
       }
     } else {
+      val ip = new InputProcessor(config.inputFile)
       filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow), config)
     }
   }

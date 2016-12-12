@@ -177,7 +177,11 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         meanGcContent = convertToDouble(input.head, "MEAN_GC_CONTENT", "-1.0")
         )
       )
-      case _ => Left("unrecognized mdType input for MapToObject")
+      case "DemultiplexedStats" => Right(new DemultiplexedStats(
+        pctOfTotalDemultiplexed = convertToDouble(input.head, "pctOfTotalDemultiplexed", "-1.0")
+        )
+      )
+      case _ => Left("unrecognized mdType input for MapToAnalysisObject")
     }
   }
 }
