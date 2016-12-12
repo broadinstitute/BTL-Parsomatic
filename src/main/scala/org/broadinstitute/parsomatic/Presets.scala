@@ -58,6 +58,7 @@ object Presets {
     val start = 6
     val end = 7
     config.delimiter = "\t"
+    config.mdType = "PicardInsertSizeMetrics"
     def run() = filterResultHandler(filter(start, end), config)
   }
 
@@ -66,6 +67,7 @@ object Presets {
     val start = 6
     val end = 7
     config.delimiter = "\t"
+    config.mdType = "PicardEstimateLibrarySize"
     def run() = filterResultHandler(filter(start, end), config)
   }
 
