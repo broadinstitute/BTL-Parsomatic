@@ -179,7 +179,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         meanGcContent = convertToDouble(input.head, "MEAN_GC_CONTENT", "-1.0")
         )
       )
-      case "PicardEstimateLibrarySize" => Right(new PicardEstimateLibraryComplexity(
+      case "PicardEstimateLibraryComplexity" => Right(new PicardEstimateLibraryComplexity(
         library = input.head.getOrElse("LIBRARY", "N/A"),
         unpariedReadsExamined = convertToLong(input.head, "UNPAIRED_READS_EXAMINED", "-1.0"),
         readPairsExamined = convertToLong(input.head, "READ_PAIRS_EXAMINED", "-1.0"),

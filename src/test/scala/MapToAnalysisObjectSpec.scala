@@ -5,6 +5,8 @@ import org.broadinstitute.MD.types.metrics._
 import org.scalatest._
 import org.broadinstitute.parsomatic.MapToAnalysisObject
 
+import scala.util
+
 class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   val alnTestEntry = List(
     Map("CATEGORY" -> "FIRST_OF_PAIR",
@@ -62,7 +64,6 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   "A PicardAlignmentMetrics mapper" should "return a PicardAlignmentSummaryAnalysis when given valid input" in {
     val mapper = new MapToAnalysisObject("PicardAlignmentMetrics", alnTestEntry)
     val metrics = mapper.go()
-    println(metrics)
     metrics.right.get.isInstanceOf[PicardAlignmentSummaryAnalysis]  should be (true)
     metrics match {
       case Right(r) => for (y <- r.toString.split(Array(',', '(', ')')).drop(4)) assert(y.toDouble > -1)
@@ -71,7 +72,8 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   }
   it should "give unrecognized MD type message with bad MD type" in {
     val mapper = new MapToAnalysisObject("foo", alnTestEntry)
-    mapper.go().left.get should be ("unrecognized mdType input for MapToObject")
+    println(mapper.go())
+    mapper.go().left.get should be ("unrecognized mdType input for MapToAnalysisObject")
   }
   it should "contain negative values to indicate a key for a parameter was not found" in {
     val missingKeys = List(Map("foo" -> "bar"))
@@ -97,7 +99,7 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   }
   it should "give unrecognized MD type message with bad MD type" in {
     val mapper = new MapToAnalysisObject("foo", alnTestEntry)
-    mapper.go().left.get should be ("unrecognized mdType input for MapToObject")
+    mapper.go().left.get should be ("unrecognized mdType input for MapToAnalysisObject")
   }
   it should "contain negative values to indicate a key for a parameter was not found" in {
     val missingKeys = List(Map("foo" -> "bar"))
@@ -123,7 +125,7 @@ class MapToAnalysisObjectSpec extends FlatSpec with Matchers {
   }
   it should "give unrecognized MD type message with bad MD type" in {
     val mapper = new MapToAnalysisObject("foo", mqcTestEntry)
-    mapper.go().left.get should be ("unrecognized mdType input for MapToObject")
+    mapper.go().left.get should be ("unrecognized mdType input for MapToAnalysisObject")
   }
   it should "contain negative values to indicate a key for a parameter was not found" in {
     val missingKeys = List(Map("foo" -> "bar"))
