@@ -8,9 +8,9 @@ class EstimateLibraryComplexitySpec extends FlatSpec with Matchers{
   "GetPctDemultiplexedStats" should "return a container with demultiplexed Stat" in {
     val config = Config(
       test = true,
-      sampleId = "SSF1859B04_A375_AkiYoda",
-      setId = "SSF1859",
-      version = Some(1479320376921L)
+      sampleId = "SSF1871C06_PeterNigrovic",
+      setId = "Mouse-Nigrovic",
+      version = Some(1483633919195L)
     )
     val getter = new GetPctDemultiplexedStat(config)
     val foo = getter.getStats()

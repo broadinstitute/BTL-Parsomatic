@@ -101,7 +101,7 @@ object Parsomatic extends App {
           preset.run()
         case "PicardMeanGc" => val preset = new Presets.PicardMeanGcPreset(config)
           preset.run()
-        case "PicardEstimateLibraryComplexity" => val preset = new Presets.PicardEstimateLibrarySize(config)
+        case "PicardEstimateLibraryComplexity" => val preset = new Presets.PicardEstimateLibraryComplexity(config)
           preset.run()
         case "DemultiplexedStats" => val preset = new Presets.DemultiplexedStatsPreset(config)
           preset.run()

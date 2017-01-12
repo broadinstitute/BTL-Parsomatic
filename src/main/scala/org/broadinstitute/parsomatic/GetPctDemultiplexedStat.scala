@@ -57,13 +57,13 @@ class GetPctDemultiplexedStat(config: Config) extends Samples with Metrics with 
     for (m <- mapsList)
       if (m("sampleName") == config.sampleId)
         m.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
-          case Some(t: Int) => sampleTotal = t.toDouble
+          case Some(t: Long) => sampleTotal = t.toDouble
           case _ => failureExit(s"totalReads not populated for ${m.getOrElse("sampleName", "sample")}")
         }
     val totals = mapsList.map( x =>
     {
       x.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
-        case Some(t: Int) => t.toDouble
+        case Some(t: Long) => t.toDouble
         case _ => failureExit(s"totalReads not populated for ${x.getOrElse("sampleName", "sample")}")
       }
     }
