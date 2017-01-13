@@ -9,7 +9,6 @@ import org.broadinstitute.MD.types.metrics.MetricsType
 import org.broadinstitute.MD.types.metrics.MetricsType.MetricsType
 import org.broadinstitute.mdreport.Reporters.getSamples
 import org.broadinstitute.mdreport.ReporterTraits._
-
 import scala.collection.mutable
 import scala.concurrent.duration._
 import scala.concurrent.Await
@@ -52,7 +51,7 @@ class GetPctDemultiplexedStat(config: Config) extends Samples with Metrics with 
       "PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads" -> None
     )
     val mapsList = fillMap(demultiplexMap, metricsList)
-    // Code review this section
+    // Code review this section. Using Double type because we have to do calculations that lead to a percentage.
     var sampleTotal: Double = 0
     for (m <- mapsList)
       if (m("sampleName") == config.sampleId)
