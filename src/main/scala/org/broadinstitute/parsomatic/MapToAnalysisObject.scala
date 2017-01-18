@@ -183,6 +183,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         library = input.head.getOrElse("LIBRARY", "N/A"),
         unpariedReadsExamined = convertToLong(input.head, "UNPAIRED_READS_EXAMINED", "-1.0"),
         readPairsExamined = convertToLong(input.head, "READ_PAIRS_EXAMINED", "-1.0"),
+        // secondaryOrSupplementaryReads = convertToLong("SECONDARY_OR_SUPPLEMENTARY_RDS", "-1.0"),
         unmappedReads = convertToLong(input.head, "UNMAPPED_READS", "-1.0"),
         unpairedReadDuplicates = convertToLong(input.head, "UNPAIRED_READ_DUPLICATES", "-1.0"),
         readPairDuplicates = convertToLong(input.head, "READ_PAIR_DUPLICATES", "-1.0"),

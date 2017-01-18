@@ -22,7 +22,7 @@ object Parsomatic extends App {
   def parser = {
 
     new scopt.OptionParser[Config]("Parsomatic") {
-      head("Parsomatic", "1.1.6")
+      head("Parsomatic", "1.1.7")
       opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
         .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
       opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
