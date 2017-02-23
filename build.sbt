@@ -1,12 +1,12 @@
 name := "Parsomatic"
 
-version := "2017.0.1"
+version := "2017.1.0"
 scalaVersion := "2.11.8"
 
 organization := "org.broadinstitute"
 
 libraryDependencies ++= Seq(
-  "org.broadinstitute" %% "mdtypes" % "1.16",
+  "org.broadinstitute" %% "mdtypes" % "1.21",
   "org.broadinstitute" %% "mdreport" % "2017.2.2",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test",
   "ch.qos.logback" %  "logback-classic" % "1.1.7",

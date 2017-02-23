@@ -17,7 +17,8 @@ import com.lambdaworks.jacks.JacksMapper
 object Parsomatic extends App {
 
   val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
-    "PicardMeanGc", "RnaSeqQcStats", "ErccStats" , "DemultiplexedStats", "PicardEstimateLibraryComplexity")
+    "PicardMeanGc", "RnaSeqQcStats", "AggregateRnaSeqQcStats", "ErccStats" , "DemultiplexedStats", 
+    "PicardEstimateLibraryComplexity")
 
   def parser = {
 
@@ -94,6 +95,8 @@ object Parsomatic extends App {
           config.vOffset = 3
           preset.run()
         case "RnaSeqQcStats" => val preset = new Presets.RnaSeqQCPreset(config)
+          preset.run()
+        case "AggregateRnaSeqQcStats" => val preset = new Presets.AggregateRnaSeqQCPreset(config)
           preset.run()
         case "PicardMeanQualByCycle" => val preset = new Presets.PicardMeanQualByCyclePreset(config)
           preset.run()

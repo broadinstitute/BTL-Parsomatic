@@ -20,7 +20,7 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
   implicit val ec = system.dispatcher
   def doRequest(path: String, json: String) =
     Http().singleRequest(
-      Post(uri = path, entity = HttpEntity(contentType = `application/json`, string = json))
+      Post(path, HttpEntity(contentType = `application/json`, string = json))
     )
 
   val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
