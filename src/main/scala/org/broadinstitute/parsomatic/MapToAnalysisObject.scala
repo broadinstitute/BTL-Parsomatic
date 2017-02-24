@@ -126,7 +126,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           exonicRate = convertToDouble(input.head, "Exonic Rate", "-1.0"),
           intergenicRate = convertToDouble(input.head, "Intergenic Rate", "-1.0"),
           intronicRate = convertToDouble(input.head, "Intronic Rate", "-1.0"),
-          genesDetected = convertToInt(input.head, "Genes Detected", "-1.0")
+          genesDetected = convertToInt(input.head, "Genes Detected", "-1")
         ),
         covMetrics = RnaSeqQcStats.CovMetrics(
           meanCV = convertToDouble(input.head, "Mean CV", "-1.0"),
