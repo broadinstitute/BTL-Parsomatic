@@ -30,6 +30,7 @@ class InputProcessor(inputFile: String) {
     }
   }
 
+
   /**
     *
     * @param start The first word in the row where filtering should begin.

@@ -99,12 +99,22 @@ object Presets {
 
   class AggregateRnaSeqQCPreset(config: Config) extends Rows with RowFilter{
     val inputFile: String = config.inputFile
-    val start: Int = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
-      .indexWhere(_.startsWith(config.sampleId))
-    val end: Int = start + 1
+    val start = 1
+    val end: Int = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
+      .indexWhere(_.startsWith(config.sampleId)) + 1
     config.delimiter = "\t"
     config.mdType = "RnaSeqQcStats"
-    def run(): Unit = filterResultHandler(filter(start, end), config)
+    def run(): Unit = {
+      filter(start, end) match {
+        case Right(filterResult) =>
+          val slicedResult: List[String] = List(filterResult.head, filterResult(end - 1))
+          slicedResult.foreach(println)
+          filterResultHandler(Right(slicedResult), config)
+        case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
+
+      }
+      filterResultHandler(filter(start, end), config)
+    }
   }
 
   class DemultiplexedStatsPreset(config: Config) {
