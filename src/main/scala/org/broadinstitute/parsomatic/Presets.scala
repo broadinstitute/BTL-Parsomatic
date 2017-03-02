@@ -113,7 +113,6 @@ object Presets {
         case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
 
       }
-      //filterResultHandler(filter(start, end), config)
     }
   }
 
