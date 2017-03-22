@@ -108,10 +108,26 @@ object Presets {
       filter(start, end) match {
         case Right(filterResult) =>
           val slicedResult: List[String] = List(filterResult.head, filterResult(end - 1))
-          slicedResult.foreach(println)
           filterResultHandler(Right(slicedResult), config)
         case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
 
+      }
+    }
+  }
+
+  class SampleSheetPreset(config: Config) extends Rows with RowFilter {
+    val inputFile: String = config.inputFile
+    val start = 1
+    val end: Int = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
+      .indexWhere(_.startsWith(config.sampleId)) + 1
+    config.delimiter = "\t"
+    config.mdType = "SampleSheet"
+    def run(): Unit = {
+      filter(start, end) match {
+        case Right(filterResult) =>
+          val slicedResult: List[String] = List(filterResult.head, filterResult(end - 1))
+          filterResultHandler(Right(slicedResult), config)
+        case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
       }
     }
   }

@@ -10,7 +10,7 @@ import org.broadinstitute.MD.types.metrics._
   * @param input The map representation of the metrics file.
   */
 class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
-  def converter[T](row: Map[String, String], key: String, default: String, cvt: String => T) =
+  def converter[T](row: Map[String, String], key: String, default: String, cvt: String => T): T =
     cvt(row.getOrElse(key, default))
 
   /**
@@ -21,7 +21,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
     * @param default A default int to use if the key is not found.
     * @return
     */
-  def convertToInt(row: Map[String, String], key: String, default: String) =
+  def convertToInt(row: Map[String, String], key: String, default: String): Int =
     converter(row, key, default, (_: String).toInt)
 
   /**
@@ -32,10 +32,10 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
     * @param default A default int to use if the key is not found.
     * @return
     */
-  def convertToDouble(row: Map[String, String], key: String, default: String) =
+  def convertToDouble(row: Map[String, String], key: String, default: String): Double =
     converter(row, key, default, (_: String).toDouble)
 
-  def convertToLong(row: Map[String, String], key: String, default: String) =
+  def convertToLong(row: Map[String, String], key: String, default: String): Long =
     converter(row, key, default, (_: String).toLong)
   /**
     * Execution engine for MapToObjects.
@@ -48,7 +48,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
       case "PicardAlignmentMetrics" =>
         val metrics = scala.collection.mutable.ListBuffer[PicardAlignmentSummaryMetrics]()
         for (row <- input) {
-        metrics += new PicardAlignmentSummaryMetrics(
+        metrics += PicardAlignmentSummaryMetrics(
           category = row.getOrElse("CATEGORY", "N/A"),
           totalReads = convertToLong(row, "TOTAL_READS", "-1"),
           pfReads = convertToLong(row, "PF_READS", "-1"),
@@ -97,13 +97,13 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           )
         )
       case "PicardMeanQualByCycle" =>
-        Right(new PicardMeanQualByCycle(
+        Right(PicardMeanQualByCycle(
         r1MeanQual = convertToDouble(input.head, "R1_MEAN_QUAL", "-1.0"),
         r2MeanQual = convertToDouble(input.head, "R2_MEAN_QUAL", "-1.0")
           )
         )
         case "RnaSeqQcStats" =>
-        Right (new RnaSeqQcStats(
+        Right (RnaSeqQcStats(
         sample = input.head.getOrElse("Sample", "N/A"),
         note = input.head.getOrElse("Note", "N/A"),
         alignmentMetrics = RnaSeqQcStats.AlignmentMetrics(
@@ -165,7 +165,7 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
           )
         )
       case "ErccStats" =>
-        Right(new ErccStats(
+        Right(ErccStats(
         totalReads = convertToLong(input.head, "TOTAL_READS", "-1"),
         totalErccReads = convertToLong(input.head,"ERCC_READS", "-1"),
         totalUnalignedReads = convertToLong(input.head,"UNALIGNED_ERCC_READS", "-1"),
@@ -175,11 +175,11 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         )
       )
       case "PicardMeanGc" =>
-        Right(new PicardReadGcMetrics(
+        Right(PicardReadGcMetrics(
         meanGcContent = convertToDouble(input.head, "MEAN_GC_CONTENT", "-1.0")
         )
       )
-      case "PicardEstimateLibraryComplexity" => Right(new PicardEstimateLibraryComplexity(
+      case "PicardEstimateLibraryComplexity" => Right(PicardEstimateLibraryComplexity(
         library = input.head.getOrElse("LIBRARY", "N/A"),
         unpariedReadsExamined = convertToLong(input.head, "UNPAIRED_READS_EXAMINED", "-1.0"),
         readPairsExamined = convertToLong(input.head, "READ_PAIRS_EXAMINED", "-1.0"),
@@ -192,8 +192,16 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         estimatedLibrarySize = convertToLong(input.head, "ESTIMATED_LIBRARY_SIZE", "-1.0")
         )
       )
-      case "DemultiplexedStats" => Right(new DemultiplexedStats(
+      case "DemultiplexedStats" => Right(DemultiplexedStats(
         pctOfTotalDemultiplexed = convertToDouble(input.head, "pctOfTotalDemultiplexed", "-1.0")
+        )
+      )
+      case "SampleSheet" => Right(SampleSheet(
+        sampleName = input.head.getOrElse("sampleName", "N/A"),
+        indexBarcode1 = input.head.getOrElse("indexBarcode1", "N/A"),
+        indexBarcode2 = input.head.getOrElse("indexBarcode2", "N/A"),
+        organism = input.head.getOrElse("organism", "N/A"),
+        dataDir = input.head.getOrElse("dataDir", "N/A")
         )
       )
       case _ => Left("unrecognized mdType input for MapToAnalysisObject")

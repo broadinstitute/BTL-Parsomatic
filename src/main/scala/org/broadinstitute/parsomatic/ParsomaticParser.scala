@@ -12,7 +12,7 @@ import scala.annotation.tailrec
   */
 class ParsomaticParser(iter: Iterator[String], delim: String) {
   val logger = Logger("Parsomatic.ParsomaticParser")
-  def parseToMap() = {
+  def parseToMap(): List[Map[String, String]] = {
     val header = iter.next().split(delim)
     logger.info("Parsing file iterator to map.")
     def populateMetrics(lb: scala.collection.mutable.ListBuffer[Map[String,String]]):

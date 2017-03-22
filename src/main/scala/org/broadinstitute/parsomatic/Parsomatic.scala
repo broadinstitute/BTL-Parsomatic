@@ -7,6 +7,7 @@ import scala.annotation.tailrec
 import scala.io.Source
 import scala.util.{Failure, Success}
 import com.lambdaworks.jacks.JacksMapper
+import scopt.OptionParser
 
 /**
   * Created by Amr Abouelleil on 9/1/2016.
@@ -18,9 +19,9 @@ object Parsomatic extends App {
 
   val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
     "PicardMeanGc", "RnaSeqQcStats", "AggregateRnaSeqQcStats", "ErccStats" , "DemultiplexedStats", 
-    "PicardEstimateLibraryComplexity")
+    "PicardEstimateLibraryComplexity", "SampleSheet")
 
-  def parser = {
+  def parser: OptionParser[Config] = {
 
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.2.0")
@@ -80,7 +81,7 @@ object Parsomatic extends App {
     * @param config The config object that contains all the user-specified arguments to run the program.
     * @return
     */
-  def execute(config: Config) = {
+  def execute(config: Config): Unit = {
     val logger = Logger("Parsomatic.execute")
     logger.debug(config.toString)
     if (config.byKey) {
@@ -107,6 +108,8 @@ object Parsomatic extends App {
         case "PicardEstimateLibraryComplexity" => val preset = new Presets.PicardEstimateLibraryComplexity(config)
           preset.run()
         case "DemultiplexedStats" => val preset = new Presets.DemultiplexedStatsPreset(config)
+          preset.run()
+        case "SampleSheet" => val preset = new Presets.SampleSheetPreset(config)
           preset.run()
         case _ => failureExit("Unrecognized preset.")
       }
@@ -168,7 +171,7 @@ object Parsomatic extends App {
     * @param config The user-supplied arguments.
     * @return
     */
-  def filterResultHandler(result: Either[String, List[String]], config: Config) = {
+  def filterResultHandler(result: Either[String, List[String]], config: Config): Unit = {
     val logger = Logger("Parsomatic.filterResultHandler")
     result match {
       case Right(filteredResult) =>
