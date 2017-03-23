@@ -117,7 +117,7 @@ object Presets {
 
   class SampleSheetPreset(config: Config) extends Rows with RowFilter {
     val inputFile: String = config.inputFile
-    val start = 1
+    val start = 0
     val end: Int = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
       .indexWhere(_.startsWith(config.sampleId)) + 1
     config.delimiter = "\t"
@@ -125,7 +125,9 @@ object Presets {
     def run(): Unit = {
       filter(start, end) match {
         case Right(filterResult) =>
-          val slicedResult: List[String] = List(filterResult.head, filterResult(end - 1))
+          val headers: List[String] = List("sampleName\tindexBarcode1\tindexBarcode2\torganism\tdataDir")
+          val slice: List[String] = List(filterResult.head)
+          val slicedResult: List[String] = headers ++ slice
           filterResultHandler(Right(slicedResult), config)
         case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
       }
