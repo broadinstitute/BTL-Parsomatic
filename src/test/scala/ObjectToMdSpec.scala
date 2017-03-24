@@ -2,23 +2,26 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.client.RequestBuilding._
 import akka.http.scaladsl.model.ContentTypes._
-import akka.http.scaladsl.model.HttpEntity
+import akka.http.scaladsl.model.{HttpEntity, HttpResponse}
 import akka.stream.ActorMaterializer
 import org.scalatest.{FlatSpec, Matchers}
 import org.broadinstitute.parsomatic.ObjectToMd
 import org.broadinstitute.MD.types._
 import akka.http.scaladsl.model.StatusCodes._
 import org.broadinstitute.MD.types.metrics.PicardReadGcMetrics
+
 import scala.concurrent.duration._
-import scala.concurrent.Await
+import scala.concurrent.{Await, ExecutionContextExecutor, Future}
+import scala.language.postfixOps
+
 /**
   * Created by Amr on 9/27/2016.
   */
 class ObjectToMdSpec extends FlatSpec with Matchers {
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
-  implicit val ec = system.dispatcher
-  def doRequest(path: String, json: String) =
+  implicit val ec: ExecutionContextExecutor = system.dispatcher
+  def doRequest(path: String, json: String): Future[HttpResponse] =
     Http().singleRequest(
       Post(path, HttpEntity(contentType = `application/json`, string = json))
     )
@@ -34,13 +37,13 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
   }
   it should "return an OK status code when updating" in {
     val otm = new ObjectToMd(set_id, SampleRef(sample_id, set_id), true, Some(version))
-    val request = otm.run(new PicardReadGcMetrics(meanGcContent = 45.55))
+    val request = otm.run(PicardReadGcMetrics(meanGcContent = 45.55))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK
   }
   it should "return an OK status code when updating a new sample" in {
     val otm = new ObjectToMd(set_id, SampleRef("put_sample_2", set_id), true, Some(version))
-    val request = otm.run(new PicardReadGcMetrics(meanGcContent = 36.12))
+    val request = otm.run(PicardReadGcMetrics(meanGcContent = 36.12))
     val result = Await.result(request, 5 seconds)
     result.status shouldBe OK
   }

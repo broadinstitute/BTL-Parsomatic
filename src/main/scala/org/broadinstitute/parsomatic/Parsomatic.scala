@@ -26,7 +26,7 @@ object Parsomatic extends App {
     new scopt.OptionParser[Config]("Parsomatic") {
       head("Parsomatic", "1.2.0")
       opt[String]('i', "sampleId").valueName("<sampleId>").required().action((x,c) => c.copy(sampleId = x))
-        .text("The ID of the sample to update metrics for. Must supply this or an entry file.")
+        .text("The ID of the sample to update metrics for.")
       opt[String]('s', "setId").valueName("<setId>").optional().action((x, c) => c.copy(setId = x))
         .text("The ID of the sample set containing the sample to update metrics for. Supply if not using entrycreator json.")
       opt[Long]('v', "version").valueName("<version>").optional().action((x,c) => c.copy(version = Some(x)))

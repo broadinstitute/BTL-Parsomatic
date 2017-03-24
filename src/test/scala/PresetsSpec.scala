@@ -2,10 +2,9 @@
   * Created by amr on 10/3/2016.
   */
 
-import org.broadinstitute.MD.types.SampleRef
 import org.scalatest.{FlatSpec, Matchers}
 import org.broadinstitute.parsomatic.Presets._
-import org.broadinstitute.parsomatic.{Config, ObjectToMd, ParsomaticParser}
+import org.broadinstitute.parsomatic.Config
 
 class PresetsSpec extends FlatSpec with Matchers {
   "A SampleSheetPreset" should "produce correct sample sheet data in a db" in {
