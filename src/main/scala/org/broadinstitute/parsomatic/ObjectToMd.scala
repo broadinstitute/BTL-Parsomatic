@@ -23,8 +23,9 @@ import scala.concurrent.{ExecutionContextExecutor, Future}
 class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Option[Long]){
   var port = 9100
   if (test) port = 9101
-//  val pathPrefix = s"http://btllims.broadinstitute.org:$port/MD"
-  val pathPrefix = s"http://gp3c5-33b.broadinstitute.org:9100/MD"
+  val pathPrefix = s"http://btllims.broadinstitute.org:$port/MD"
+//  val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
+//  val pathPrefix = "http://osiris-pc:9100/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
   val metricsCreate = s"$pathPrefix/add/metrics"
   implicit val system = ActorSystem()
