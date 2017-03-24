@@ -126,9 +126,9 @@ object Presets {
       filter(start, end) match {
         case Right(filterResult) =>
           val headers: List[String] = List("sampleName\tindexBarcode1\tindexBarcode2\torganism\tdataDir")
-          val slice: List[String] = List(filterResult.head)
-          val slicedResult: List[String] = headers ++ slice
-          filterResultHandler(Right(slicedResult), config)
+          val slice: List[String] = List(filterResult(end - 1))
+          val mergedResult: List[String] = headers ++ slice
+          filterResultHandler(Right(mergedResult), config)
         case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
       }
     }
