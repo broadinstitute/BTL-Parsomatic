@@ -27,7 +27,6 @@ class PresetsSpec extends FlatSpec with Matchers {
     val preset = "SampleSheet"
     val filterResult1 = ssp1.filter(ssp1.start, ssp1.end)
     val filterResult2 = ssp2.filter(ssp2.start, ssp2.end)
-    // expected results
     val frLength1 = 7
     val frLength2 = 1
     val ec1_bc1 = "TAAGGCGA"
@@ -38,8 +37,6 @@ class PresetsSpec extends FlatSpec with Matchers {
     val dp = "/btl/data/walkup/SMART-Seq/SSF-2315/data/HHJTVBGX2/C1-66_2017-03-16_2017-03-16"
     filterResult1.right.get.length shouldBe frLength1
     filterResult2.right.get.length shouldBe frLength2
-    ssp1.run()
-    ssp2.run()
     }
 
 }

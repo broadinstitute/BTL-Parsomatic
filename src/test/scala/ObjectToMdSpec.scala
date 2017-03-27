@@ -33,7 +33,8 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
   "ObjectToMd" should "return a CREATED status code when adding" in {
     val addPath = pathPrefix + "/add/metrics"
     val request = doRequest(addPath, s"""{\"id\": \"$set_id\", \"version\": $version}""")
-    Await.result(request, 5 seconds).status shouldBe Created
+    val result = Await.result(request, 5 seconds)
+    result.status shouldBe Created
   }
   it should "return an OK status code when updating" in {
     val otm = new ObjectToMd(set_id, SampleRef(sample_id, set_id), true, Some(version))
