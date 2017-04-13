@@ -18,7 +18,7 @@ import scopt.OptionParser
 object Parsomatic extends App {
 
   val presetList = List("PicardAlignmentMetrics", "PicardInsertSizeMetrics", "PicardMeanQualByCycle",
-    "PicardMeanGc", "RnaSeqQcStats", "AggregateRnaSeqQcStats", "ErccStats" , "DemultiplexedStats", 
+    "PicardMeanGc", "RnaSeqQcStats", "AggregateRnaSeqQcStats", "ErccStats" , "MultiplexedStats",
     "PicardEstimateLibraryComplexity", "SampleSheet")
 
   def parser: OptionParser[Config] = {
@@ -107,7 +107,7 @@ object Parsomatic extends App {
           preset.run()
         case "PicardEstimateLibraryComplexity" => val preset = new Presets.PicardEstimateLibraryComplexity(config)
           preset.run()
-        case "DemultiplexedStats" => val preset = new Presets.DemultiplexedStatsPreset(config)
+        case "MultiplexedStats" => val preset = new Presets.MultiplexedStatsPreset(config)
           preset.run()
         case "SampleSheet" => val preset = new Presets.SampleSheetPreset(config)
           preset.run()

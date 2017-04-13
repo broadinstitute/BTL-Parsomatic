@@ -192,8 +192,8 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
         estimatedLibrarySize = convertToLong(input.head, "ESTIMATED_LIBRARY_SIZE", "-1.0")
         )
       )
-      case "DemultiplexedStats" => Right(DemultiplexedStats(
-        pctOfTotalDemultiplexed = convertToDouble(input.head, "pctOfTotalDemultiplexed", "-1.0")
+      case "pctOfMultiplexedReads" => Right(DemultiplexedStats(
+        pctOfMultiplexedReads = convertToDouble(input.head, "pctOfMultiplexedReads", "-1.0")
         )
       )
       case "SampleSheet" => Right(SampleSheet(

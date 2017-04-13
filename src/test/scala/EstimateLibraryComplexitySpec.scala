@@ -1,4 +1,4 @@
-import org.broadinstitute.parsomatic.GetPctDemultiplexedStat
+import org.broadinstitute.parsomatic.GetPctMultiplexedStat
 import org.scalatest.{FlatSpec, Matchers}
 import org.broadinstitute.parsomatic.Config
 /**

@@ -134,10 +134,10 @@ object Presets {
     }
   }
 
-  class DemultiplexedStatsPreset(config: Config) {
+  class MultiplexedStatsPreset(config: Config) {
     config.delimiter = "\t"
-    config.mdType = "DemultiplexedStats"
-    val result: Either[String, List[String]] = new GetPctDemultiplexedStat(config).getStats
+    config.mdType = "MultiplexedStats"
+    val result: Either[String, List[String]] = new GetPctMultiplexedStat(config).getStats
     def run(): Unit = filterResultHandler(result, config)
   }
 }
