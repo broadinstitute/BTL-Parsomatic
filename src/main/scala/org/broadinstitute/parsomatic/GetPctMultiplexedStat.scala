@@ -16,6 +16,8 @@ import org.broadinstitute.MD.types.marshallers.Marshallers._
 import org.broadinstitute.parsomatic.Parsomatic.failureExit
 import scala.language.postfixOps
 import scala.util.{Try, Success, Failure}
+import java.io.StringWriter
+import java.io.PrintWriter
 
 /**
   * Created by amr on 12/8/2016.
@@ -76,7 +78,9 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
           case _ => Left("Totals list contains non-Long values.")
         }
       case Failure(e) =>
-        Left(e.getMessage())
+        val sw = new StringWriter
+        e.printStackTrace(new PrintWriter(sw))
+        Left(sw.toString)
     }
   }
 }
