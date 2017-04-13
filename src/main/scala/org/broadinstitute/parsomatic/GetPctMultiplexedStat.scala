@@ -15,6 +15,7 @@ import scala.concurrent.Await
 import org.broadinstitute.MD.types.marshallers.Marshallers._
 import org.broadinstitute.parsomatic.Parsomatic.failureExit
 import scala.language.postfixOps
+import scala.util.{Try, Success, Failure}
 
 /**
   * Created by amr on 12/8/2016.
@@ -40,37 +41,42 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
     sreqs = scala.collection.mutable.ListBuffer[SampleMetricsRequest]())
   val mq: MetricsQuery = makeMetricsQuery(sampleRequests)
   def getStats:Either[String, List[String]] = {
-
     val query = doQuery(mq)
     val result = query.flatMap(response => Unmarshal(response.entity).to[List[SampleMetrics]])
-    val metricsList = Await.result(result, 5 seconds)
-    val multiplexMap: mutable.LinkedHashMap[String, Any] = mutable.LinkedHashMap(
-      "PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads" -> None
-    )
-    val mapsList = fillMap(multiplexMap, metricsList)
-    // Code review this section. Using Double type because we have to do calculations that lead to a percentage.
-    var sampleTotal: Double = 0
-    for (m <- mapsList)
-      if (m("sampleName") == config.sampleId)
-        m.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
-          case Some(t: Long) => sampleTotal = t.toDouble
-          case _ => failureExit(s"totalReads not populated for ${m.getOrElse("sampleName", "sample")}")
+    val metricsResult = Try(Await.result(result, 5 seconds))
+    metricsResult match {
+      case Success(metricsList) =>
+        val multiplexMap: mutable.LinkedHashMap[String, Any] = mutable.LinkedHashMap(
+          "PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads" -> None
+        )
+        val mapsList = fillMap(multiplexMap, metricsList)
+
+        // Code review this section. Using Double type because we have to do calculations that lead to a percentage.
+        var sampleTotal: Double = 0
+        for (m <- mapsList)
+          if (m("sampleName") == config.sampleId)
+            m.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
+              case Some(t: Long) => sampleTotal = t.toDouble
+              case _ => failureExit(s"totalReads not populated for ${m.getOrElse("sampleName", "sample")}")
+            }
+        val totals = mapsList.map( x =>
+        {
+          x.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
+            case Some(t: Long) => t.toDouble
+            case _ => failureExit(s"totalReads not populated for ${x.getOrElse("sampleName", "sample")}")
+          }
         }
-    val totals = mapsList.map( x =>
-    {
-      x.get("PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads") match {
-        case Some(t: Long) => t.toDouble
-        case _ => failureExit(s"totalReads not populated for ${x.getOrElse("sampleName", "sample")}")
-      }
-    }
-    )
-    totals match {
-      case l: List[Double] =>
-        val libTotals = l.sum
-        val percentDemultiplexed: Double = (sampleTotal/libTotals) * 100.0
-        logger.debug(s"% Multiplex Calculation: ($sampleTotal/$libTotals) * 100.0 = $percentDemultiplexed")
-        Right(List("pctOfMultiplexedReads", percentDemultiplexed.toString))
-      case _ => Left("Totals list contains non-Long values.")
+        )
+        totals match {
+          case l: List[Double] =>
+            val libTotals = l.sum
+            val percentDemultiplexed: Double = (sampleTotal/libTotals) * 100.0
+            logger.debug(s"% Multiplex Calculation: ($sampleTotal/$libTotals) * 100.0 = $percentDemultiplexed")
+            Right(List("pctOfMultiplexedReads", percentDemultiplexed.toString))
+          case _ => Left("Totals list contains non-Long values.")
+        }
+      case Failure(e) =>
+        Left(e.getMessage())
     }
   }
 }
