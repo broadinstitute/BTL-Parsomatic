@@ -72,13 +72,14 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
         totals match {
           case l: List[Double] =>
             val libTotals = l.sum
-            val percentDemultiplexed: Double = (sampleTotal/libTotals) * 100.0
-            logger.debug(s"% Multiplex Calculation: ($sampleTotal/$libTotals) * 100.0 = $percentDemultiplexed")
-            Right(List("pctOfMultiplexedReads", percentDemultiplexed.toString))
+            val percentMultiplexed: Double = (sampleTotal/libTotals) * 100.0
+            logger.debug(s"% Multiplex Calculation: ($sampleTotal/$libTotals) * 100.0 = $percentMultiplexed")
+            Right(List("pctOfMultiplexedReads", percentMultiplexed.toString))
           case _ => Left("Totals list contains non-Long values.")
         }
       case Failure(e) =>
         val sw = new StringWriter
+        logger.error(sw.toString)
         e.printStackTrace(new PrintWriter(sw))
         Left(sw.toString)
     }
