@@ -45,7 +45,7 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
   def getStats:Either[String, List[String]] = {
     val query = doQuery(mq)
     val result = query.flatMap(response => Unmarshal(response.entity).to[List[SampleMetrics]])
-    val metricsResult = Try(Await.result(result, 5 seconds))
+    val metricsResult = Try(Await.result(result, 15 seconds))
     metricsResult match {
       case Success(metricsList) =>
         val multiplexMap: mutable.LinkedHashMap[String, Any] = mutable.LinkedHashMap(

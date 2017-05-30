@@ -1,6 +1,6 @@
 name := "Parsomatic"
 
-version := "2017.4.2"
+version := "2017.4.3"
 scalaVersion := "2.11.8"
 
 organization := "org.broadinstitute"
