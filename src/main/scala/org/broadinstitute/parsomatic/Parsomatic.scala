@@ -187,16 +187,16 @@ object Parsomatic extends App {
           case Right(analysis) =>
             val insertObject = new ObjectToMd(config.setId,
               SampleRef(sampleID = config.sampleId, setID = config.setId), config.test, config.version)
-            insertObject.run(analysis) onComplete {
-              case Success(s) =>
-              s.status match {
-                case StatusCodes.OK => logger.info("Request successful: " + s.status)
-                  System.exit(0)
-                case _ =>
-                  val failMsg = "Request failed: " + s.status
-                  failureExit(failMsg)
-              }
-              case Failure(f) => failureExit("Request failed: " + f.getMessage)
+            insertObject.run(analysis) match {
+              case Some(a) =>
+                a.status match {
+                  case StatusCodes.OK => logger.info("Request successful: " + a.status)
+                    System.exit(0)
+                  case _ =>
+                    val failMsg = "Request failed: " + a.status
+                    failureExit(failMsg)
+                }
+              case None => failureExit("Request failed. Server failed to respond.")
             }
           case Left(unexpectedResult) => failureExit(unexpectedResult)
         }

@@ -9,7 +9,9 @@ import akka.http.scaladsl.client.RequestBuilding.Post
 import akka.stream.ActorMaterializer
 import org.broadinstitute.MD.rest._
 import org.broadinstitute.MD.types.metrics.MetricsType.MetricsType
-import scala.concurrent.{ExecutionContextExecutor, Future}
+
+import scala.concurrent.{Await, ExecutionContextExecutor, Future, TimeoutException}
+import scala.concurrent.duration._
 
 /**
   * Created by Amr on 9/23/2016.
@@ -21,6 +23,7 @@ import scala.concurrent.{ExecutionContextExecutor, Future}
   */
 
 class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Option[Long]){
+  var retries = 4
   var port = 9100
   if (test) port = 9101
   val pathPrefix = s"http://btllims.broadinstitute.org:$port/MD"
@@ -37,14 +40,31 @@ class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Op
     * @param analysisObject A list of one or more instances of a single MD metrics type.
     * @return
     */
-  def run(analysisObject: AnalysisMetrics): Future[HttpResponse] = {
+  def run(analysisObject: AnalysisMetrics): Option[HttpResponse] = {
+    def doUpdate(au: MetricsUpdate): Option[HttpResponse] = {
+      val result = doAnalysisUpdate(au)
+      try {
+        Some(Await.result(result, 10 seconds))
+      } catch {
+        case e: TimeoutException =>
+          retries match {
+            case 0 =>
+              None
+            case _ =>
+              retries = retries - 1
+              doUpdate(au)
+          }
+        case _: Throwable => None
+      }
+    }
     val analysisUpdate = createAnalysisUpdate(
       setId = setId,
       version = version,
       metricType = MetricsType.withName(analysisObject.getClass.getSimpleName),
       metrics = analysisObject
     )
-    doAnalysisUpdate(analysisUpdate)
+    doUpdate(analysisUpdate)
+
   }
 
   /**

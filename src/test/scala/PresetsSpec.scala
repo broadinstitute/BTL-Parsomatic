@@ -12,14 +12,14 @@ class PresetsSpec extends FlatSpec with Matchers {
       sampleId = "TestSample1",
       setId = "TestSet1",
       version = Some(1490358021350L),
-      inputFile = "C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\input_data.tsv"
+      inputFile = "D:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\input_data.tsv"
     )
 
     val config_2 = Config(
       sampleId = "TestSample2",
       setId = "TestSet2",
       version = Some(1L),
-      inputFile = "C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\input_data.tsv"
+      inputFile = "D:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\input_data.tsv"
     )
 
     val ssp1 = new SampleSheetPreset(config_1)
