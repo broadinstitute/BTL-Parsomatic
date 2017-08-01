@@ -14,7 +14,7 @@ import scala.io.Source
 object Presets {
 
   class PicardAlignmentMetricPreset(config: Config) extends Rows with RowFilter{
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     /*Note these preset numbers factor in that inputProcessor removes blank lines.
      The header line in the file is line 7, but because there is a blank line above it, start is 6 and end is 9.
       */
@@ -26,7 +26,7 @@ object Presets {
   }
 
   class PicardMeanQualByCyclePreset(config: Config) extends Keys with KeyFilter {
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = "CYCLE"
     val end = ""
     config.delimiter = "\t"
@@ -41,7 +41,7 @@ object Presets {
   }
 
   class PicardMeanGcPreset (config: Config) extends Keys with KeyFilter {
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = "GC"
     val end = ""
     config.delimiter = "\t"
@@ -56,7 +56,7 @@ object Presets {
   }
 
   class PicardInsertSizeMetric(config: Config) extends Rows with RowFilter{
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = 6
     val end = 7
     config.delimiter = "\t"
@@ -65,7 +65,7 @@ object Presets {
   }
 
   class PicardEstimateLibraryComplexity(config: Config) extends Rows with RowFilter{
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = 6
     val end = 7
     config.delimiter = "\t"
@@ -74,7 +74,7 @@ object Presets {
   }
 
   class ErccStatsPreset(config: Config) extends Rows with RowFilter {
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = 1
     val end = 0
     config.delimiter = "\t"
@@ -89,7 +89,7 @@ object Presets {
   }
 
   class RnaSeqQCPreset(config: Config) extends Rows with RowFilter{
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = 1
     val end = 0
     config.delimiter = "\t"
@@ -98,7 +98,7 @@ object Presets {
   }
 
   class AggregateRnaSeqQCPreset(config: Config) extends Rows with RowFilter{
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = 1
     val end: Int = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
       .indexWhere(_.startsWith(config.sampleId)) + 1
@@ -116,7 +116,7 @@ object Presets {
   }
 
   class SampleSheetPreset(config: Config) extends Rows with RowFilter {
-    val inputFile: String = config.inputFile
+    val inputFile: String = config.inputFile.get
     val start = 0
     val end: Int = Source.fromFile(inputFile).getLines().filterNot(_.isEmpty()).toList
       .indexWhere(_.startsWith(config.sampleId)) + 1

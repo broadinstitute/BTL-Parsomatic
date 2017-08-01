@@ -7,7 +7,7 @@ class ConfigSpec extends FlatSpec with Matchers{
   val config = Config(
     sampleId = "foo",
     //setId = "bar",
-    inputFile = "input.txt",
+    inputFile = Some("input.txt"),
     preset = "preset",
     delimiter = ","
     )

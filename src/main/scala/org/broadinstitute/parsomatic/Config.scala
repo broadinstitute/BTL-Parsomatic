@@ -9,7 +9,7 @@ case class Config (
                    var setId: String = "",
                    var version: Option[Long] = None,
                    entryFile: String = "",
-                   inputFile: String = "",
+                   inputFile: Option[String] = None,
                    preset: String = "",
                    var mdType: String = "",
                    headerRow: Int = 1,

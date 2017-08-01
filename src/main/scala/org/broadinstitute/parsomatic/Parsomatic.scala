@@ -33,8 +33,8 @@ object Parsomatic extends App {
         .text("Optional version string for the entry.")
       opt[String]('e', "entryFile").optional().action((x, c) => c.copy(entryFile = x))
         .text("If EntryCreator was used you may supply the entry file to pass along sampleId and version.")
-      opt[String]('f', "inputFile").valueName("<file>").optional().action((x, c) => c.copy(inputFile = x))
-        .text("Path to input file to parse. Required for all but DemultiplexedStats.")
+      opt[String]('f', "inputFile").valueName("<file>").optional().action((x, c) => c.copy(inputFile = Option(x)))
+        .text("Path to input file to parse. Required for all but MultiplexedStats.")
       opt[String]('p', "preset").valueName("<preset>").optional().action((x, c) => c.copy(preset = x))
         .text("Use a parser preset from:".concat(presetList.toString()))
       opt[String]('m', "mdType").valueName("<type>").optional().action((x, c) => c.copy(mdType = x))
@@ -71,6 +71,12 @@ object Parsomatic extends App {
         val mapper = JacksMapper.readValue[Map[String, String]](json)
         config.setId = mapper("id")
         config.version = Some(mapper("version").toLong)
+        if (config.preset != "MultiplexedStats") {
+          config.inputFile match {
+            case None => failureExit(s"${config.preset} preset requires an --inputFile parameter.")
+            case Some(e) => 
+          }
+        }
       }
       execute(config)
     case None => failureExit("Please provide valid input.")
@@ -85,7 +91,7 @@ object Parsomatic extends App {
     val logger = Logger("Parsomatic.execute")
     logger.debug(config.toString)
     if (config.byKey) {
-      val ip = new InputProcessor(config.inputFile)
+      val ip = new InputProcessor(config.inputFile.get)
       filterResultHandler(ip.filterByKey(config.startKey, config.endKey), config)
     } else if (config.preset.length() > 0) {
       config.preset match {
@@ -114,7 +120,7 @@ object Parsomatic extends App {
         case _ => failureExit("Unrecognized preset.")
       }
     } else {
-      val ip = new InputProcessor(config.inputFile)
+      val ip = new InputProcessor(config.inputFile.get)
       filterResultHandler(ip.filterByRow(config.headerRow, config.lastRow), config)
     }
   }
