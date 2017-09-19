@@ -26,7 +26,9 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
       Post(path, HttpEntity(contentType = `application/json`, string = json))
     )
 
-  val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
+  // val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
+  //val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
+  val pathPrefix = "http://Office:9100/MD"
   val set_id = "parsomatic_unit_test"
   val sample_id = "put_sample_1"
   val version = 1
@@ -42,9 +44,8 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
     request match {
       case Some(r) =>
         r.status shouldBe OK
-      case None => None
+      case None => request shouldBe OK
     }
-
   }
   it should "return an OK status code when updating a new sample" in {
     val otm = new ObjectToMd(set_id, SampleRef("put_sample_2", set_id), true, Some(version))
@@ -52,7 +53,7 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
     request match {
       case Some(r) =>
         r.status shouldBe OK
-      case None => None
+      case None => request shouldBe OK
     }
   }
   it should "return a 200 ok status code when deleting" in {
