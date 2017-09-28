@@ -20,9 +20,7 @@ import java.util.UUID._
   * requests.
   */
 class MDIntegrationSpec extends FlatSpec with Matchers{
-  // val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
   val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
-  //val pathPrefix = "http://Office:9100/MD"
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
   implicit val ec: ExecutionContextExecutor = system.dispatcher
@@ -31,6 +29,7 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
     sampleId = "Load Test Sample",
     setId = "Load Test Set",
     version = Some(1L),
+    test = true,
     inputFile = Some("C:\\Dev\\Scala\\Parsomatic\\target\\scala-2.11\\test-classes\\input_data.tsv ")
   )
   private val metrics = List(SampleSheet(),
@@ -60,13 +59,13 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
     result.status shouldBe Created
   }
   "Parsomatic" should "add metrics without any duplicate addresses" in {
-    val samples = Seq.fill(250)(randomUUID().toString)
+    val samples = Seq.fill(96)(randomUUID().toString)
     samples.map(
       x =>{
         val otm = new ObjectToMd(
           setId = config.setId,
           sampleRef = SampleRef(sampleID = x, setID = config.setId),
-          test = false,
+          test = true,
           version = config.version
         )
         metrics.map(metric => otm.run(metric))
