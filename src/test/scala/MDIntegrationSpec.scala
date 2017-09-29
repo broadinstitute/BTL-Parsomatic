@@ -59,7 +59,7 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
     result.status shouldBe Created
   }
   "Parsomatic" should "add metrics without any duplicate addresses" in {
-    val samples = Seq.fill(96)(randomUUID().toString)
+    val samples = Seq.fill(1)(randomUUID().toString)
     samples.map(
       x =>{
         val otm = new ObjectToMd(
