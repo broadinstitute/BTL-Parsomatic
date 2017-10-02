@@ -27,26 +27,28 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
   private val url = getClass.getResource("/load_input.tsv")
   private val config = Config(
     sampleId = "Load Test Sample",
-    setId = "Load Test Set",
+    setId = randomUUID().toString,
     version = Some(1L),
     test = true,
     inputFile = Some("C:\\Dev\\Scala\\Parsomatic\\target\\scala-2.11\\test-classes\\input_data.tsv ")
   )
-  private val metrics = List(SampleSheet(),
-      PicardReadGcMetrics(),
-  PicardInsertSizeMetrics(),
-  PicardEstimateLibraryComplexity(),
-  PicardAlignmentSummaryMetrics(),
-  PicardMeanQualByCycle(),
-  DemultiplexedStats(),
-  ErccStats(),
-  RnaSeqQcStats(
-    alignmentMetrics = RnaSeqQcStats.AlignmentMetrics(),
-    annotationMetrics = RnaSeqQcStats.AnnotationMetrics(),
-    covMetrics = RnaSeqQcStats.CovMetrics(),
-    endMetrics = RnaSeqQcStats.EndMetrics(),
-    gapMetrics = RnaSeqQcStats.GapMetrics(),
-    readMetrics = RnaSeqQcStats.ReadMetrics())
+  private val metrics = List(SampleSheet()
+//    ,
+//      PicardReadGcMetrics(),
+//  PicardInsertSizeMetrics(),
+//  PicardEstimateLibraryComplexity(),
+//  PicardAlignmentSummaryMetrics(),
+//  PicardMeanQualByCycle(),
+//  DemultiplexedStats(),
+//  ErccStats(),
+//  RnaSeqQcStats(
+//    alignmentMetrics = RnaSeqQcStats.AlignmentMetrics(),
+//    annotationMetrics = RnaSeqQcStats.AnnotationMetrics(),
+//    covMetrics = RnaSeqQcStats.CovMetrics(),
+//    endMetrics = RnaSeqQcStats.EndMetrics(),
+//    gapMetrics = RnaSeqQcStats.GapMetrics(),
+//    readMetrics = RnaSeqQcStats.ReadMetrics()
+//  )
   )
   def doRequest(path: String, json: String): Future[HttpResponse] =
     Http().singleRequest(
@@ -59,7 +61,7 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
     result.status shouldBe Created
   }
   "Parsomatic" should "add metrics without any duplicate addresses" in {
-    val samples = Seq.fill(1)(randomUUID().toString)
+    val samples = Seq.fill(2)(randomUUID().toString)
     samples.map(
       x =>{
         val otm = new ObjectToMd(
