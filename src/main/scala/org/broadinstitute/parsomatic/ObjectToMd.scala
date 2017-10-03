@@ -29,6 +29,7 @@ class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Op
     server = "gp3c5-33b"
   }
   val pathPrefix = s"http://$server.broadinstitute.org:9100/MD"
+  //val pathPrefix = s"http://Office:9100/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
   val metricsCreate = s"$pathPrefix/add/metrics"
   implicit val system = ActorSystem()
