@@ -25,10 +25,11 @@ import scala.concurrent.duration._
 class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Option[Long]){
   var retries = 4
   var server = "btllims"
+  var port = 9100
   if (test) {
-    server = "gp3c5-33b"
+    port = 9101
   }
-  val pathPrefix = s"http://$server.broadinstitute.org:9100/MD"
+  val pathPrefix = s"http://$server.broadinstitute.org:$port/MD"
   //val pathPrefix = s"http://Office:9100/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
   val metricsCreate = s"$pathPrefix/add/metrics"
@@ -45,7 +46,7 @@ class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Op
     def doUpdate(au: MetricsUpdate): Option[HttpResponse] = {
       val result = doAnalysisUpdate(au)
       try {
-        Some(Await.result(result, 10 seconds))
+        Some(Await.result(result, 10.seconds))
       } catch {
         case e: TimeoutException =>
           retries match {
