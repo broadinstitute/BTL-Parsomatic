@@ -38,5 +38,17 @@ class PresetsSpec extends FlatSpec with Matchers {
     filterResult1.right.get.length shouldBe frLength1
     filterResult2.right.get.length shouldBe frLength2
     }
+  "A ErccPreset" should "" in {
+    val config = Config(
+      sampleId = "ErccPresetTest",
+      setId = "TestSet1",
+      version = Some(1L),
+      //inputFile = Some("C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\Mouse-A2-single.ErccMetrics.out")
+      inputFile = Some("C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\new_ercc.out")
+    )
+
+    val ep = new ErccStatsPreset(config)
+    ep.run()
+  }
 
 }

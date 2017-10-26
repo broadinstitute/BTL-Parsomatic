@@ -10,7 +10,8 @@ package org.broadinstitute.parsomatic
 object GetErccStats {
   // It might be interesting to use reflection in the future to get the case class param names. This would
   // require refactoring at several levels as then headers and case class params would have to be same everywhere.
-  private val headers = List("TOTAL_READS",
+  private val headers = List(
+    "TOTAL_READS",
     "ERCC_READS",
     "UNALIGNED_ERCC_READS",
     "FRC_GENOME_REF",
@@ -24,9 +25,13 @@ object GetErccStats {
     * @param delim The delimiter to used as string separators.
     * @return
     */
-  def getStats(input: List[String], delim: String):Either[String, List[String]] = {
-    if (input.length==headers.length) {
-      Right(List(headers.mkString(delim), input.mkString(delim)))
+  def getStats(input: String, delim: String):Either[String, List[String]] = {
+
+    val input_list = input.split(delim)
+    val head = input_list.head.split(delim)
+    val data = input_list(1).split(delim)
+    if (data.length==headers.length) {
+      Right(List(head.mkString(delim), data.mkString(delim)))
     }
     else Left(s"GetErccStats.getStats failed: Expected input length ${headers.length}, received ${input.length}.")
   }

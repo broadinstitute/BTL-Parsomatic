@@ -4,14 +4,15 @@ import org.broadinstitute.parsomatic.GetErccStats
   * Created by amr on 9/29/2016.
   */
 class GetErccStatsSpec extends FlatSpec with Matchers{
-  private val input = "2368092\n75658\n293314\n0.84419\n0.0319489\n0.123861".split("\n").toList
   "GetErccStats.getStats" should "return a failure message if input stats are wrong length" in {
-    val badStats = "2368092\n75658\n293314\n0.84419\n".split("\n").toList
+    val badStats = "TOTAL_READS\tERCC_READS\tUNALIGNED_ERCC_READS\tFRC_GENOME_REF\tFRC_ERCC_READS\tFRC_UNALIGNED_ERCC\n2368092\t75658\t293314\t0.84419\t"
     val badErccStats = GetErccStats.getStats(badStats, "\t")
     badErccStats should be (Left("GetErccStats.getStats failed: Expected input length 6, received 4."))
   }
   it should "return a list with correct input that can be properly mapped to k/v pairs" in {
-    val erccStats = GetErccStats.getStats("2368092\n75658\n293314\n0.84419\n0.0319489\n0.123861".split("\n").toList, "\t")
+    val input = "TOTAL_READS\tERCC_READS\tUNALIGNED_ERCC_READS\tFRC_GENOME_REF\tFRC_ERCC_READS\tFRC_UNALIGNED_ERCC\n2368092\t75658\t293314\t0.84419\t0.0319489\t0.123861\n"
+    val erccStats = GetErccStats.getStats(input, "\t")
+    
     val stat_list = erccStats.right.get
     val header = stat_list.head.split("\t")
     val values = stat_list(1).split("\t")

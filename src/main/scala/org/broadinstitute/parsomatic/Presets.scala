@@ -79,7 +79,9 @@ object Presets {
     val end = 0
     config.delimiter = "\t"
     config.mdType = "ErccStats"
-    def run(): Unit = {
+    def run(): Unit =
+//      filterResultHandler(filter(start, end), config)
+    {
       filter(start, end) match {
         case Right(filterResult) =>
           filterResultHandler(GetErccStats.getStats(filterResult, config.delimiter), config)
