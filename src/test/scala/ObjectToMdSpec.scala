@@ -9,7 +9,6 @@ import org.broadinstitute.parsomatic.ObjectToMd
 import org.broadinstitute.MD.types._
 import akka.http.scaladsl.model.StatusCodes._
 import org.broadinstitute.MD.types.metrics.PicardReadGcMetrics
-
 import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContextExecutor, Future}
 import scala.language.postfixOps
@@ -26,8 +25,8 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
       Post(path, HttpEntity(contentType = `application/json`, string = json))
     )
 
-  // val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
-  val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
+  val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
+  //val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
   //val pathPrefix = "http://Office:9100/MD"
   val set_id = "parsomatic_unit_test"
   val sample_id = "put_sample_1"

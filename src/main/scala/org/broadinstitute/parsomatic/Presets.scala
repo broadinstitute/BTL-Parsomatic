@@ -77,17 +77,17 @@ object Presets {
     val inputFile: String = config.inputFile.get
     val start = 1
     val end = 0
-    config.delimiter = "\t"
+    config.delimiter = ","
     config.mdType = "ErccStats"
     def run(): Unit =
-//      filterResultHandler(filter(start, end), config)
-    {
       filter(start, end) match {
         case Right(filterResult) =>
-          filterResultHandler(GetErccStats.getStats(filterResult, config.delimiter), config)
-        case Left(unexpectedResult) => failureExit("ErccStatsPreset failed.")
+          val header = filterResult.head
+          val data = filterResult(1)
+          val slicedResult: List[String] = List(filterResult.head, data)
+          filterResultHandler(Right(slicedResult), config)
+        case Left(unexpectedResult) => filterResultHandler(Left(unexpectedResult), config)
       }
-    }
   }
 
   class RnaSeqQCPreset(config: Config) extends Rows with RowFilter{

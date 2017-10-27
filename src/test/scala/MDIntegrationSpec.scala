@@ -20,7 +20,7 @@ import java.util.UUID._
   * requests.
   */
 class MDIntegrationSpec extends FlatSpec with Matchers{
-  val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
+  val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
   implicit val ec: ExecutionContextExecutor = system.dispatcher
@@ -57,7 +57,7 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
   "EntryCreator" should "create a metrics entry" in {
     val addPath = pathPrefix + "/add/metrics"
     val request = doRequest(addPath, s"""{\"id\": \"${config.setId}\", \"version\": ${config.version.get}}""")
-    val result = Await.result(request, 5 seconds)
+    val result = Await.result(request, 10 seconds)
     result.status shouldBe Created
   }
   "Parsomatic" should "add metrics without any duplicate addresses" in {
