@@ -26,9 +26,7 @@ class ObjectToMdSpec extends FlatSpec with Matchers {
       Post(path, HttpEntity(contentType = `application/json`, string = json))
     )
 
-  // val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
-  val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
-  //val pathPrefix = "http://Office:9100/MD"
+  val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
   val set_id = "parsomatic_unit_test"
   val sample_id = "put_sample_1"
   val version = 1

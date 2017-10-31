@@ -20,7 +20,7 @@ import java.util.UUID._
   * requests.
   */
 class MDIntegrationSpec extends FlatSpec with Matchers{
-  val pathPrefix = "http://gp3c5-33b.broadinstitute.org:9100/MD"
+  val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
   implicit val ec: ExecutionContextExecutor = system.dispatcher

@@ -25,11 +25,7 @@ import scala.concurrent.duration._
 class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Option[Long]){
   var retries = 4
   var server = "btllims"
-  if (test) {
-    server = "gp3c5-33b"
-  }
-  val pathPrefix = s"http://$server.broadinstitute.org:9100/MD"
-  //val pathPrefix = s"http://Office:9100/MD"
+  val pathPrefix = if (!test) s"http://$server.broadinstitute.org:9100/MD" else s"http://$server.broadinstitute.org:9101/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
   val metricsCreate = s"$pathPrefix/add/metrics"
   implicit val system = ActorSystem()
