@@ -7,7 +7,7 @@ import org.broadinstitute.parsomatic.Config
 class EstimateLibraryComplexitySpec extends FlatSpec with Matchers{
   "EstimateLibraryComplexity" should "return a container with library complexity stats" in {
     val config = Config(
-      test = true,
+      port = 9101,
       sampleId = "SSF1871C06_PeterNigrovic",
       setId = "Mouse-Nigrovic",
       version = Some(1483633919195L)

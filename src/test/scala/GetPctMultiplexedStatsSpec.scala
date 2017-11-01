@@ -7,7 +7,7 @@ import org.broadinstitute.parsomatic.Config
 class GetPctMultiplexedStatsSpec extends FlatSpec with Matchers{
   "GetPctMultiplexedStatsSpec" should "return a container with multiplexed Stat" in {
     val config = Config(
-      test = true,
+      port = 9101,
       sampleId = "SSF1871C06_PeterNigrovic",
       setId = "Mouse-Nigrovic",
       version = Some(1483633919195L)

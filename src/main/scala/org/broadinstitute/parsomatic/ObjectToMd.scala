@@ -22,15 +22,10 @@ import scala.concurrent.duration._
   * @param sampleRef a sampleRef containing a sample ID and sample set ID.
   */
 
-class ObjectToMd(setId: String, sampleRef: SampleRef, test: Boolean, version: Option[Long]){
+class ObjectToMd(setId: String, sampleRef: SampleRef, host: String, port: Int, version: Option[Long]){
   var retries = 4
-  var server = "btllims"
-  var port = 9100
-  if (test) {
-    port = 9101
-  }
-  val pathPrefix = s"http://$server.broadinstitute.org:$port/MD"
-  //val pathPrefix = s"http://Office:9100/MD"
+
+  val pathPrefix = s"$host:$port/MD"
   val metricsUpdate = s"$pathPrefix/metricsUpdate"
   val metricsCreate = s"$pathPrefix/add/metrics"
   implicit val system = ActorSystem()

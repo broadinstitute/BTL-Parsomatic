@@ -19,6 +19,8 @@ class PresetsSpec extends FlatSpec with Matchers {
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
   implicit val ec: ExecutionContextExecutor = system.dispatcher
+  private val input = getClass.getResource("/input_data.tsv").getPath
+
   def doRequest(path: String, json: String): Future[HttpResponse] =
     Http().singleRequest(
       Post(path, HttpEntity(contentType = `application/json`, string = json))
@@ -28,14 +30,13 @@ class PresetsSpec extends FlatSpec with Matchers {
       sampleId = "TestSample1",
       setId = "TestSet1",
       version = Some(1490358021350L),
-      inputFile = Some("D:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\input_data.tsv")
+      inputFile = Some(input)
     )
-
     val config_2 = Config(
       sampleId = "TestSample2",
       setId = "TestSet2",
       version = Some(1L),
-      inputFile = Some("D:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\input_data.tsv")
+      inputFile = Some(input)
     )
 
     val ssp1 = new SampleSheetPreset(config_1)
@@ -55,13 +56,13 @@ class PresetsSpec extends FlatSpec with Matchers {
     filterResult2.right.get.length shouldBe frLength2
     }
   "A ErccPreset" should "Do stuff" in {
+    val ercc_out = getClass.getResource("/new_ercc.out").getPath
     val ercc_config = Config(
       sampleId = "ErccPresetTest",
       setId = "TestSet1",
       version = Some(1L),
-      test = true,
-      //inputFile = Some("C:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\Mouse-A2-single.ErccMetrics.out")
-      inputFile = Some("D:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\new_ercc.out")
+      port = 9101,
+      inputFile = Some(ercc_out)
     )
     val pathPrefix = "http://btllims.broadinstitute.org:9101/MD"
     val addPath = pathPrefix + "/add/metrics"
