@@ -27,11 +27,8 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
   private implicit lazy val system = ActorSystem()
   private implicit lazy val materializer = ActorMaterializer()
   private implicit lazy val ec = system.dispatcher
-  val rootPath = "http://btllims.broadinstitute.org"
-  var port = 9100
   var retries = 4
-  if (config.test) port = 9101
-  val server = s"$rootPath:$port/MD"
+  val server = s"${config.host}:${config.port}/MD"
   val path = s"$server/metricsQuery"
   val sampleList: List[String] = getSamples(config.setId, config.version, server)
   val metrics: List[MetricsType] = List(MetricsType.PicardAlignmentSummaryAnalysis)
@@ -45,7 +42,6 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
   val mq: MetricsQuery = makeMetricsQuery(sampleRequests)
   def getStats:Either[String, List[String]] = {
     val query = doQuery(mq)
-//    val result = query.flatMap(response => Unmarshal(response.entity).to[List[SampleMetrics]])
     query match {
       case Some(r) =>
         val result = Unmarshal(r.entity).to[List[SampleMetrics]]
@@ -55,7 +51,7 @@ class GetPctMultiplexedStat(config: Config) extends Samples with Metrics with Re
             val multiplexMap: mutable.LinkedHashMap[String, Any] = mutable.LinkedHashMap(
               "PicardAlignmentSummaryAnalysis.PicardAlignmentSummaryMetrics.totalReads" -> None
             )
-            val mapsList = fillMap(multiplexMap, metricsList)
+            val mapsList = makeMap(multiplexMap.keys.toList, metricsList)
             var sampleTotal: Double = 0
             for (m <- mapsList)
               if (m("sampleName") == config.sampleId)

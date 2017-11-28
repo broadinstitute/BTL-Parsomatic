@@ -54,10 +54,12 @@ object Parsomatic extends App {
         .text("Delimiter used to separate values in file. Use '\\t' for tabs. Default is comma-separated.")
       opt[Boolean]('V', "validateDelim").optional().action((x, c) => c.copy(validateDelim = x))
         .text("Validates delimiter. set to 'false' to disable. On by default.")
-      opt[Int]('o', "offset").action((_, c) => c.copy(test = true))
+      opt[Int]('o', "offset").action((x, c) => c.copy(vOffset = x))
         .text("An offset for validation. Should equal the number of headers with no columns. 0 by default.")
-      opt[String]('t', "test").hidden().action((_, c) => c.copy(test = true))
-        .text("Enable test mode which updates MDBeta instead of MD.")
+      opt[String]('H', "HOST").valueName("<host url>").optional().action((x, c) => c.copy(host = x))
+        .text("Optional. Specify database host. Default is http:\\\\btllims.broadinstitute.org.")
+      opt[Int]('P', "PORT").valueName("<port>").optional().action((x, c) => c.copy(port = x))
+        .text("Optional database host port. Default is 9100. Use 9101 for MdBeta.")
       help("help").text("Prints this help text.")
       note("\nA tool for parsing data files into MD objects.\n")
     }
@@ -192,7 +194,7 @@ object Parsomatic extends App {
         analysisObject match {
           case Right(analysis) =>
             val insertObject = new ObjectToMd(config.setId,
-              SampleRef(sampleID = config.sampleId, setID = config.setId), config.test, config.version)
+              SampleRef(sampleID = config.sampleId, setID = config.setId), host = config.host, port = config.port, config.version)
             insertObject.run(analysis) match {
               case Some(a) =>
                 a.status match {

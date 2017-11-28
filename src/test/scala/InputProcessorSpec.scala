@@ -6,7 +6,7 @@ import org.scalatest._
   */
 
 class InputProcessorSpec extends FlatSpec with Matchers {
-  val alignmentMetrics = "D:\\Dev\\Scala\\Parsomatic\\src\\test\\resources\\Mouse-A2-single.AlignmentSummaryMetrics.out"
+  val alignmentMetrics = getClass.getResource("/Mouse-A2-single.AlignmentSummaryMetrics.out").getPath
   val notRealFile = "doesnt_exists.txt"
   "A valid input" should "return the 'right' case of an Either" in {
     val ip = new InputProcessor(alignmentMetrics)

@@ -20,5 +20,6 @@ case class Config (
                    var delimiter: String = ",",
                    validateDelim: Boolean = true,
                    var vOffset: Int = 0,
-                   test: Boolean = false
-                   )
+                   host: String = "http://btllims.broadinstitute.org",
+                   port: Int = 9100
+                  )

@@ -29,7 +29,7 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
     sampleId = "Load Test Sample",
     setId = randomUUID().toString,
     version = Some(1L),
-    test = true,
+    port = 9101,
     inputFile = Some("C:\\Dev\\Scala\\Parsomatic\\target\\scala-2.11\\test-classes\\input_data.tsv ")
   )
   private val metrics = List(SampleSheet()
@@ -57,7 +57,7 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
   "EntryCreator" should "create a metrics entry" in {
     val addPath = pathPrefix + "/add/metrics"
     val request = doRequest(addPath, s"""{\"id\": \"${config.setId}\", \"version\": ${config.version.get}}""")
-    val result = Await.result(request, 5 seconds)
+    val result = Await.result(request, 10 seconds)
     result.status shouldBe Created
   }
   "Parsomatic" should "add metrics without any duplicate addresses" in {
@@ -67,7 +67,8 @@ class MDIntegrationSpec extends FlatSpec with Matchers{
         val otm = new ObjectToMd(
           setId = config.setId,
           sampleRef = SampleRef(sampleID = x, setID = config.setId),
-          test = true,
+          host = "http://btllims.broadinstitute.org",
+          port = 9101,
           version = config.version
         )
         metrics.map(metric => otm.run(metric))
