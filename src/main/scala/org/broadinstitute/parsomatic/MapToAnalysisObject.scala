@@ -21,8 +21,14 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
     * @param default A default int to use if the key is not found.
     * @return
     */
-  def convertToInt(row: Map[String, String], key: String, default: String): Int =
-    converter(row, key, default, (_: String).toInt)
+  def convertToInt(row: Map[String, String], key: String, default: String): Int = {
+    val value = row.get(key)
+    val newRow = row + (key -> {
+      val p = "\\d+".r
+      p.findFirstIn(value.get).get
+    })
+    converter(newRow, key, default, (_: String).toInt)
+  }
 
   /**
     * Converts a string representation of an double to a double.
