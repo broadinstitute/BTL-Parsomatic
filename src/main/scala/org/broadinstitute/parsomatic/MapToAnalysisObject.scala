@@ -23,11 +23,9 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
     */
   def convertToInt(row: Map[String, String], key: String, default: String): Int = {
     val value = row.get(key)
-    val newRow = row + (key -> {
-      val p = "\\d+".r
-      p.findFirstIn(value.get).get
-    })
-    converter(newRow, key, default, (_: String).toInt)
+    val newval = scala.math.round(value.get.toDouble).toInt
+    val newMap = row + (key -> newval.toString)
+    converter(newMap, key, default, (_: String).toInt)
   }
 
   /**
