@@ -21,8 +21,12 @@ class MapToAnalysisObject(mdType: String, input: List[Map[String, String]]) {
     * @param default A default int to use if the key is not found.
     * @return
     */
-  def convertToInt(row: Map[String, String], key: String, default: String): Int =
-    converter(row, key, default, (_: String).toInt)
+  def convertToInt(row: Map[String, String], key: String, default: String): Int = {
+    val value = row.get(key)
+    val newval = scala.math.round(value.get.toDouble).toInt
+    val newMap = row + (key -> newval.toString)
+    converter(newMap, key, default, (_: String).toInt)
+  }
 
   /**
     * Converts a string representation of an double to a double.
